@@ -1,0 +1,26 @@
+{
+  "name": "societe_project",
+  "version": "1.0.0",
+  "authors": [
+    "Copser <iamrmot@gmail.com>"
+  ],
+  "description": "e_commerce",
+  "main": "index.html",
+  "keywords": [
+    "SOCIETE",
+    "literatillc",
+    "real_estate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0"
+  }
+}

@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+
+<!--Modal content-->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Login</h4>
+      </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 btn-group-vertical" role="group">
+                    <a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
+                    <a id="linkedin_login" href="{% provider_login_url 'linkedin' %}" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
+                    <a id="twitter_login" href="{% provider_login_url 'twitter' %}" class="btn btn-info btn-lg"><i class="fa fa-twitter"></i>&nbsp;Sign in with Twitter</a>
+                </div>
+            </div>
+            &nbsp;
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+     
+        </div>
+    </div>
+ </div> 
+</div><!--/ end modal -->
+
+<div class="container">
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <p style="padding: 25px;"></p>
+      </div> 
+   </div> 
+</div><!--/ end container -->
+
+<div class="cotainer">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <h1><span class="glyphicon glyphicon-stop"></span>&nbsp;<strong>MISSION AND <span class="overline">HISTORY</strong></span></h1>
+    </div>
+  </div>  
+</div><!--/ end container -->
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+       
+   </div> 
+</div><!--/ end container -->
+    
+<div class="conatiner">
+   <div class="row">
+      <div class="hidden-xs hidden-sm col-md-5 col-lg-5 bridge">
+        <img class="img-responsive" src="/static/img/about/about_bridge_02.jpg" alt=""/> 
+      </div> 
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 bridge">
+        <p>Originally started in 2009, Literati Group Housing began bacause of the lack of affordable, furnished housing for international community in New York City. Our goal is to offer housing accommodations for motivated, qualified, educated and trained individuals that strive to be at the top of their respective crafts. By partnering with local universities, internship programs, and specialty schools, there is no place like Literati Group Housing. We foster micro communities in our residences where residents serce multiple functions as roommate, friend, and city ambassador. Literati Group Housing strives to end the plight of misleading advertisment targeted to the international community and build our company with good service, ethics and a rigid selection criteria to residents partners and employees alike. There is no place like home and there is no place like Literati.</p>
+      </div>
+      <div class="hidden-xs hidden-sm col-md-3 col-lg-3 bridge" style="padding-left: 0;">
+        <img class="img-responsive" src="/static/img/about/SOCIETE2.jpg" alt=""/>    
+      </div>
+   </div>
+</div><!--/end container -->
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+   </div> 
+</div><!--/ end container -->
+
+<div class="cotainer">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <h1><span class="glyphicon glyphicon-stop"></span>&nbsp;<strong><span class="overline">AMENITIES</strong></span></h1>
+    </div>
+  </div>  
+</div><!--/ end container -->
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+   </div> 
+</div><!--/ end container -->
+
+<div class="container">
+    <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+           <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+           Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+           Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+           Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <a href="#"><img class="img-thumbnail img-responsive" src="/static/img/about/apartment/apartment1.jpg" alt=""></a>
+        </div>
+    </div><!--/ end row --> 
+
+    <div class="row">
+        <p style="padding:10px;"></p>
+    </div><!--/ end divider -->
+
+    <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <a href="#"><img class="img-thumbnail img-responsive" src="/static/img/about/apartment/apartment2.jpg" alt=""></a>
+       </div> 
+       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p class="hidden-md hidden-lg" style="padding:10px;"></p>
+            <a href="#"><img class="img-thumbnail img-responsive" src="/static/img/about/apartment/apartment4.jpg" alt=""></a>
+       </div>
+    </div>
+
+    <div class="row">
+        <p style="padding:10px;"></p>
+    </div><!--/end divider -->
+
+    <div class="row started">
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+           
+            <p class="hidden-xs hidden-sm" style="padding:100px;"></p>
+           <h2><strong>Easy as <span class="overline">One</span>, Two, Three</strong></h2>  
+           <a href="#" id="showlogin"><button type="button" class="active btn btn-lg btn-info round" data-toggle="modal" data-target="#loginModal">GET STARTED</button></a>
+       </div> 
+       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <p class="hidden-md hidden-lg" style="padding:10px;"></p>
+            <a href="#"><img class="img-thumbnail img-responsive" src="/static/img/about/apartment/apartment3.jpg" alt=""></a>
+       </div>
+    </div>
+
+    <div class="row">
+        <p style="padding:10px;"></p>
+    </div><!--/end divider -->
+
+    <div class="row started">
+       <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <a href="#"><img class="img-thumbnail img-responsive" src="/static/img/about/apartment/apartment5.jpg" alt=""></a>
+            <p style="padding:10px;"></p>
+        <p style="">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+       </div> 
+
+       <div class="col-cs-12 col-sm-12 col-md-7 col-lg-7">
+        <p style="padding:10px;"></p>
+        <p style="">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p style="padding:10px;"></p>
+            <a href="#"><img class="img-thumbnail img-responsive" src="/static/img/about/apartment/apartment6.jpg" alt=""></a>
+           
+       </div>
+    </div>
+</div><!--/end container -->
+{% endblock %}

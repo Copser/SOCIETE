@@ -1,0 +1,370 @@
+/* Nav bar  */
+
+body {
+  padding: 0; 
+  margin: 0;
+  max-width: 1500px;
+}
+
+body img {
+    max-width: 1500px;
+}
+
+/* text overline */
+.overline {
+    border-top: 5px solid;
+    border-color: #428bca;
+}
+
+.glyphicon-stop {
+    color: #428bca;
+}
+
+
+.jumbotron {
+    background: url('/static/img/Astoria_bay.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 400px;
+}
+
+.navbar li {
+    padding-top: 10px;
+}
+
+
+.navbar-brand, #showlogin {
+    padding: 0 !important;
+}
+
+.btn-sm.round {
+    border-radius: 15px;
+}
+
+
+/* SOCIETE row od columns, making devider */ 
+
+.SOCIETE-columns {
+    text-align: center;
+}
+
+.SOCIETE-columns img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-sm-4:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+
+/* Carousel */
+
+#best {
+    background-color: #EBEBEB;
+}
+
+#example-generic{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#example-generic, .item, .active {
+    height: 100%;
+}
+
+.item img {
+    width: 100%;
+}
+
+.diamonds {
+    color: #428bca;
+}
+
+/* Thumbnail Section */
+
+.thumb {
+    height:350px;
+    max-width: 100%;
+    max-height: 100%;
+    background: #E6E6E6;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding: 0px;
+    border: 1px solid #ddd;
+    webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2 ease-in-out;
+}
+
+.thumb .caption {
+    padding: 9px;
+    opacity:0;
+    -moz-opacity: 0.5;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+}
+
+.thumb .caption h4 {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.thumb .caption .dolar p {
+    padding-top: 60px;
+}
+
+.second-thumb{
+    margin-top: 20px;
+}
+
+.thumb-one img, .second-thumb img {
+    height: 100%;
+    width: 100%;
+}
+
+.aimage {
+    background-image: url('/static/img/portfolio_new/portfolio1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.bimage {
+    background-image: url('/static/img/portfolio_new/portfolio2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.cimage {
+    background-image: url('/static/img/portfolio_new/portfolio3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.dimage {
+    background-image: url('/static/img/portfolio_new/portfolio4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.eimage {
+    background-image: url('/static/img/portfolio_new/portfolio5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.fimage {
+    background-image: url('/static/img/portfolio_new/portfolio6.jpg');
+    background-size: cover;
+    background-position: center;
+}
+/* Easy Section */
+
+.easy {
+    background-color: #428bca;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#winter {
+    color: #ffffff;
+}
+
+/* Media Query Carousel */
+
+#carousel-example-generic {
+    background-color: #EBEBEB;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+#carousel-example-generic .item {
+    height: 300px;
+}
+
+#carousel-example-generic .item img {
+    height: 150px;
+    width: 150px;
+}
+
+
+#carousel-example-generic .media {
+    text-align: left;
+}
+
+
+#carousel-example-generic .glyphicon {
+    color: #5bc9de;
+}
+
+/* Footer */
+
+#footerWrapper, #footerRights {
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+
+#footerWrapper {
+    background-color:#383838;
+}
+
+#footerWrapper .btn .change {
+    color: #7A7A7A;
+}
+
+.btn-facebook, .btn-google-plus, .btn-linkedin, .btn-twitter, .btn-youtube, .btn-social-icon {
+    color: #777;
+}
+
+#address{
+    color: #777;
+}
+
+#address a {
+    color: #777;
+}
+
+
+#footerRights {
+    background-color:#030303;
+}
+
+/* ==========================================================================
+   SOCIETE custom styles
+   ========================================================================== */
+/***
+ *
+ * ABOUT 
+ *
+ * ***/
+
+/* MISSION AND HISTORY */
+
+.bridge img {
+    height: 320px;
+}
+
+
+/* CONTACT US */
+
+.custom {
+    padding-left: 15px;
+}
+
+.text {
+    padding-top: 10px;
+}
+
+
+/***
+ *
+ * Success page  
+ *
+ * ***/
+
+#success {
+    height: 500px;
+}
+
+/*==========  Mobile First Method  ==========*/
+ 
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width : 320px){
+        .thumb-one img, .second-thumb img {
+            max-width: 1500px;
+        }
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+
+        .bridge p {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .started {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+    }
+ 
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width : 480px){
+        .thumb-one img, .second-thumb img {
+            max-width: 1500px;
+        }
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+
+        .bridge p {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .started {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+    }
+ 
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px){
+        .thumb-one img, .second-thumb img {
+            max-width: 1500px;
+        }
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+
+ 
+    }
+ 
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px){
+        .thumb-one img, .second-thumb img {
+            max-width: 1500px;
+        }
+ 
+    }
+ 
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px){
+        .thumb-one img, .second-thumb img {
+            max-width: 1500px;
+        }
+    }

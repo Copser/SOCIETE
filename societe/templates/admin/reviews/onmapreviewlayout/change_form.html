@@ -1,0 +1,132 @@
+{% extends "admin/change_form.html" %}
+{% load staticfiles %} 
+{% load i18n static %} 
+{% load reviews %}
+
+{% block extrastyle %}{{ block.super }}
+    <link href="{% static 'reviews/css/reviews.css' %}" rel="stylesheet"></link> 
+    <style>
+        #global_map_container {
+            padding: 10px;
+            display:none;
+        }
+        .global_map {
+            background: url({% static 'img/global_new.svg' %}) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .global_map .review_container {
+            width: 100%;
+            height: 100%;
+            max-width: 1500px;
+            max-height: 750px;
+            overflow: hidden;
+        }
+        .on_map_review .review_body {
+            font-size: 20px;
+        }
+        .on_map_review .review_body a,
+        .on_map_review .review_body p {
+            font-family: "Ubuntu Light";
+            line-height: 1.2em;
+            font-size: 0.8em;
+        }
+
+        #map_labels div label {
+            padding: 5px;
+            border: 1px solid #CCC; 
+            border-radius: 5px;
+            width: auto;
+            margin-right: 10px;
+        }
+        #id_map1,
+        #id_map2 {
+            display: none;
+        }
+        #id_map2:checked ~ #map_labels #id_lbl2,
+        #id_map1:checked ~ #map_labels #id_lbl1 {
+            background: #ededed;
+        }
+        #id_map1:checked ~ #global_map_container,
+        #id_map2:checked ~ #global_map_container {
+            display:block;
+        }
+        #id_map1:checked ~ #global_map_container .global_map .review_container,
+        #id_map1:checked ~ #global_map_container .global_map {
+            max-width: 1500px;
+            height: 750px;
+        }
+        #id_map1:checked ~ #global_map_container .global_map .review_container {
+            left: calc(50% - 750px);
+        }
+        #id_map2:checked ~ #global_map_container .global_map .review_container,
+        #id_map2:checked ~ #global_map_container .global_map {
+            max-width: 1000px;
+            height: 500px;
+        }
+        #id_map2:checked ~ #global_map_container .global_map .review_container {
+            left: calc(50% - 500px);
+        }
+    </style>
+{% endblock %}
+{% block extrahead %}{{ block.super }}
+    <script src="{% static 'reviews/js/reviews.js' %}" type="text/javascript"></script>
+    <script src="{% static 'reviews/admin/js/jquery-ui.min.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            init_reviews();
+            //$(".review_container .on_map_review").draggable().mousedown(function(e){
+            //    e.preventDefault();
+            //    return $(this).mousedown();
+            //});
+            $('.review_container .on_map_review').on('mouseup mouseout', function(e) {
+                var position = $(this).position();
+                var inputX = $('#x_' + this.id);
+                var inputY = $('#y_' + this.id);
+                if (position.top > 0 && position.left > 0) {
+                    inputX.val(parseInt(position.left));
+                    inputY.val(parseInt(position.top));
+                }
+                else {
+                    $(this).css({top : inputY.val() + 'px', left : inputX.val() + 'px'});
+                }
+            });
+            $('.review_container .on_map_review').draggable().click(function(e) {
+                var position =  $(this).position();
+                top = e.pageY - position.top; 
+                left = e.pageX - position.left;
+                return false;
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block after_field_sets %}
+    {% if original and original.id %}
+    <fieldset class="module aligned augmented_fieldset">
+        <h2>
+            Preview 
+        </h2>
+        <input type="radio" id="id_map1" class="map_mode" name="map_radio"></input>
+        <input type="radio" id="id_map2" class="map_mode" name="map_radio"></input>
+        <div class="form-row" id="map_labels">
+            <div class="related-widget-wrapper">
+                <label id="id_lbl1" for="id_map1">1500px</label>
+                <label id="id_lbl2" for="id_map2">1000px</label>
+            </div>
+        </div>
+        <div id="global_map_container">
+            <p class="help">To change the position of the selected reviews, please click and hold your mouse button on the review object.</p>
+            <div class="global_map">
+                <div class="review_container">
+                    {% get_map_layout layout=original %}
+                </div>
+            </div>
+        </div>
+        {% for r in original.reviews.all %}
+        <input type=hidden name="x_review_{{ r.id }}" id="x_id_review_{{ r.id }}" value="{{ r.position_x }}"></input>
+        <input type=hidden name="y_review_{{ r.id }}" id="y_id_review_{{ r.id }}" value="{{ r.position_y }}"></input>
+        {% endfor %}
+    </fieldset>
+    {% endif %}
+{% endblock %}

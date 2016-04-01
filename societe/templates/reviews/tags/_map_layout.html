@@ -1,0 +1,10 @@
+{% load staticfiles %}
+{% if queryset %}
+    {% for r in queryset %}
+        {% if forloop.counter|divisibleby:2 %}
+            {% include 'reviews/widgets/on_map_review.html' with review=r marked=True %}
+        {% else %} 
+            {% include 'reviews/widgets/on_map_review.html' with review=r %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
