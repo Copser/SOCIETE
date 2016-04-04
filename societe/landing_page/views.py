@@ -28,7 +28,7 @@ def about(request):
             our_form = form.save(commit=False)
             our_form.save()
             messages.add_message(
-                request, messages.INFO, "Your message has been sent, Thank you."
+                request, messages.INFO, "Your message has been sent, Thank you"
             )
             return HttpResponseRedirect('/')
     else:
