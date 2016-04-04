@@ -21,7 +21,7 @@ class ContactView(ModelForm):
     """
     error_css_class = 'error'
     required_css_class = 'required'
-    birthday = forms.DateField(widget=extras.SelectDateWidget(years=range(2010, 1939, -1)))
+    birthday = forms.DateField(widget=extras.SelectDateWidget(years=range(1939, 2010)))
     move_in_date = get_move_date_field()
     move_out_date = get_move_date_field()
 
