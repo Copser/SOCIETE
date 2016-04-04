@@ -3,6 +3,7 @@ from django.template import RequestContext, loader
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactUsView
 from django.contrib import messages
+from reviews.models import OnMapReviewLayout
 
 
 def index(request):
@@ -11,8 +12,13 @@ def index(request):
     index.html(landing page)
 
     """
+    layouts = OnMapReviewLayout.objects.filter(
+        category__codename='intern_review').order_by('?')
     return render_to_response(
-        'index.html', context_instance=RequestContext(request)
+        'index.html', context_instance=RequestContext(
+            request,
+            {'selected_layout': layouts.first() if layouts else None}
+        )
     )
 
 
