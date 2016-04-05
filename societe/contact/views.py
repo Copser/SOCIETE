@@ -9,7 +9,7 @@ from .forms import ContactView
 # Create your views here.
 
 
-@login_required(login_url='/accounts/signup')
+#@login_required(login_url='/accounts/signup')
 def contact(request):
     """TODO: Docstring for contact.This will be a contact app
     for the SOCIETE aplicant's, they will be asked to write down,
