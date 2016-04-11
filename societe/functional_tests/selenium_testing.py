@@ -46,9 +46,9 @@ class SocietePageTest(unittest.TestCase):
 
         """
         self.browser.get('http://localhost:8000')
-        WebDriverWait(self.browser, 10).unit(lambda browser:
-                                             self.browser.find_element_by_xpath
-                                             ('//li/a[contains(text(), "GET STARTED")]')).click()
+        WebDriverWait(self.browser, 10).until(lambda browser:
+                                              self.browser.find_element_by_id
+                                              ('showlogin')).click()
         self.assertIn('http://localhost:8000/contact', self.browser.current_url)
 
 

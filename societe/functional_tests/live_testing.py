@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 import unittest
 
 
@@ -25,6 +26,17 @@ class LiveSocieteTest(unittest.TestCase):
         """
         self.browser.get('http://societe.herokuapp.com/')
         self.assertIn('SOCIETE', self.browser.title)
+
+    def test_live_societe_click_and_go_to_about_page(self):
+        """TODO: Docstring for test_live_societe_click_and_go_to_about_page.
+        :returns: TODO
+
+        """
+        self.browser.get('http://societe.herokuapp.com')
+        WebDriverWait(self.browser, 10).until(lambda browser:
+                                              self.browser.find_element_by_xpath
+                                              ('//li/a[contains(text(), "About")]')).click()
+        self.assertIn('http://societe.herokuapp.com/about', self.browser.current_url)
 
 
 if __name__ == '__main__':
