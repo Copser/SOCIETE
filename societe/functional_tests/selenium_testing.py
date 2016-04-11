@@ -1,31 +1,32 @@
-import unittest
 from selenium import webdriver
+import unittest
 
 
-class TestSignup(unittest.TestCase):
-    """Docstring for TestSignup."""
+class SocietePageTest(unittest.TestCase):
+    """Docstring for SocietePageTest. Start to write selenium testing for SOCIETE application.
+    We will cover some basic stuff on the landing page, as the login, contact page, etc.
+    """
     def setUp(self):
-        """TODO: to be defined1. """
-        self.driver = webdriver.Firefox()
-
-    def test_signup_fire(self):
-        """TODO: Docstring for test_signup_fire.
-        :returns: TODO
-
-        """
-        self.driver.get('http://localhost:8000')
-        self.driver.find_element_by_id('id_title').send_keys('test title')
-        self.driver.find_element_by_id('id_body').send_keys('test body')
-        self.driver.find_element_by_id('submit').click()
-        self.assertIn('http://localhost:8000/', self.driver.current_url)
+        """TODO: to be defined1.Defing what browser we are using. """
+        self.browser = webdriver.Firefox()
 
     def tearDown(self):
         """TODO: Docstring for tearDown.
-        :returns: TODO
+        :returns: Quit browser afther tests
 
         """
-        self.driver.quit
+        self.browser.quit()
+
+    def test_societe_landing_page_return_title(self):
+        """TODO: Docstring for test_societe_landing_page_return_title.
+        :returns: Returns landing page title
+
+        """
+        self.browser.get('http://localhost:8000')
+
+        # test is this the title
+        self.assertIn('SOCIETE', self.browser.title)
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(warnings='ignore')
