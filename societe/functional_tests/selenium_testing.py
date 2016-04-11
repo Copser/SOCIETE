@@ -1,4 +1,6 @@
 from selenium import webdriver
+# from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 import unittest
 
 
@@ -32,8 +34,11 @@ class SocietePageTest(unittest.TestCase):
         :returns: Click on navbar and return about page
 
         """
-        self.browser.find_element_by_link_text('About').click()
-        self.assertIn('http://localhost:8000/about', self.driver.current_url)
+        self.browser.get('http://localhost:8000')
+        WebDriverWait(self.browser, 10).until(lambda browser:
+                                              self.browser.find_element_by_xpath
+                                              ('//li/a[contains(text(), "About")]')).click()
+        self.assertIn('http://localhost:8000/about', self.browser.current_url)
 
 
 if __name__ == '__main__':
