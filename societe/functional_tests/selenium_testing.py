@@ -27,6 +27,14 @@ class SocietePageTest(unittest.TestCase):
         # test is this the title
         self.assertIn('SOCIETE', self.browser.title)
 
+    def test_societe_navbar_get_user_to_about_page(self):
+        """TODO: Docstring for test_societe_navbar_get_user_to_about_page.
+        :returns: Click on navbar and return about page
+
+        """
+        self.browser.find_element_by_link_text('About').click()
+        self.assertIn('http://localhost:8000/about', self.driver.current_url)
+
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
