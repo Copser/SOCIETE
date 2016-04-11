@@ -40,6 +40,17 @@ class SocietePageTest(unittest.TestCase):
                                               ('//li/a[contains(text(), "About")]')).click()
         self.assertIn('http://localhost:8000/about', self.browser.current_url)
 
+    def test_societe_navbar_get_user_to_contact_page(self):
+        """TODO: Docstring for test_societe_navbar_get_user_to_contact_page.
+        :returns: Click on navbar and return contact page
+
+        """
+        self.browser.get('http://localhost:8000')
+        WebDriverWait(self.browser, 10).unit(lambda browser:
+                                             self.browser.find_element_by_xpath
+                                             ('//li/a[contains(text(), "GET STARTED")]')).click()
+        self.assertIn('http://localhost:8000/contact', self.browser.current_url)
+
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
