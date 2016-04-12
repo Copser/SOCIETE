@@ -2,12 +2,11 @@ language:
 - python
 python:
 - '3.4'
-- '2.7'
 install:
 - pip install -r requirements.txt
 - pip install coveralls
 # command to run tests
-script: coverage run --source=contact, landing_page manage.py test contact, landing_page
+script: coverage run --include="contact/*" --omit="contact/migrations/*" manage.py test contact
 affter_success:
     coveralls
 deploy:
