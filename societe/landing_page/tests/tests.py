@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import resolve
-from .views import index
+from ..views import index
 from django.test import RequestFactory
 
 
