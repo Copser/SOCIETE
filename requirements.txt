@@ -1,4 +1,5 @@
 coverage==4.0.3
+coveralls==1.1
 defusedxml==0.4.1
 dj-database-url==0.4.0
 dj-static==0.0.6
@@ -13,6 +14,7 @@ django-datetime-widget==0.9.3
 django-pylibmc==0.6.1
 django-toolbelt==0.0.1
 djangorestframework==3.3.2
+docopt==0.6.2
 ecdsa==0.13
 Fabric==1.10.2
 foreman==0.9.7
