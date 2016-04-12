@@ -5,8 +5,10 @@ python:
 - '2.7'
 install:
 - pip install -r requirements.txt
-script: 
-- nosetests
+# command to run tests
+script: coverage run --include="societe/*" --omit="societe/migrations/*" manage.py test societe
+affter_success:
+    coveralls
 deploy:
   provider: heroku
   api_key:
