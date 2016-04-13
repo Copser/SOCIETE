@@ -6,7 +6,7 @@ install:
 - pip install -r requirements.txt
 - pip install coveralls
 # command to run tests
-script: coverage run --include="societe/*" manage.py test societe/
+script: nosetest
 affter_success:
     coveralls
 deploy:
