@@ -1,0 +1,20 @@
+language:
+- python
+python:
+- '3.4'
+install:
+- pip install -r requirements.txt
+- pip install coveralls
+# command to run tests
+script: coverage run --include="societe/*" manage.py test societe/
+affter_success:
+    coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: Vh1U02KXmgMblUr0RElwz5KDY66+GzJAxNOGgN5ndYio8BUs7JDSref4WJXSkOKZ8nCX/wep31s8XyULkGwIY+nhFvnIMS/A6NjuKxG+B9hv1Hdt+sn0nx7YBeWcuuT2o5Qt4hDr2VrgW1uZWkyYmACIdj7K6MP83pIGY3zZeVhi8mxQG9n/v43CbCEsCSf0ALBiqS+3yyIqqc60SJjMvf7NEeAMURtAUj4o+o2JCxU+RUiKPjB+ImAWJx56ePAX5Bg7Gowc7+ZRPI42cQqlzK0Q/Nzp3WcTp+RXgfuVEGOQBmm/ePRtNjSlYy1h7zHp9pK5r44Usc9vlfoVwImSN522r/SZLOtOFNT1FncMEs6bBBRD6VDQU5ktwVU+muJnPIZMF/d/fuplnWw5TT4fcsEpg8v1uxZ9X2mesDAXEpleSwM9cGHDFfhmPYrX+rq2p3XKMbNjKjhzzi/A1NW5qYNCtZTIv3nL9z03FF+uD/LUH8gnmCgRwyLFMWP7gEzA/N3R5B2QZlkv51QKAubeF68IvwxveeNPgkmi3IAjlwBPk3Ed7W3GvuDN7YovAVaamOEQU2GEXde4I/lf3hbIevdA2h/CNtNcpvC2DWekU7E7SJB65KATtpsfa1mmMZ5lCaSeBhNf5+sjmoLMC9z+XW9JpvF1PJThuLF/Y3iCvxg=
+  app: societe
+  on:
+    branch: master
+    python: '3.4'
+    repo: Copser/SOCIETE
