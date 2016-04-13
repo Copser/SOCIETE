@@ -1,0 +1,4 @@
+[report]
+omit =
+    */python3.4/*
+    */site-packages/nose/*
