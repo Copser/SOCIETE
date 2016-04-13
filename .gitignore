@@ -1,1 +1,2 @@
 societe/societe/local_settings.py
+societe/functional_tests/selenium_testing.py
