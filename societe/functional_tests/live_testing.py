@@ -51,14 +51,14 @@ class LiveSocieteTest(unittest.TestCase):
         twitter_choice = dropSelect.find_element_by_id('twitter_login')
         twitter_choice.click()
         # Fill out twitter oauth form
-        login_form = WebDriverWait(self.browser, 10).until(
+        login_form = WebDriverWait(self.browser, 5).until(
             lambda browser: (self.browser.find_element_by_id('username_or_email')))
-        login_form.send_keys('ppilipovic84@gmail.com')
-        password_form = WebDriverWait(self.browser, 10).until(
+        login_form.send_keys('')
+        password_form = WebDriverWait(self.browser, 5).until(
             lambda browser: (self.browser.find_element_by_id('password')))
-        password_form.send_keys('gnome54321go')
+        password_form.send_keys('')
         # Sign in to SOCIETE, but first wait for authomatic redirection
-        select_sign_in = WebDriverWait(self.browser, 10).until(
+        select_sign_in = WebDriverWait(self.browser, 5).until(
             lambda browser: (self.browser.find_element_by_id('allow')))
         select_sign_in.click()
         self.assertIn('http://societe.herokuapp.com/contact', self.browser.current_url)
