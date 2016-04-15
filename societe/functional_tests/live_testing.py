@@ -44,8 +44,9 @@ class LiveSocieteTest(unittest.TestCase):
 
         """
         dropSelect = WebDriverWait(self.browser, 20).until(
-            lambda browser: (self.browser.find_element_by_css_selector('div#navbar ul li.dropdown'))).click()
-        twitter_choice = dropSelect.find_element_by_name('Sign in with Twitter')
+            lambda browser: (self.browser.find_element_by_css_selector('div#navbar ul li.dropdown')))
+        dropSelect.click()
+        twitter_choice = dropSelect.find_element_by_id('twitter_login')
         twitter_choice.click()
         self.assertIn('http://societe.herokuapp.com/contact', self.browser.current_url)
 
