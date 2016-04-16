@@ -6,9 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import ContactView
 
+
 # Create your views here.
-
-
 @login_required(login_url='/accounts/signup')
 def contact(request):
     """TODO: Docstring for contact.This will be a contact app
