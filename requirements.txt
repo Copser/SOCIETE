@@ -11,6 +11,7 @@ django-axes==1.6.0
 django-bootstrap3==7.0.0
 django-countries==3.4.1
 django-datetime-widget==0.9.3
+django-paypal==0.3.2
 django-pylibmc==0.6.1
 django-toolbelt==0.0.1
 djangorestframework==3.3.2
