@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'landing_page',
     'contact',
     'reviews',
+    'payments',
     # instaled third party app
     'analytical',
     'axes',
