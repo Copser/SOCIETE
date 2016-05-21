@@ -1,6 +1,5 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from .payments import views
 
 urlpatterns = [
     # Examples:
@@ -20,11 +19,4 @@ urlpatterns = [
     # allauth urls
     # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'^accounts/', include('allauth.urls')),
-
-    # user registration/authentication for payments
-    url(r'^sign_in$', views.sign_in, name='sign_in'),
-    url(r'^sign_out$', views.sign_out, name='sign_out'),
-    url(r'^register$', views.register, name='register'),
-    url(r'^edit$', views.edit, name='edit'),
-
 ]
