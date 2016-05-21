@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+from payments.views import StripePaymentsView, SuccessView
 
 urlpatterns = [
     # Examples:
@@ -19,4 +20,8 @@ urlpatterns = [
     # allauth urls
     # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'^accounts/', include('allauth.urls')),
+
+    # payments url
+    url(r'^subscribe/$', StripePaymentsView.as_view(), name='subscribe'),
+    url(r'^thank_you/$', SuccessView.as_view(), name='thank_you'),
 ]
