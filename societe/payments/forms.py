@@ -12,3 +12,10 @@ class StripeForm(forms.Form):
         card, and this token can then be used in a charge request.
     """
     stripe_token = forms.CharField()
+
+    def send_email(self):
+        """TODO: Docstring for send_email.
+        :returns: TODO
+
+        """
+        pass

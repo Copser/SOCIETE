@@ -1,7 +1,9 @@
 from societe import settings
 from django.core.urlresolvers import reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic.edit import FormView
+from django.views.generic.base import TemplateView
 from .forms import StripeForm
+import stripe
 
 
 class StripeMixin(object):
@@ -17,20 +19,27 @@ class StripeMixin(object):
 class SuccessView(TemplateView):
 
     """Docstring for SuccessView. """
-    template_name = 'payments/thank_you.html'
+    template_name = 'thank_you.html'
 
 
 class StripePaymentsView(StripeMixin, FormView):
 
     """Docstring for StripePaymentsView. """
-    tempalte_name = 'payments/subscribe.html'
+    template_name = 'subscribe.html'
     form_class = StripeForm
     success_url = reverse_lazy('thank_you')
 
     def form_valid(self, form):
         """TODO: to be defined1. """
-        pass
+        stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
 
-    def form_invalid(self, form):
-        """TODO: to be defined1. """
-        pass
+        customer_data = {
+            'description': 'Some Customer Data',
+            'card': form.cleaned_data['stripe_token']
+        }
+        customer = stripe.Customer.create(**customer_data)
+
+        # chose a plane for the cusotmer
+        customer.subscriptions.create(plan='gold')
+
+        return super(StripePaymentsView, self).form_valid(form)
