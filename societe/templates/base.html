@@ -116,6 +116,9 @@
     {% block content %}
     {% endblock %}
     
+    {% block form %}
+    {% endblock %}
+    
     {% block global_map %}
         
     {% endblock %}
@@ -137,6 +140,14 @@
                     <abbr title="Email">Email:</abbr><a href="http://www.url.com" target="_blank"> societe@gmail.com</a><br>
                     <abbr title="Address">Address:</abbr> hogvards ap. 10
                 </address>
+                <h5 class="text-muted"><strong>PAYMENTS:</strong></h5>
+                <ul class="list-unstyled list-inline">
+                    <li><a class="" href=""><i class="fa fa-2x fa-cc-paypal" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li><a href="" target="{% url 'subscribe' %}"><i class="fa fa-2x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li><a href="" target=""><i class="fa fa-2x fa-cc-visa" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li><a href="" target=""><i class="fa fa-2x fa-cc-mastercard" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li><a href="" target=""><i class="fa fa-2x fa-credit-card" style="color:#777" aria-hidden="true"></i></a></li>
+                </ul>
              </div> 
              <div class="col-xs-12 col-sm-12 col-md-4 col-md-push-1 text-center">
                 <a href="#"><img src="/static/img/smallogo_14.png" alt=""/></a>
@@ -144,12 +155,12 @@
                 ing talking. Securing as informed declared or margaret.
                 Joy horrible moreover man feelings own shy.</p>
             <ul class="list-unstyled list-inline">
-                <li><a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a></li>
-                <li><a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a></li>
-                <li><a class="btn btn-social-icon btn-linkedin" href="http://linkedin/in"><i class="fa fa-linkedin"></i></a></li>
-                <li><a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a></li>
-                <li><a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a></li>
+                <li><a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-lg fa-google-plus"></i></a></li>
+                <li><a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-lg fa-facebook"></i></a></li>
+                <li><a class="btn btn-social-icon btn-linkedin" href="http://linkedin/in"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                <li><a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-lg fa-twitter"></i></a></li>
+                <li><a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-lg fa-youtube"></i></a></li>
+                <li><a class="btn btn-social-icon" href="mailto:"><i class="fa fa-lg fa-envelope-o"></i></a></li>
             </ul>
              </div> 
              <div class="col-xs-12 col-sm-12 col-md-2 col-md-push-2">
@@ -182,10 +193,6 @@
     <!-- Include reviews app static files js -->
     <script src="{% static 'reviews/js/reviews.js' %}"></script>
     <script src="{% static 'reviews/admin/js/jquery-ui.min.js' %}"></script>
-    <!-- Include Icomoon js files to support gylphicons -->
-    <script src="{% static 'bower_components/bootstrap/dist/js/main.js' %}"></script>
-    </script> 
       {% analytical_body_bottom %}
   </body>
 </html>
-
