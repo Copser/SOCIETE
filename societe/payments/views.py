@@ -12,7 +12,7 @@ class StripeMixin(object):
     def get_context_data(self, **kwargs):
         """TODO: to be defined1. """
         context = super(StripeMixin, self).get_context_data(**kwargs)
-        context['pubslishable_key'] = settings.STRIPE_TEST_PUBLISHABLE_KEY
+        context['pubslishable_key'] = settings.TEST_PUBLISHABLE_KEY
         return context
 
 
@@ -31,7 +31,7 @@ class StripePaymentsView(StripeMixin, FormView):
 
     def form_valid(self, form):
         """TODO: to be defined1. """
-        stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
+        stripe.api_key = settings.TEST_SECRET_KEY
 
         customer_data = {
             'description': 'Some Customer Data',
@@ -40,6 +40,6 @@ class StripePaymentsView(StripeMixin, FormView):
         customer = stripe.Customer.create(**customer_data)
 
         # chose a plane for the cusotmer
-        customer.subscriptions.create(plan='gold')
+        customer.subscriptions.create(plan='basic_plan')
 
         return super(StripePaymentsView, self).form_valid(form)
