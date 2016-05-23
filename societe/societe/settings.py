@@ -21,8 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Stripe Test Key's
 
-STRIPE_TEST_SECRET_KEY = "sk_test_Af0CcjOrf82UCxJzWNFroiZ3"
-STRIPE_TEST_PUBLISHABLE_KEY = "pk_test_hY5WMw8smrp2OhIatk2opxwp"
+TEST_SECRET_KEY = "sk_test_dG17z4Lp64Fqm249gVOLs677"
+TEST_PUBLISHABLE_KEY = "pk_test_Knhrcva7VhUK4HwnheB4e2FB"
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'j-%*5#5wtg9#128lvye-ln8^-s6__3&&*jm-_s)&h_2hj61fs_'
