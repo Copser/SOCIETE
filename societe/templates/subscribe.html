@@ -1,46 +1,5 @@
 {% extends "base.html" %}
 
-{% block content %}
-
-    <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
-    <script src="" type="text/javascript" charset="utf-8">
-        Stripe.setPublishableKey('{{ publishable_key }}');
-
-        var stripeResponseHandler = functions(status, response) {
-            var $form = $('#checkout-form');
-
-            if(response.error){
-               // Show the errors on the form
-               $form.find('.payment-errors').text(response.error.message);
-               $form.find('.payment-errors').addClass('alert');
-               $form.find('.payment-errors').addClass('alert-class');
-               $form.find('button').prop('disable', false);
-            } else {
-               // token contains id, last4, and card type
-               var token = response.id;
-               // Insert the token into the form so it gets submitted to the server
-               $form.append($('<input type="hidden" name="stripe_token" />').val(token));
-               // and re-submite
-               $form.get(0).submit();
-            }
-        };
-
-        (function($) {
-            $('#checkout-form').submit(function(e) {
-               var $form = $(this);
-
-               // Disable the submit button to prevent repeated clicks
-               $form.find('button').prop('disabled', true);
-
-               Stripe.createToken($form, stripeResponseHandler);
-
-               // Prevent the form submitton with the default action
-               return false
-            });
-        });
-    </script>
-    
-{% endblock %}
 
 {% block form %}
 
@@ -49,14 +8,14 @@
 </div>
 
 <div class="row">
-    <h1 class="text-center">Use your Visa or Mastercard, or seomthing like that</h1>
+    <h1 class="text-center">Use your Visa or Mastercard</h1>
     <p class="text-center">Please fill out the form, and here we need to make some kind a text explaining
     what they get by purchasing and paying us this fee!</p>
 </div>
 
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-       <form action="" method="post" id="checkout-form" accept-charset="utf-8">
+       <form action="" method="post" id="payment-form">
            {% csrf_token %} 
            <span class="payment-errors"></span>
            <div class="form-group">
