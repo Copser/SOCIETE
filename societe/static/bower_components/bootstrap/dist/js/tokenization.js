@@ -1,32 +1,36 @@
-    var stripeResponseHandler = function(status, response) {
-            var $form = $('#payment-form');
+// Create a single use token
+$(function() {
+  var $form = $('#payment-form');
+  $form.submit(function(event) {
+    // Disable the submit button to prevent repeated clicks
+    $form.find('.submit').prop('disabled', true);
 
-            if (response.error) {
-                // Show the errors on the form
-                $form.find('.payment-errors').text(response.error.message);
-                $form.find('.payment-errors').addClass('alert');
-                $form.find('.payment-errors').addClass('alert-error');
-                $form.find('button').prop('disabled', false);
-            } else {
-                // token contains id, last4, and card type
-                var token = response.id;
-                // Insert the token into the form so it gets submitted to the server
-                $form.append($('<input type="hidden" name="stripe_token" />').val(token));
-                // and re-submit
-                $form.get(0).submit();
-            }
-        };
+    // Request a token from Stripe
+    Stripe.card.createToken($form, stripeResponseHandler);
 
-        $(function($) {
-            $('#payment-form').submit(function(e) {
-                var $form = $(this);
+    // Prevent the form from being submitted
+    return false
+  });
 
-                // Disable the submit button to prevent repeated clicks
-                $form.find('button').prop('disabled', true);
+  function stripeResponseHandler(status, response) {
+    // Grab the form
+    var $form = $('#payment-form');
 
-                Stripe.createToken($form, stripeResponseHandler);
+    if (response.error) {// Problem!
 
-                // Prevent the form from submitting with the default action
-                return false;
-            });
-        });
+      // Show the errors on the form
+      $form.find('.payment-errors').text(response.error.message);
+      $form.find('.submit').prop('disabled', false); // Re-enable submission
+    } else { // Token was created
+      // Ger the token ID
+      var token = response.id;
+
+      // Insert the token ID into the form so it gets submitted to the server
+      $form.append($('<input type="hidden" name="stripeToken">').val(token));
+
+      // Submit the form
+      console.log(token);
+      // $form.get(0).submit();
+    }
+  };
+});
