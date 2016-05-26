@@ -29,8 +29,8 @@ $(function() {
       $form.append($('<input type="hidden" name="stripeToken">').val(token));
 
       // Submit the form
-      console.log(token);
-      // $form.get(0).submit();
+      //console.log(token);
+      $form.get(0).submit();
     }
   };
 });
