@@ -21,9 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Stripe Test Key's
 
-TEST_SECRET_KEY = "sk_test_dG17z4Lp64Fqm249gVOLs677"
-TEST_PUBLISHABLE_KEY = "pk_test_Knhrcva7VhUK4HwnheB4e2FB"
-
+# Braintree API Keys
+BRAINTREE_MERCHANT_ID = '<your_merchant_id>'
+BRAINTREE_PUBLIC_KEY = '<your_public_key>'
+BRAINTREE_PRIVATE_KEY = '<your_private_key>'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'j-%*5#5wtg9#128lvye-ln8^-s6__3&&*jm-_s)&h_2hj61fs_'
@@ -48,7 +49,6 @@ INSTALLED_APPS = (
     'landing_page',
     'contact',
     'reviews',
-    'payments',
     # instaled third party app
     'analytical',
     'axes',
