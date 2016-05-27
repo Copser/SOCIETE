@@ -19,7 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-# Stripe Test Key's
+# Stripe test Keys
+TEST_SECRET_KEY = 'sk_test_BgoRb5NlZkvmIBs7waRutiqi'
+TEST_PUBLISHABLE_KEY = 'pk_test_AvBnrIWeiAGXHX4TwPqlyi0L'
+
 
 # Braintree API Keys
 BRAINTREE_MERCHANT_ID = '<your_merchant_id>'
