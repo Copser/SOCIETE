@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+
+{% block form %}
+
+<div class="row">
+    <p style="padding: 50px;"></p>
+</div>
+
+<div class="row">
+    <h1 class="text-center">Use your Visa or Mastercard</h1>
+    <p class="text-center">Please fill out the form, and here we need to make some kind a text explaining
+    what they get by purchasing and paying us this fee!</p>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+       <form action="" method="post" id="payment-form">
+           {% csrf_token %} 
+           <span class="payment-errors"></span>
+           <div class="form-group">
+               <label class="control-label" for="name">Name</label>
+               <div class="controls">
+                   <input type="text" id="name" class="form-control" data-stripe="name" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="last_name">Last Name</label>
+               <div class="controls">
+                   <input type="text" id="last_name" class="form-control" data-stripe="last_name" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="email">Email</label>
+               <div class="controls">
+                   <input type="text" id="email" class="form-control" data-stripe="email" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="address_line1">Address Line</label>
+               <div class="controls">
+                   <input type="text" id="address_line1" class="form-control" data-stripe="address_line1" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="address_line2">Address Line 2</label>
+               <div class="controls">
+                   <input type="text" id="address_line2" class="form-control" data-stripe="address_line2" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="address_city">City</label>
+               <div class="controls">
+                   <input type="text" id="address_city" class="form-control" data-stripe="address_city" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="address_state">State</label>
+               <div class="controls">
+                   <input type="text" id="address_state" class="form-control" data-stripe="address_state" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="address_zip">Zip</label>
+               <div class="controls">
+                   <input type="text" id="address_zip" class="form-control" data-stripe="address_zip" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="address_county">Country</label>
+               <div class="controls">
+                   <input type="text" id="address_country" class="form-control" data-stripe="address_country" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="card">Card Nnumber</label>
+               <div class="controls">
+                   <input type="text" id="card" class="form-control" size="20" data-stripe="number" />
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="">Expiration (MM/YYYY)</label>
+               <div class="row">
+                   <div class="col-xs-2">
+                       <input type="text" size="2" data-stripe="exp-month" class="form-control" />
+                   </div>
+                   <div class="col-xs-2">
+                       <input type="text" size="4" data-stripe="exp-year" class="form-control" />
+                   </div>
+               </div>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="cvc">CVC</label>
+               <div class="controls">
+                   <input type="text" id="cvc" size="4" class="form-control" data-stripe="cvc" />
+               </div>
+           </div>
+           <div class="form-group">
+               <div class="controls">
+                   <input type="submit" value="Submit" class="btn btn-primary" />
+               </div>
+           </div>
+       </form>
+   </div>
+</div>
+        
+{% endblock %}
