@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'contact',
     'reviews',
     # instaled third party app
+    'paypal.standard.ipn',
     'djstripe',
     'analytical',
     'axes',
@@ -493,7 +494,6 @@ DJSTRIPE_PLANS = {
 }
 
 
-# Braintree API Keys
-BRAINTREE_MERCHANT_ID = '<your_merchant_id>'
-BRAINTREE_PUBLIC_KEY = '<your_public_key>'
-BRAINTREE_PRIVATE_KEY = '<your_private_key>'
+# Django-Paypal
+
+PAYPAL_TEST = True
