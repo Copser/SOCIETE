@@ -4,6 +4,7 @@ coveralls==1.1
 defusedxml==0.4.1
 dj-database-url==0.4.0
 dj-static==0.0.6
+dj-stripe==0.8.0
 Django==1.8.7
 django-allauth==0.24.1
 django-analytical==2.0.0
@@ -11,8 +12,10 @@ django-appconf==1.0.2
 django-autocomplete-light==2.2.10
 django-axes==1.6.0
 django-bootstrap3==7.0.0
+django-braces==1.8.1
 django-countries==3.4.1
 django-datetime-widget==0.9.3
+django-model-utils==2.5
 django-paypal==0.3.2
 django-pylibmc==0.6.1
 django-toolbelt==0.0.1
