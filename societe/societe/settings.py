@@ -19,21 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-# Stripe test Keys
-TEST_SECRET_KEY = 'sk_test_BgoRb5NlZkvmIBs7waRutiqi'
-TEST_PUBLISHABLE_KEY = 'pk_test_AvBnrIWeiAGXHX4TwPqlyi0L'
-
-
-# Braintree API Keys
-BRAINTREE_MERCHANT_ID = '<your_merchant_id>'
-BRAINTREE_PUBLIC_KEY = '<your_public_key>'
-BRAINTREE_PRIVATE_KEY = '<your_private_key>'
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'j-%*5#5wtg9#128lvye-ln8^-s6__3&&*jm-_s)&h_2hj61fs_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -53,6 +43,7 @@ INSTALLED_APPS = (
     'contact',
     'reviews',
     # instaled third party app
+    'djstripe',
     'analytical',
     'axes',
     'autocomplete_light',
@@ -115,7 +106,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'societe.wsgi.application'
 
 # This also use allauth
-SITE_ID = 2
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -484,3 +475,25 @@ GOOGLE_ANALYTICS_DISPLAY_ADVERTISING = True
 
 # Tracking site speed on Google analytics
 GOOGLE_ANALYTICS_SITE_SPEED = True
+
+# Stripe test Keys
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', 'pk_test_AvBnrIWeiAGXHX4TwPqlyi0L')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', 'sk_test_BgoRb5NlZkvmIBs7waRutiqi')
+
+
+DJSTRIPE_PLANS = {
+    "yearly": {
+        "stripe_plan_id": "pro-yearly",
+        "name": "Web App Pro ($300/year)",
+        "description": "The annual subscription plan to WebApp",
+        "price": 30000,  # $300.00
+        "currency": "usd",
+        "interval": "year"
+    }
+}
+
+
+# Braintree API Keys
+BRAINTREE_MERCHANT_ID = '<your_merchant_id>'
+BRAINTREE_PUBLIC_KEY = '<your_public_key>'
+BRAINTREE_PRIVATE_KEY = '<your_private_key>'
