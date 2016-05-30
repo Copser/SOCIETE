@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% block javascript %}
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    Stripe.setPublishableKey('{{ publishable_key }}');
+</script>
+
+{% endblock %}
+
+
 
 {% block form %}
 
