@@ -21,6 +21,7 @@ urlpatterns = [
     # payments url
     url(r'^subscribe/$', StripePaymentsView.as_view(), name='subscribe'),
     url(r'^thank_you/$', SuccessView.as_view(), name='thank_you'),
+    url(r'^stripe/$', include('djstripe.urls', namespace='djstripe')),
 
     # allauth urls
     # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
