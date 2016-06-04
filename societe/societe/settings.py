@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'reviews',
     # instaled third party app
     'paypal.standard.ipn',
+    'stripe',
     'analytical',
     'axes',
     'autocomplete_light',
@@ -475,6 +476,14 @@ GOOGLE_ANALYTICS_DISPLAY_ADVERTISING = True
 
 # Tracking site speed on Google analytics
 GOOGLE_ANALYTICS_SITE_SPEED = True
+
+# Stripe Test Secret Key and Test Publishable Key
+TEST_SECRET_KEY = os.environ['TEST_SECRET_KEY']
+TEST_PUBLISHABLE_KEY = os.environ['TEST_PUBLISHABLE_KEY']
+
+# Stripe Test Secret Key and Test Publishable Key
+# LIVE_SECRET_KEY = os.environ['LIVE_SECRET_KEY']
+# LIVE_PUBLISHABLE_KEY = os.environ['LIVE_PUBLISHABLE_KEY']
 
 # Django-Paypal
 

@@ -1,7 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-
 urlpatterns = [
     # Examples:
     # url(r'^$', 'societe.views.home', name='home'),
@@ -15,6 +14,10 @@ urlpatterns = [
     url(r'^about/', 'landing_page.views.about', name='about'),
     url(r'^appartments/', 'landing_page.views.appartments', name='appartments'),
     url(r'^contact/', 'contact.views.contact', name='contact'),
+
+    # payments urls
+    url(r'^charge/', 'payments.views.charge', name='charge'),
+    url(r'^thank_you/', 'payments.views.thank_you', name='thank_you'),
 
     # allauth urls
     # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
