@@ -1,5 +1,47 @@
 {% extends "base.html" %}
 
+{% block script %}
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<script type="text/javascript">
+    // This identifies your website in the createToken call below
+    Stripe.setPublishableKey('{{ publishable_key }}');
+    function stripeResponseHandler(status, response) {
+      var $form = $('#payment-form');
+
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('button').prop('disabled', false);
+      } else {
+        // response contains id and card, which contains additional card details
+        var token = response.id;
+        $console.log('token');
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        $form.get(0).submit();
+      }
+    };
+</script>
+{% endblock %}
+
+{% block jquery %}
+    jQuery(function($) {
+      $('#payment-form').submit(function(e) {
+        var $form = $(this);
+
+        // Disable the submit button to prevent repeated clicks
+        $form.find('button').prop('disabled', true);
+
+        Stripe.card.createToken($form, stripeResponseHandler);
+
+        // Prevent the form from submitting with the default action
+        return false;
+      });
+    });
+{% endblock %}
 
 {% block form %}
 
@@ -15,7 +57,7 @@
 
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-       <form action="" method="post" id="payment-form">
+        <form class="form" action="" method="post" id="payment-form">
            {% csrf_token %} 
            <span class="payment-errors"></span>
            <div class="form-group">
@@ -73,7 +115,7 @@
                </div>
            </div>
            <div class="form-group">
-               <label class="control-label" for="card">Card Nnumber</label>
+               <label class="control-label" for="card">Card Number</label>
                <div class="controls">
                    <input type="text" id="card" class="form-control" size="20" data-stripe="number" />
                </div>

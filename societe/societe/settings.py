@@ -19,12 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-# Stripe Test Key's
-
-TEST_SECRET_KEY = "sk_test_dG17z4Lp64Fqm249gVOLs677"
-TEST_PUBLISHABLE_KEY = "pk_test_Knhrcva7VhUK4HwnheB4e2FB"
-
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'j-%*5#5wtg9#128lvye-ln8^-s6__3&&*jm-_s)&h_2hj61fs_'
 
@@ -48,8 +42,9 @@ INSTALLED_APPS = (
     'landing_page',
     'contact',
     'reviews',
-    'payments',
     # instaled third party app
+    'paypal.standard.ipn',
+    'stripe',
     'analytical',
     'axes',
     'autocomplete_light',
@@ -481,3 +476,15 @@ GOOGLE_ANALYTICS_DISPLAY_ADVERTISING = True
 
 # Tracking site speed on Google analytics
 GOOGLE_ANALYTICS_SITE_SPEED = True
+
+# Stripe Test Secret Key and Test Publishable Key
+TEST_SECRET_KEY = os.environ['TEST_SECRET_KEY']
+TEST_PUBLISHABLE_KEY = os.environ['TEST_PUBLISHABLE_KEY']
+
+# Stripe Test Secret Key and Test Publishable Key
+# LIVE_SECRET_KEY = os.environ['LIVE_SECRET_KEY']
+# LIVE_PUBLISHABLE_KEY = os.environ['LIVE_PUBLISHABLE_KEY']
+
+# Django-Paypal
+
+PAYPAL_TEST = True

@@ -143,7 +143,7 @@
                 <h5 class="text-muted"><strong>PAYMENTS:</strong></h5>
                 <ul class="list-unstyled list-inline">
                     <li><a class="" href=""><i class="fa fa-2x fa-cc-paypal" style="color:#777" aria-hidden="true"></i></a></li>
-                    <li><a href="{% url 'subscribe' %}"><i class="fa fa-2x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li><a href="{% url 'charge' %}"><i class="fa fa-2x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-2x fa-cc-visa" style="color:#777" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-2x fa-cc-mastercard" style="color:#777" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-2x fa-credit-card" style="color:#777" aria-hidden="true"></i></a></li>
@@ -193,14 +193,18 @@
     <!-- Include reviews app static files js -->
     <script src="{% static 'reviews/js/reviews.js' %}"></script>
     <script src="{% static 'reviews/admin/js/jquery-ui.min.js' %}"></script>
-    <!-- Stripe JavaScript Support -->
+    <!-- Stripe js support code, and publishable key -->
     <script src="{% static 'bower_components/bootstrap/dist/js/tokenization.js' %}"></script>
-    <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
-    <script type="text/javascript">
-      //<![CDATA[
-      Stripe.publishableKey = '{{ publishable_key }}';
-      //]]>
+    <!-- Stripe support javascript and jQuery code -->
+    {% block script %}
+    {% endblock %}
+    <script>
+    $(document).ready(function(){
+        {% block jquery %}
+        {% endblock %}
+    });
     </script>
+
       {% analytical_body_bottom %}
   </body>
 </html>
