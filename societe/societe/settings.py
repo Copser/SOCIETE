@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'contact',
     'reviews',
     # instaled third party app
+    'debug_toolbar',
     'paypal.standard.ipn',
     'stripe',
     'analytical',
