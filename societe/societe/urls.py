@@ -15,6 +15,8 @@ urlpatterns = [
     url(r'^appartments/', 'landing_page.views.appartments', name='appartments'),
     url(r'^contact/', 'contact.views.contact', name='contact'),
 
+    # paypal payment notify url
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
     # payments urls
     url(r'^charge/', 'payments.views.charge', name='charge'),
     url(r'^thank_you/', 'payments.views.thank_you', name='thank_you'),
