@@ -3,13 +3,44 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext, loader
 
+from paypal.pro.views import PayPalPro
+
 from .forms import ChargeForm
 import stripe
 
 
-stripe.api_key = settings.TEST_SECRET_KEY
+# PayPal section
+def nvp_handler(nvp):
+    """TODO: Docstring for nvp_handler.
+    :returns: This is passed  a PayPalNVP object when payment succeeds.
+
+    """
+    pass
 
 
+def erasums_charge(request):
+    """TODO: Docstring for erasums_charge.
+    :returns: TODO
+
+    """
+    item = {
+        "paymentrequest_0_atm": "300.00",  # charge
+        "inv": "inventory",  # unique tracking variable paypal
+        "custom": "tracking",  # custom tracking variable for you
+        "cancelurl": "",  # express checkout cancel url
+        "returnurl": ""  # express checkout return url
+    }
+
+    ppp = PayPalPro(
+        item=item,
+        payment_template="payment.html",
+        confirm_tempalte="confirmation.html",
+        success_url="/success",
+        nvp_handler=nvp_handler)
+    return ppp(request)
+
+
+# Stripe section
 def charge(request):
     """TODO: Docstring for charge.
     :returns: Charge view is responsible for providing us with user token, which we will
