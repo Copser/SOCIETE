@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block BrainTree_form %}
+    <div class="row">
+       <p style="padding:20px;"></p>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <form id="creditcard_form" action="{% url 'checkout_view' %}" method="post">
+                {% csrf_token %}
+                <label for="id_number">Card number</label>
+                <div id="id_number">
+                </div>
+                
+                <label for="id_expiration_month">Expiration month</label>
+                <div id="id_expiration_month">
+                </div>
+            
+                <label for="id_verification_year">Expiration year</label>
+                <div id="id_verification_year">
+                </div>
+
+                <label for="id_verification_code">CVV</label>
+                <div id="id_verification_code">
+                </div>
+
+                <p><input type="submit" value="Submit></p>
+            </form>
+            
+        </div>
+        
+    </div>
+    
+{% endblock %}
+
+{% block BrainTree_js %}
+   <script type="text/javascript">
+            "{{ request.session.braintree_client_token }}",
+            "custom",
+            {
+                id: "creditcard_form",
+                hostedFields: {
+                    number: {
+                        selector: "#cc_number"
+                    },
+                    expirationDate: {
+                        selector: "#cc_expiration_date"
+                    },
+                    cvv: {
+                        selector: "#cc_verification_code"
+                    },
+                },
+            }
+        );
+   </script>
+{% endblock %}

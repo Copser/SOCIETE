@@ -118,6 +118,9 @@
     
     {% block form %}
     {% endblock %}
+
+    {% block BrainTree_form %}
+    {% endblock %}
     
     {% block global_map %}
         
@@ -190,9 +193,11 @@
     <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <!-- Include reviews app static files js -->
-    <script src="{% static 'reviews/js/reviews.js' %}"></script>
-    <script src="{% static 'reviews/admin/js/jquery-ui.min.js' %}"></script>
+    <!-- BrainTree JavaScript source code path -->
+    <script src="https://js.braintreegateway.com/js/braintree-2.24.1.min.js"></script>
+    <!-- BrainTree setup -->
+    {% block BrainTree_js %}
+    {% endblock %}
     <!-- Stripe js support code, and publishable key -->
     <script src="{% static 'bower_components/bootstrap/dist/js/tokenization.js' %}"></script>
     <!-- Stripe support javascript and jQuery code -->
