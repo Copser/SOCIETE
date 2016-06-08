@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<div class="row">
+    <p style="padding: 50px;"></p>
+</div>
+
+<div class="row">
+   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+       <h1>Accept Erasmus Charge</h1>
+       <form action="" method="post">
+           
+           {% csrf_token %}
+           {{ form }}
+       
+       
+           <p><input type="submit" value="Yes I Accept"></p>
+       </form>
+       
+   </div> 
+</div>

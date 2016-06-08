@@ -1,6 +1,8 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
+# from payments import views
+
 urlpatterns = [
     # Examples:
     # url(r'^$', 'societe.views.home', name='home'),
@@ -16,7 +18,8 @@ urlpatterns = [
     url(r'^contact/', 'contact.views.contact', name='contact'),
 
     # paypal payment notify url
-    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    # url(r'^payment-url/$', views.erasmus_charge),
+    # url(r'^paypal/', include('paypal.standard.ipn.urls')),
     # payments urls
     url(r'^charge/', 'payments.views.charge', name='charge'),
     url(r'^thank_you/', 'payments.views.thank_you', name='thank_you'),

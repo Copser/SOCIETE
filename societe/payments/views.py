@@ -3,41 +3,31 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext, loader
 
-from paypal.pro.views import PayPalPro
-
 from .forms import ChargeForm
+import braintree
 import stripe
 
 
-# PayPal section
-def nvp_handler(nvp):
-    """TODO: Docstring for nvp_handler.
-    :returns: This is passed  a PayPalNVP object when payment succeeds.
-
-    """
-    pass
+# BrainTree Configuration
+braintree.Configuration.configure(braintree.Environment.Sandbox,
+                                  merchant_id=settings.BRAINTREE_MERCHANT_ID,
+                                  public_key=settings.BRAINTREE_PUBLIC_KEY,
+                                  private_key=settings.BRAINTREE_PRIVATE_KEY)
 
 
-def erasums_charge(request):
-    """TODO: Docstring for erasums_charge.
+def braintree_payment(request):
+    """TODO: Docstring for braintree_payment.
     :returns: TODO
 
     """
-    item = {
-        "paymentrequest_0_atm": "300.00",  # charge
-        "inv": "inventory",  # unique tracking variable paypal
-        "custom": "tracking",  # custom tracking variable for you
-        "cancelurl": "",  # express checkout cancel url
-        "returnurl": ""  # express checkout return url
-    }
-
-    ppp = PayPalPro(
-        item=item,
-        payment_template="payment.html",
-        confirm_tempalte="confirmation.html",
-        success_url="/success",
-        nvp_handler=nvp_handler)
-    return ppp(request)
+    if request.method == "GET":
+        request.session['braintree_client_token'] = braintree.ClientToken.generate()
+        return render(request, 'braintree_payment.html')
+    else:
+        if not form.is_valid():
+            return render(render, 'braintree_payment.html')
+        else:
+            HttpResponseRedirect('/success')
 
 
 # Stripe section

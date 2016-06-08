@@ -44,8 +44,6 @@ INSTALLED_APPS = (
     'reviews',
     # instaled third party app
     'debug_toolbar',
-    'paypal.standard',
-    'paypal.pro',
     'stripe',
     'analytical',
     'axes',
@@ -479,5 +477,7 @@ GOOGLE_ANALYTICS_DISPLAY_ADVERTISING = True
 # Tracking site speed on Google analytics
 GOOGLE_ANALYTICS_SITE_SPEED = True
 
-# Django-Paypal
-PAYPAL_TEST = True
+# BrainTree Credential Keys
+BRAINTREE_MERCHANT_ID = 'x6kghwrrz78wkh4z'
+BRAINTREE_PUBLIC_KEY = '47thpt69sxgp55wp'
+BRAINTREE_PRIVATE_KEY = '445bc0e9744f8e2104ee68a8695c8bbd'
