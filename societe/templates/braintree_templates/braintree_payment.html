@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block Erasmus_BrainTree_charge_form %}
+
+<div class="row">
+    <p style="padding:60px"></p>
+</div>
+
+<div class="row">
+   <div class="col-xs-12 col-sm-6 col-offset-sm-3">
+      <form action="" method="post" id="example_form">
+         {% csrf_token %} 
+     <label for="card-number">Card Number</label>
+          <div id="card-number"></div>
+
+          <label for="cvv">CVV</label>
+          <div id="cvv"></div>
+
+          <label for="expiration-date">Expiration Date</label>
+          <div id="expiration-date"></div>
+
+          <input type="submit" value="Pay" />
+      </form> 
+   </div> 
+</div>
+{% endblock %}
+    
+
+{% block braintree_javascript_code %}
+
+<script src="https://js.braintreegateway.com/js/braintree-2.24.1.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var client_token = '{{ request.session.braintree_client_token }}'; 
+    braintree.setup(client_token, "custom", {
+        id: "example_form",
+        hostedFields: {
+            number: {
+                selector: "#card-number",
+                placeholder: 'Card Number'
+            },
+            cvv: {
+                selector: "#cvv",
+                placeholder: 'CVV'
+            },
+            expirationDate: {
+                selector: "#expiration-date",
+                placeholder: 'MM/YYYY'
+            }
+        }
+    });
+</script>
+{% endblock %}

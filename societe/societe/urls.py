@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^contact/', 'contact.views.contact', name='contact'),
 
     # paypal payment notify url
-    # url(r'^payment-url/$', views.erasmus_charge),
+    url(r'braintree_token/', 'payments.braintree_app.braintree_views.braintree_token', name="braintree_token"),
     # url(r'^paypal/', include('paypal.standard.ipn.urls')),
     # payments urls
     url(r'^charge/', 'payments.views.charge', name='charge'),

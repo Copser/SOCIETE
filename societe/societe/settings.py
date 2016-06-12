@@ -44,6 +44,8 @@ INSTALLED_APPS = (
     'landing_page',
     'contact',
     'reviews',
+    'payments',
+    'payments.braintree_app',
     # instaled third party app
     'debug_toolbar',
     'stripe',
