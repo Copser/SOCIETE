@@ -4,33 +4,9 @@ from django.shortcuts import render
 from django.template import RequestContext, loader
 
 from .forms import ChargeForm
-import braintree
 import stripe
 
 
-# BrainTree Configuration
-braintree.Configuration.configure(braintree.Environment.Sandbox,
-                                  merchant_id=settings.BRAINTREE_MERCHANT_ID,
-                                  public_key=settings.BRAINTREE_PUBLIC_KEY,
-                                  private_key=settings.BRAINTREE_PRIVATE_KEY)
-
-
-def braintree_payment(request):
-    """TODO: Docstring for braintree_payment.
-    :returns: TODO
-
-    """
-    if request.method == "GET":
-        request.session['braintree_client_token'] = braintree.ClientToken.generate()
-        return render(request, 'braintree_payment.html')
-    else:
-        if not form.is_valid():
-            return render(render, 'braintree_payment.html')
-        else:
-            HttpResponseRedirect('/success')
-
-
-# Stripe section
 def charge(request):
     """TODO: Docstring for charge.
     :returns: Charge view is responsible for providing us with user token, which we will
