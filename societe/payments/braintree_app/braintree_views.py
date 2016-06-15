@@ -27,6 +27,7 @@ def braintree_token(request):
             form = BrainChargeForm(request.POST)
             if form.is_valid():
                 client_nounce = request.form['payment_method_nounce']
+                client_nounce = form.cleaned_data['payment_method_nonce']
                 braintree_charge = braintree.Transaction.sale({
                     "amount": "300.00",
                     "payment_method_nounce": client_nounce,
@@ -34,6 +35,11 @@ def braintree_token(request):
                         "submit_for_settlemant": True
                     }
                 })
+                if braintree_charge.is_sucess:
+                    form.cleaned_data['braintree_transaction_id'] = braintree_charge.id
+                else:
+                    errors = ", ".join([e.message for e in braintree_charge.errors.deep_errors])
+                    raise form.ValidationError(errors)
             else:
                 return HttpResponseRedirect('/sucess')
         else:
