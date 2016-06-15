@@ -119,9 +119,6 @@
     {% block form %}
     {% endblock %}
 
-    {% block Erasmus_BrainTree_charge_form %}
-    {% endblock %}
-
     {% block global_map %}
     {% endblock %}
 
@@ -146,7 +143,7 @@
                 <ul class="list-unstyled list-inline">
                     <li><a class="" href=""><i class="fa fa-2x fa-cc-paypal" style="color:#777" aria-hidden="true"></i></a></li>
                     <li><a href="{% url 'charge' %}"><i class="fa fa-2x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
-                    <li><a href="{% url 'braintree_token' %}"><i class="fa fa-2x fa-cc-visa" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li><a href=""><i class="fa fa-2x fa-cc-visa" style="color:#777" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-2x fa-cc-mastercard" style="color:#777" aria-hidden="true"></i></a></li>
                     <li><a href=""><i class="fa fa-2x fa-credit-card" style="color:#777" aria-hidden="true"></i></a></li>
                 </ul>
@@ -196,8 +193,6 @@
     <script src="{% static 'bower_components/bootstrap/dist/js/tokenization.js' %}"></script>
     <!-- Stripe support javascript and jQuery code -->
     {% block script %}
-    {% endblock %}
-    {% block braintree_javascript_code %}
     {% endblock %}
       {% analytical_body_bottom %}
   </body>
