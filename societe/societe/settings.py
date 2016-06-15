@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'contact',
     'reviews',
     'payments',
-    'payments.braintree_app',
+    'payments.paypal_app',
     # instaled third party app
     'debug_toolbar',
     'stripe',

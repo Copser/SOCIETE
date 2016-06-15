@@ -368,27 +368,3 @@ body img {
             max-width: 1500px;
         }
     }
-
-/* Braintree Hosted Field CSS */
-/* Static State */
-input[type="text"],
-.hosted-fields-frame {
-    box-shadow: 0 0 2px 1px #999;
-}
-
-/* Focus State */
-input[type="text"]:focus,
-.hosted-fields-frame:focus {
-    box-shadow: 0 0 4px 1px #777;
-}
-
-/* Invalid State */
-.braintree-hosted-fields-invalid {
-    box-shadow: 0 0 4px 1px tomato;
-}
-
-/* Text Input */
-input[type="text"]:focus,
-.braintree-hosted-fields-focus {
-    box-shadow: 0 0 4px 1px #777;
-}
