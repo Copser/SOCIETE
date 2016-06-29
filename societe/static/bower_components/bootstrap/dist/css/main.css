@@ -1,8 +1,6 @@
 /* Nav bar  */
 
 body {
-  padding: 0; 
-  margin: 0;
   max-width: 1500px;
 }
 
@@ -12,7 +10,12 @@ body img {
 
 /* text overline */
 .overline {
-    border-top: 5px solid;
+    border-top: 3px solid;
+    border-color: #428bca;
+}
+
+.bottom-line {
+    border-bottom: 3px solid;
     border-color: #428bca;
 }
 
@@ -20,27 +23,53 @@ body img {
     color: #428bca;
 }
 
-
-.jumbotron {
-    background: url('/static/img/Astoria_bay.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 400px;
+.navbar {
+    background: transparent;
+    border-color: transparent;
+    border-width:;
+    border-bottom-width: 0px;
 }
 
-.navbar li {
-    padding-top: 10px;
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
 }
 
+.navbar.scrolled {
+    background: rgb(68, 68, 68);
+    background: #ffffff;
+}
 
-.navbar-brand, #showlogin {
-    padding: 0 !important;
+.navbar-toggle {
+    margin: 23px 0;
+}
+
+.navbar-nav .navbar-nav li, .navbar-nav li a{
+    height: 80px;
+    line-height: 80px;
+    color: #ffffff;
+}
+
+.navbar-nav li a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand {
+    margin-top: -30px;
 }
 
 .btn-sm.round {
     border-radius: 15px;
+}
+
+.jumbotron {
+    background: url('/static/img/nyc_building.jpg') no-repeat center center;
+    background-size: cover;
+    height: 550px;
 }
 
 
@@ -62,7 +91,7 @@ body img {
 
 /* Carousel */
 
-#best {
+.work-text {
     background-color: #EBEBEB;
 }
 
@@ -71,17 +100,12 @@ body img {
     padding-right: 0;
 }
 
-#example-generic, .item, .active {
+
+.carousel-inner .item img {
+    width: 100%;
     height: 100%;
 }
 
-.item img {
-    width: 100%;
-}
-
-.diamonds {
-    color: #428bca;
-}
 
 /* Thumbnail Section */
 
@@ -182,33 +206,6 @@ body img {
     color: #ffffff;
 }
 
-/* Media Query Carousel */
-
-#carousel-example-generic {
-    background-color: #EBEBEB;
-    padding-left: 0;
-    padding-right: 0;
-
-}
-
-#carousel-example-generic .item {
-    height: 300px;
-}
-
-#carousel-example-generic .item img {
-    height: 150px;
-    width: 150px;
-}
-
-
-#carousel-example-generic .media {
-    text-align: left;
-}
-
-
-#carousel-example-generic .glyphicon {
-    color: #5bc9de;
-}
 
 /* Footer */
 
@@ -338,6 +335,10 @@ body img {
  
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px){
+        .navbar-brand {
+            padding: 0;
+        }
+
         .thumb-one img, .second-thumb img {
             max-width: 1500px;
         }
