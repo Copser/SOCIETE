@@ -25,12 +25,7 @@ body img {
 
 .navbar {
     background: transparent;
-    border-color: transparent;
-    border-width:;
-    border-bottom-width: 0px;
-}
-
-.navbar {
+    border: none;
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
     -o-transition: all 0.6s ease-out;
@@ -39,8 +34,7 @@ body img {
 }
 
 .navbar.scrolled {
-    background: rgb(68, 68, 68);
-    background: #ffffff;
+    background: #F2F2F2;
 }
 
 .navbar-toggle {
