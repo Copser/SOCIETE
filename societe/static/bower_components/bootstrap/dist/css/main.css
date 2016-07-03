@@ -89,7 +89,7 @@ body img {
     background-color: #EBEBEB;
 }
 
-#example-generic{
+#carousel-example-generic{
     padding-left: 0;
     padding-right: 0;
 }
@@ -110,8 +110,30 @@ body img {
     height: 100%;
     background-color: #428bca;
     opacity: 0.9;
+    overflow: hidden;
+    z-index: 1;
 }
 
+.carousel-caption p, .carousel-caption h3 {
+    text-align: left;
+    padding-left: 25px;
+}
+
+.carousel-control {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    margin-top: 200px;
+    background-color: transparent;
+}
+
+.glyphicon-chevron-right, .glyphicon-chevron-left {
+    color: #428bca;
+}
+
+.right {
+    z-index: 2;
+}
 
 /* Thumbnail Section */
 
