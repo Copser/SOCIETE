@@ -1,11 +1,9 @@
-/* Nav bar  */
-
 body {
-  max-width: 1500px;
+    max-width: 1500px;
 }
 
-body img {
-    max-width: 1500px;
+.spec {
+    font-family: 'Aladin', cursive;
 }
 
 /* text overline */
@@ -22,6 +20,8 @@ body img {
 .glyphicon-stop {
     color: #428bca;
 }
+
+/* Navbar */
 
 .navbar {
     background: transparent;
