@@ -41,10 +41,9 @@ body {
     margin: 23px 0;
 }
 
-.navbar-nav .navbar-nav li, .navbar-nav li a{
+.navbar-nav .navbar-nav li, .navbar-nav li a {
     height: 80px;
     line-height: 80px;
-    color: #ffffff;
 }
 
 .navbar-nav li a {
@@ -275,20 +274,48 @@ body {
  * ***/
 
 /* MISSION AND HISTORY */
-
-.bridge img {
-    height: 320px;
+    
+.living-room {
+    background: url('/static/img/about/bedroom-03.jpg') no-repeat center center;
+    background-size: cover;
+    height: 550px;
 }
 
-
-/* CONTACT US */
-
-.custom {
-    padding-left: 15px;
+.living-room h1 {
+    color: #ffffff;
 }
 
-.text {
-    padding-top: 10px;
+.erasmus {
+    color: #428bca;
+}
+
+.mission p, .apartment p {
+    line-height: 2em;
+}
+
+.living_kitchen p {
+    line-height: 2em;
+    padding: 0px 15px 0px 15px;
+}
+
+.started {
+    height: 450px;
+}
+
+.living_room_1 {
+    background-image: url('/static/img/about/apartment/apartment3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+}
+
+.kitchen_1 {
+    background-image: url('/static/img/about/apartment/apartment5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 550px;
 }
 
 
