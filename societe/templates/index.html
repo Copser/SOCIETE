@@ -161,7 +161,7 @@
     </div><!--/end container-fluid row-->
 </div><!--/end container-fluid -->
 
-    <div class="container-fluid">
+    <div class="container-fluid hidden-xs">
        <div class="row">
            <!-- container devider -->
           <p style="padding: 15px;"></p> 
@@ -174,7 +174,7 @@
            <div class="col-xs-12 text-center">
                &nbsp;
                <h4 class="spec"><strong>What we do</strong></h4>
-               <h2><span class=""></span>&nbsp;<strong>SOME <span class="bottom-line">OF OUR</span> WORK</strong></h2>
+               <h2 class="hidden-xs"><span class=""></span>&nbsp;<strong>SOME <span class="bottom-line">OF OUR</span> WORK</strong></h2>
                &nbsp;
               <p>Erasmus Haus provides furnished housing for the</p>
                   <p>New York City international community of students, interns,</p>
@@ -269,7 +269,8 @@
   <div class="container-fluid easy">
      <div class="row">
          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="static/img/join_societe/icons-08.png" class=" img-rounded img-responsive pull-right" alt="Responsive image" width=90 height=90>
+            <img src="static/img/join_societe/icons-08.png" class="hidden-xs img-rounded img-responsive pull-right" alt="Responsive image" width=90 height=90>
+            <img src="static/img/join_societe/icons-08.png" class="visible-xs img-rounded img-responsive" alt="Responsive image" width=90 height=90>
          </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-left" id="">
             <h2 class="">Easy as One, Two, Three</h2>
@@ -278,17 +279,25 @@
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <p style="padding: 5px"></p>
             <button type="button" class="active btn btn-lg btn-info round" data-toggle="modal" data-target="#loginModal" >GET STARTED</button>
-            <p style="padding: 5px;"></p>
+            <p class="hidden-sm hidden-md hidden-lg" style="padding: 35px;"></p>
+            <p class="hidden-xs" style="padding: 5px;"></p>
         </div>
      </div> 
   </div>
+
+    <div class="container-fluid hidden-xs visible-sm hidden-md hidden-lg">
+       <div class="row">
+           <!-- container devider -->
+          <p style="padding: 35px;"></p> 
+       </div><!--/end row -->
+    </div><!--/end container-fluid -->
 
 
 {% endblock %}
 
 {% block global_map %}
 
-        <div class="container-fluid">
+        <div class="hidden-xs container-fluid abstract_map">
             <div class="row">
                 <div id="abstract_map" class="tasky_wall_style careers">
                     <h4 class="spec"><strong>Our Clients, are</strong></h4>
