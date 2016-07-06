@@ -346,23 +346,36 @@ body {
             text-align: center;
         }
 
-        .bridge p {
-            padding-left: 15px;
-            padding-right: 15px;
+        .navbar-toggle {
+            margin-right: 15px;
         }
 
-        .started {
-            padding-left: 15px;
-            padding-right: 15px;
+        .navbar-brand {
+            padding-top: 20px;
+            padding-left: 5px;
         }
 
+
+        #footerWrapper {
+            padding-left: 15px;
+        }
+
+        .easy .round {
+            margin-left: 60px;
+        }
+
+        .easy img {
+            margin-left: 95px;
+        }
     }
  
     /* Extra Small Devices, Phones */
     @media only screen and (min-width : 480px){
+
         .thumb-one img, .second-thumb img {
             max-width: 1500px;
         }
+
         .navbar .navbar-nav {
             display: inline-block;
             float: none;
@@ -370,18 +383,10 @@ body {
         }
 
         .navbar .navbar-collapse {
-            text-align: center;
+            text-align: left;
         }
 
-        .bridge p {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
 
-        .started {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
 
     }
  
