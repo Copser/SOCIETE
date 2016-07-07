@@ -44,14 +44,14 @@ def about(request):
     return HttpResponse(t.render(c))
 
 
-def appartments(request):
+def explore(request):
     """TODO: Docstring for appartments, simple view for appartments page.
     :returns: This function will return
     appartments.html(Information about SOCIETE appartments)
 
     """
     return render_to_response(
-        'appartments.html', context_instance=RequestContext(request)
+        'explore.html', context_instance=RequestContext(request)
     )
 
 

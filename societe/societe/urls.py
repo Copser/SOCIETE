@@ -14,7 +14,7 @@ urlpatterns = [
 
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/', 'landing_page.views.about', name='about'),
-    url(r'^appartments/', 'landing_page.views.appartments', name='appartments'),
+    url(r'^explore/', 'landing_page.views.explore', name='explore'),
     url(r'^contact/', 'contact.views.contact', name='contact'),
 
     # paypal payment notify url

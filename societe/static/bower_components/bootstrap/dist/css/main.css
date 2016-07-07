@@ -318,7 +318,83 @@ body {
     height: 550px;
 }
 
+/***
+ *
+ * EXPLORE(CITIES) PAGE
+ *
+ * ***/
 
+.cities {
+    background: url('/static/img/nyc_building.jpg') no-repeat center center;
+    background-size: cover;
+    height: 550px;
+}
+
+/* First image section */
+
+.first_image {
+    background: url('/static/img/explore/image_sections/bridge-01.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+}
+
+
+.second_image {
+    background: url('/static/img/explore/image_sections/bridge-02.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+}
+
+.third_image {
+    background: url('/static/img/explore/image_sections/bridge-03.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+}
+
+.fourth_image {
+    background: url('/static/img/explore/image_sections/astoria-60.jpg') no-repeat center center;
+    background-size: cover;
+    height: 520px;
+}
+
+/* Second image section */
+
+.fifth_image {
+    background: url('/static/img/explore/image_sections/astoria-39.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+    margin-top: -250px;
+}
+
+.six_image {
+    background: url('/static/img/explore/image_sections/astoria-56.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+    margin-top: -250px;
+}
+
+.seventh_image {
+    background: url('/static/img/explore/image_sections/new_yorker_1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 520px;
+    margin-top: -250px;
+}
+
+/* Third image section */
+
+.eighth_image {
+    background: url('/static/img/explore/image_sections/new_yorker_2.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+    margin-top: -250px;
+}
+
+.nineth_image {
+    background: url('/static/img/explore/image_sections/astoria-65.jpg') no-repeat center center;
+    background-size: cover;
+    height: 250px;
+    margin-top: -250px;
+}
 /***
  *
  * Success page  

@@ -15,6 +15,8 @@ $(document).ready(function(){
         interval: 1800
     });
 
+    $('img.lazy').lazyload();
+
 });
 
 function checkScroll() {

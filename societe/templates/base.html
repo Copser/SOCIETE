@@ -96,8 +96,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li class="hidden"><a href="{% url 'appartments' %}">Explore</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
+                <li class=""><a href="{% url 'explore' %}">Explore</a></li>
             {% if user.is_authenticated %}
                 <li><a id="logout" href="/accounts/logout">Logout</a></li>
             {% else %}
@@ -195,6 +195,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'bower_components/bootstrap/dist/js/main.js' %}"></script>
+    <!-- LazyLoad js support code -->
+    <script src="{% static 'bower_components/jquery_lazyload/jquery.lazyload.js' %}"></script>
     <!-- Stripe js support code, and publishable key -->
     <script src="{% static 'bower_components/bootstrap/dist/js/tokenization.js' %}"></script>
     <!-- Stripe support javascript and jQuery code -->
