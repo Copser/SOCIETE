@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+
+<!--Modal content-->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Login</h4>
+      </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 btn-group-vertical" role="group">
+                    <a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
+                    <a id="linkedin_login" href="{% provider_login_url 'linkedin' %}" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
+                    <a id="twitter_login" href="{% provider_login_url 'twitter' %}" class="btn btn-info btn-lg"><i class="fa fa-twitter"></i>&nbsp;Sign in with Twitter</a>
+                </div>
+            </div>
+            &nbsp;
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+     
+        </div>
+    </div>
+ </div> 
+</div><!--/ end modal -->
+
+<div class="container-fluid cities">
+</div>
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+   </div> 
+</div><!--/ end container -->
+
+<div class="cotainer mission">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <span><img class="" src="/static/img/about/icons-09.png" alt="compass" width=90 height=90></span>
+        <h3><span class=""></span><span class="bottom-line">HISTORY</span></h3>
+        &nbsp;
+        <p class="text-center">The history of New York begins around 10,000 BC, when the first Native Americans arrive. By</br> 1100 AD, New York's main native cultures, the Iroquian and Algonquian, had developed.</br> European discovery of New York was led by the French in 1524 and the first land claim came in</br> 1609 by the Dutch. As part of New Netherland, the colony was important in the fur trade and</br> eventually became an agricultural recourse thanks to the patroon system. In 1626 the Dutch</br> bought the island of Manhattan from Native Americans. In 1664, England renamed the colony</br> New York, after the Duke of York. New York City gained prominence in the 18th century as a</br> major trading port in the Thirteen Colonies. The first native New Yorkers were the Lenape, an</br> Algonquin people who hunted, fished and farmed in the area between the Delawere and Hudson</br> rivers. The first European was Giovanni da Verrazzano, and Italian who sailed up and down the</br> Atlantic coas in search of a route to Asia-but none setteled there unitl 1624.</p>
+    </div>
+  </div>  
+</div><!--/ end container -->
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+   </div> 
+</div><!--/ end container -->
+
+
+<section class="first image section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 first_image">
+              </div> 
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 second_image">
+              </div> 
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 third_image">
+              </div> 
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fourth_image">
+              </div> 
+            </div>
+        </div>
+    </div><!-- end first section img container /-->
+</section>
+
+
+<section class="second image section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fifth_image">
+              </div> 
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 six_image">
+              </div> 
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 seventh_image">
+              </div> 
+            </div>
+        </div>
+    </div><!-- end second section image container /-->
+</section>
+
+<section class="third image section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 eighth_image">
+              </div> 
+            </div>
+            <div class="col-xs-3 col-sm-3 col-sm-push-4 col-md-3 col-md-push-4 col-lg-3 col-lg-push-4">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nineth_image">
+              </div> 
+            </div>
+        </div>
+    </div><!-- end third image section conatiner /-->
+</section>
+
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <img src="/static/img/join_societe/icons-08.png" class="hidden-xs hidden-sm visible-md visible-lg img-rounded img-responsive pull-right" alt="Responsive image" width=90 height=90>
+            <img src="/static/img/join_societe/icons-08.png" class="hidden-xs visible-sm hidden-md hidden-lg img-rounded img-responsive pull-left" alt="Responsive image" width=90 height=90>
+         </div>
+          
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-left" id="">
+            <h2 class="">Easy as One, Two, Three</h2>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <p style="padding: 5px"></p>
+            <button type="button" class="active btn btn-lg btn-info round" data-toggle="modal" data-target="#loginModal" >GET STARTED</button>
+            <p style="padding: 5px;"></p>
+        </div>
+      </div> 
+   </div> 
+</div>
+{% endblock %}
