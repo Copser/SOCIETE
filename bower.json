@@ -22,6 +22,7 @@
   "dependencies": {
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0",
-    "braintree-web": "^2.24.1"
+    "braintree-web": "^2.24.1",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7"
   }
 }
