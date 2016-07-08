@@ -17,6 +17,10 @@ $(document).ready(function(){
 
     $('img.lazy').lazyload();
 
+    $('div.lazy').lazyload({
+        effect : 'fadeIn'
+    });
+
 });
 
 function checkScroll() {

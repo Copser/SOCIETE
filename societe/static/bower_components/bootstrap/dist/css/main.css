@@ -65,6 +65,10 @@ body {
     height: 550px;
 }
 
+.jumbotron h2, p {
+    color: #ffffff;
+}
+
 
 /* SOCIETE row od columns, making devider */ 
 
