@@ -65,7 +65,7 @@ body {
     height: 550px;
 }
 
-.jumbotron h2, p {
+.jumbotron .haus {
     color: #ffffff;
 }
 
