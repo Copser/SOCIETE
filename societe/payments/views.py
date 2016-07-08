@@ -2,11 +2,13 @@ from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext, loader
+from django.contrib.auth.decorators import login_required
 
 from .forms import ChargeForm
 import stripe
 
 
+@login_required(login_url='/accounts/signup')
 def charge(request):
     """TODO: Docstring for charge.
     :returns: Charge view is responsible for providing us with user token, which we will
