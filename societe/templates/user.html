@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
+        <p style="padding:50px;"></p>
+        <h1>Member's Only Page</h1><br/>
+        <h3>Welcome {{ user.name }}.</h3>
+        <p>Click <a href="{% url 'edit' %}">here</a> to make changes to your credit card.</p>
+    </div>
+  </div>
+{% endblock %}

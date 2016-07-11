@@ -2,148 +2,37 @@
 
 {% block script %}
 
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
 
-
-<script type="text/javascript">
-    <!-- Fill in your publishable key -->
-    Stripe.setPublishableKey('pk_test_AvBnrIWeiAGXHX4TwPqlyi0L');
-
-   var stripeResponseHandler = function(status, response) {
-     var $form = $('#payment-form');
-
-     if (response.error) {
-       // Show the errors on the form
-       $form.find('.payment-errors').text(response.error.message);
-       $form.find('button').prop('disabled', false);
-     } else {
-       // token contains id, last4, and card type
-       var token = response.id;
-       // Insert the token into the form so it gets submitted to the server
-       $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-       // and re-submit
-       $form.get(0).submit();
-     }
-   };
-
-   jQuery(function($) {
-     $('#payment-form').submit(function(e) {
-       var $form = $(this);
-
-       // Disable the submit button to prevent repeated clicks
-       $form.find('button').prop('disabled', true);
-
-       Stripe.card.createToken($form, stripeResponseHandler);
-
-       // Prevent the form from submitting with the default action
-       return false;
-     });
-   });
-</script>
 {% endblock %}
 
 
 {% block form %}
 
-<div class="row">
-    <p style="padding: 50px;"></p>
+    <div class="container">
+        <div class="row">
+            <p style="padding:100px"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <h3>Erasmus Haus Fee</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_AvBnrIWeiAGXHX4TwPqlyi0L"
+                data-amount="30000"
+                data-name="Erasmus Haus"
+                data-description="Fee"
+                data-image="/static/img/squarelogo.png"
+                data-locale="auto">
+              </script>
+            </form>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <h1 class="text-center">Use your Visa or Mastercard</h1>
-    <p class="text-center">Please fill out the form, and here we need to make some kind a text explaining
-    what they get by purchasing and paying us this fee!</p>
-</div>
-
-<div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <form class="form" action="" method="post" id="payment-form">
-           {% csrf_token %} 
-           <span class="payment-errors"></span>
-           <div class="form-group">
-               <label class="control-label" for="name">Name</label>
-               <div class="controls">
-                   <input type="text" id="name" class="form-control" data-stripe="name" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="last_name">Last Name</label>
-               <div class="controls">
-                   <input type="text" id="last_name" class="form-control" data-stripe="last_name" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="email">Email</label>
-               <div class="controls">
-                   <input type="text" id="email" class="form-control" data-stripe="email" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="address_line1">Address Line</label>
-               <div class="controls">
-                   <input type="text" id="address_line1" class="form-control" data-stripe="address_line1" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="address_line2">Address Line 2</label>
-               <div class="controls">
-                   <input type="text" id="address_line2" class="form-control" data-stripe="address_line2" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="address_city">City</label>
-               <div class="controls">
-                   <input type="text" id="address_city" class="form-control" data-stripe="address_city" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="address_state">State</label>
-               <div class="controls">
-                   <input type="text" id="address_state" class="form-control" data-stripe="address_state" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="address_zip">Zip</label>
-               <div class="controls">
-                   <input type="text" id="address_zip" class="form-control" data-stripe="address_zip" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="address_county">Country</label>
-               <div class="controls">
-                   <input type="text" id="address_country" class="form-control" data-stripe="address_country" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="card">Card Number</label>
-               <div class="controls">
-                   <input type="text" id="card" class="form-control" size="20" data-stripe="number" />
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="">Expiration (MM/YYYY)</label>
-               <div class="row">
-                   <div class="col-xs-2">
-                       <input type="text" size="2" data-stripe="exp-month" class="form-control" />
-                   </div>
-                   <div class="col-xs-2">
-                       <input type="text" size="4" data-stripe="exp-year" class="form-control" />
-                   </div>
-               </div>
-           </div>
-           <div class="form-group">
-               <label class="control-label" for="cvc">CVC</label>
-               <div class="controls">
-                   <input type="text" id="cvc" size="4" class="form-control" data-stripe="cvc" />
-               </div>
-           </div>
-           <div class="form-group">
-               <div class="controls">
-                   <input type="submit" value="Submit" class="btn btn-primary" />
-               </div>
-           </div>
-       </form>
-   </div>
-</div>
-        
 {% endblock %}
