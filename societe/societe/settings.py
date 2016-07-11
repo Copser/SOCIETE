@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-# from .secret import *
+from .secret import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # Quick-start development settings - unsuitable for production
@@ -485,3 +485,7 @@ GOOGLE_ANALYTICS_SITE_SPEED = True
 BRAINTREE_MERCHANT_ID = 'x6kghwrrz78wkh4z'
 BRAINTREE_PUBLIC_KEY = '47thpt69sxgp55wp'
 BRAINTREE_PRIVATE_KEY = '445bc0e9744f8e2104ee68a8695c8bbd'
+
+# Stripe Key's
+TEST_SECRET_KEY = 'sk_test_BgoRb5NlZkvmIBs7waRutiqi'
+TEST_PUBLISHABLE_KEY = 'pk_test_AvBnrIWeiAGXHX4TwPqlyi0L'
