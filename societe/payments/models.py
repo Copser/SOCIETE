@@ -6,6 +6,7 @@ class User(AbstractBaseUser):
 
     """Docstring for PaymentUser. """
     name = models.CharField(max_length=225)
+    last_name = models.CharField(max_length=225)
     email = models.CharField(max_length=225, unique=True)
     # password field define in base class
     last_4_digits = models.CharField(max_length=4, blank=True, null=True)
@@ -15,6 +16,14 @@ class User(AbstractBaseUser):
 
     USERNAME_FIELD = 'email'
 
-    def __str__(self):
+    @classmethod
+    def get_by_id(cls, uid):
+        """TODO: Docstring for get_by_id.
+        :returns: TODO
+
+        """
+        return User.objects.get(pk=uid)
+
+    def __unicode__(self):
         """TODO: to be defined1. """
         return self.email

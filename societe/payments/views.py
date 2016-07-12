@@ -1,10 +1,11 @@
-from django.db import IntegrityError
+# from django.db import IntegrityError
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
-from .forms import CardForm, SigninForm, UserForm
+from .forms import CardForm
 from .models import User
 
 import stripe
@@ -22,48 +23,7 @@ def soon():
     return {'month': soon.month, 'year': soon.year}
 
 
-def sign_in(request):
-    """TODO: Docstring for charge.
-    :returns: view in which we will sign_in our Payment User
-
-    """
-    user = None
-    if request.method == 'POST':
-        form = SigninForm(request.POST)
-        if form.is_valid():
-            results = User.objects.filter(email=form.cleaned_data['email'])
-            if len(results) == 1:
-                if results[0].check_password(form.cleaned_data['password']):
-                    request.session['user'] = results[0].pk
-                    return HttpResponseRedirect('/')
-                else:
-                    form.addError('Incorrect email address or password')
-            else:
-                form.addError('Incorrect email address or password')
-        else:
-            form = SigninForm()
-
-        print(form.non_field_errors())
-
-        return render_to_response(
-            'sign_in.html',
-            {
-                'form': form,
-                'user': user
-            },
-            context_instance=RequestContext(request)
-        )
-
-
-def sign_out(request):
-    """TODO: Docstring for sign_out.
-    :returns: TODO
-
-    """
-    del request.session['user']
-    return HttpResponseRedirect('/')
-
-
+@login_required(login_url='/accounts/signup')
 def register(request):
     """TODO: Docstring for sign_out.
     :returns: TODO
@@ -71,10 +31,10 @@ def register(request):
     """
     user = None
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = CardForm(request.POST)
         if form.is_valid():
 
-            #update based on your billing method (subscription vs one time)
+            # update based on your billing method (subscription vs one time)
             # customer = stripe.Customer.create(
             #     email=form.cleaned_data['email'],
             #     description=form.cleaned_data['name'],
@@ -83,7 +43,7 @@ def register(request):
             # )
 
             customer = stripe.Charge.create(
-                amount="5000",
+                amount="30000",
                 currency="usd",
                 description=form.cleaned_data['email'],
                 card=form.cleaned_data['stripe_token'],
@@ -96,19 +56,9 @@ def register(request):
                 stripe_id=customer.id,
             )
 
-            #ensure encrypted password
-            user.set_password(form.cleaned_data['password'])
-
-            try:
-                user.save()
-            except IntegrityError:
-                form.addError(user.email + ' is already a member')
-            else:
-                request.session['user'] = user.pk
-                return HttpResponseRedirect('/')
-
+            return HttpResponseRedirect('/thank_you')
     else:
-        form = UserForm()
+        form = CardForm()
 
     return render_to_response(
         'register.html',
@@ -124,52 +74,11 @@ def register(request):
     )
 
 
-def edit(request):
-    """TODO: Docstring for edit.
-    :returns: TODO
-
-    """
-    uid = request.session.get('user')
-
-    if uid is None:
-        return HttpResponseRedirect('/index')
-
-    user = User.objects.get(pk=uid)
-
-    if request.method == 'POST':
-        form = CardForm(request.POST)
-        if form.is_valid():
-
-            customer = stripe.Customer.retrieve(user.stripe_id)
-            customer.card = form.cleaned_data['stripe_token']
-            customer.save()
-
-            user.last_4_digits = form.cleaned_data['last_4_digits']
-            user.stripe_id = customer.id
-            user.save()
-
-            return HttpResponseRedirect('/index')
-        else:
-            pass
-    else:
-        form = CardForm()
-
-    return render_to_response(
-        'edit.html',
-        {
-            'form': form,
-            'publishable': settings.TEST_PUBLISHABLE_KEY,
-            'soon': soon(),
-            'months': range(1, 12),
-            'years': range(2011, 2036)
-        },
-        context_instance=RequestContext(request)
-    )
-
-
 def thank_you(request):
     """TODO: Docstring for thank_you.
     :returns: TODO
 
     """
-    return render(request, 'thank_you.html')
+    return render_to_response(
+        'thank_you.html',
+        context_instance=RequestContext(request))
