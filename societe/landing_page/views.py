@@ -9,7 +9,7 @@ from reviews.models import OnMapReviewLayout
 def index(request):
     """TODO: Docstring for index.
     :returns: This function will return
-    index.html(landing page)
+    index.html(landing page), I should change the name to home page.
 
     """
     layouts = OnMapReviewLayout.objects.filter(
