@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactUsView
 from django.contrib import messages
 from reviews.models import OnMapReviewLayout
-from payments.models import User
 
 
 def index(request):
@@ -15,19 +14,12 @@ def index(request):
     """
     layouts = OnMapReviewLayout.objects.filter(
         category__codename='intern_review').order_by('?')
-    uid = request.session.get('user')
-    if uid is None:
-        return render_to_response(
-            'index.html', context_instance=RequestContext(
-                request,
-                {'selected_layout': layouts.first() if layouts else None}
-            )
+    return render_to_response(
+        'index.html', context_instance=RequestContext(
+            request,
+            {'selected_layout': layouts.first() if layouts else None}
         )
-    else:
-        return render_to_response(
-            'user.html',
-            {'user': User.objects.get(pk=uid)}
-        )
+    )
 
 
 def about(request):
