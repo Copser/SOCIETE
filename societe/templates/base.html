@@ -143,11 +143,13 @@
             &nbsp;
                 <h5 class=""><strong>PAYMENTS:</strong></h5>
                 <ul class="list-unstyled list-inline">
-                    <li><a class="" href=""><i class="fa fa-2x fa-cc-paypal" style="color:#777" aria-hidden="true"></i></a></li>
-                    <li><a id="customButton" href="{% url 'register' %}"><i class="fa fa-2x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-2x fa-cc-visa" style="color:#777" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-2x fa-cc-mastercard" style="color:#777" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-2x fa-credit-card" style="color:#777" aria-hidden="true"></i></a></li>
+                    <li>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="PTMU5JLD2XUZ8">
+                    <button class="btn btn-sm" type="submit"><i class="fa fa-3x fa-cc-paypal" style="color:#777;" aria-hidden="true"></i></button>
+            </form></li>
+                    <li><a class="btn btn-sm" id="customButton" href="{% url 'register' %}"><i class="fa fa-3x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
                 </ul>
              </div> 
              <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
@@ -156,25 +158,23 @@
              </div> 
              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <h3><strong>EMAIL US:</strong></h3> 
-                 <p class="text-muted"><i class="fa fa-2x fa-envelope-o" aria-hidden="true"></i> erasmushaus@gmail.com</p>
+                <p class="text-muted"><a href="#" style="color:#777;"><i class="fa fa-2x fa-envelope-o" aria-hidden="true"></i> erasmushaus@gmail.com</a></p>
              </div>
              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <h5 class=""><strong>MENU:</strong></h5>
                 <ul class="list-unstyled">
-                    <li><a class="text-muted" href="">Home</a></li>
+                    <li><a class="text-muted" href="{% url 'index' %}">Home</a></li>
                     &nbsp;
-                    <li><a class="text-muted" href="">About Us</a></li>
+                    <li><a class="text-muted" href="{% url 'about' %}">About Us</a></li>
                     &nbsp;
-                    <li><a class="text-muted" href="">Explore</a></li>
-                    &nbsp;
-                    <li><a class="text-muted" href="">Get Started</a></li>
+                    <li><a class="text-muted" href="{% url 'explore' %}">Explore</a></li>
              </div> 
           </div>
        </div>
     <div id="footerRights" class="container-fluid">
        <div class="row">
            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-           <p align="center">© 2015 Company, Inc.</p>
+           <p align="center">© 2015 Erasmus Haus</p>
             <ul class="list-unstyled list-inline">
                 <li><a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-lg fa-google-plus"></i></a></li>
                 <li><a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-lg fa-facebook"></i></a></li>
