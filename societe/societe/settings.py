@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-# from .secret import *
+from .secret import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'payments',
     'payments.paypal_app',
     # instaled third party app
+    'robots',
     'debug_toolbar',
     'stripe',
     'analytical',
