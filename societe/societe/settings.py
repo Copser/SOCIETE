@@ -490,3 +490,6 @@ BRAINTREE_PRIVATE_KEY = '445bc0e9744f8e2104ee68a8695c8bbd'
 # Stripe Key's
 TEST_SECRET_KEY = 'sk_test_BgoRb5NlZkvmIBs7waRutiqi'
 TEST_PUBLISHABLE_KEY = 'pk_test_AvBnrIWeiAGXHX4TwPqlyi0L'
+
+# Change default Robots for Sitemaps
+ROBOTS_USE_SITEMAPS = False
