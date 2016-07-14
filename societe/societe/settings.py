@@ -469,9 +469,6 @@ AXES_VERBOSE = True
 # IP. Default: False
 AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = False
 
-# Clicky configuration
-CLICKY_SITE_ID = '100938376'
-
 # Google analytics configuration
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-75841576-1'
 
