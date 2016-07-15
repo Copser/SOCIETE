@@ -33,18 +33,18 @@
       {% analytical_head_bottom %}
   </head>
 
-  <body data-spy="scroll" data-target="#myNav" itemscope itemtype="http://schema.org/WebPage">
+  <body data-spy="scroll" data-target="#myNav" itemscope itemtype="http://schema.org/Organization">
       {% analytical_body_top %}
 <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Organization",
-        "name": "SOCIETE",
-        "alteranteName": "Literati",
-        "legalName": "SOCIETE",
-        "description": "Furnished housing, students, interns, proffesionals, Astoria, New York, Long Island",
-        "url": "http://societe.herokuapp.com/",
-        "email": "societe@gmail.com",
+        "name": "Erasmus Haus",
+        "alteranteName": "erasmushaus",
+        "legalName": "Erasmus Haus",
+        "description": "Erasmus Haus provides furnished housing of the London, Instanbul, Manila and Skopje international community of students, interns and young professionals.",
+        "url": "http://www.erasmushaus.com/",
+        "email": "erasmushaus@gmail.com",
         "contactPoint" : [
             {
                 "@type": "ContactPoint",
@@ -53,10 +53,10 @@
             }
         ],
         "address": {
-            "@type": "PostalAddress",
+            "@type": "http://schema.org/PostalAddress",
             "streetAddress": "hogvards ap. 10",
             "addressLocality": "Long Island City",
-            "addressRegion": "NY",
+            "addressRegion": "New York",
             "postalCode": "11101",
             "addressCountry": "US"
         }
@@ -88,7 +88,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <span itemscope itemtype="http://schema.org/Organization" itemprop="brand"><a class="navbar-brand" href="{% url 'index' %}">
+          <span itemscope itemtype="http://schema.org/Brand" itemprop="brand"><a class="navbar-brand" href="{% url 'index' %}">
                   <img class="hidden-xs" src="/static/img/ErasmusHausLogo.png" height=150 width=150>
                   <img class="visible-xs" src="/static/img/ErasmusHausLogo.png" height=100 width=100>
           </a></span>
