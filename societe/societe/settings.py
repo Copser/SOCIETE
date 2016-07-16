@@ -165,7 +165,7 @@ except Exception as e:
 # import config.py from django_social_app
 from .config import *
 
-# allauth configuration
+# ALLAUTH configuration
 
 # Specific the adapter class to use, allowing you to alter certain default behaviour
 # ACCOUNT_ADAPTER = "allauth.account.adapter.DefaultAccountAdapter"
