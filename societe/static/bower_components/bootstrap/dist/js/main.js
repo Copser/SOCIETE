@@ -20,6 +20,8 @@ $(document).ready(function(){
     $('div.lazy').lazyload({
         effect : 'fadeIn'
     });
+    
+    $('select').select2();
 
 });
 
