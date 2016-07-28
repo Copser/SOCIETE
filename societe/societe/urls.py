@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^about/', 'landing_page.views.about', name='about'),
     url(r'^explore/', 'landing_page.views.explore', name='explore'),
     url(r'^contact/', 'contact.views.contact', name='contact'),
+    url(r'^success/', 'contact.views.success', name='success'),
 
     # robots.txt
     url(r'^robots.txt$',
