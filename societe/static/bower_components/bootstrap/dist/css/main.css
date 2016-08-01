@@ -6,6 +6,10 @@ body {
     font-family: 'Aladin', cursive;
 }
 
+.rounded-btn {
+    border-radius: 45px;
+}
+
 /* text overline */
 .overline {
     border-top: 3px solid;
@@ -15,8 +19,16 @@ body {
 .bottom-line {
     border-bottom: 3px solid;
     border-color: #51A59C;
+    width: 5%;
 }
 
+.erasmus-color {
+    color: #51A59C;
+}
+
+.erasmus {
+    color: #030303;
+}
 
 /* Navbar */
 
@@ -35,21 +47,19 @@ body {
 }
 
 .navbar-toggle {
-    margin: 23px 0;
 }
 
 .navbar-nav .navbar-nav li, .navbar-nav li a {
     height: 80px;
-    line-height: 80px;
+    line-height: 50px;
 }
 
-.navbar-nav li a {
-    padding-top: 0;
-    padding-bottom: 0;
+.navbar-nav {
+    margin-right: 100px;
 }
 
 .navbar-brand {
-    margin-top: -30px;
+    margin-top: 10px;
 }
 
 .btn-sm.round {
@@ -57,7 +67,8 @@ body {
 }
 
 .jumbotron {
-    background: url('/static/img/nyc_building.jpg') no-repeat center center;
+    background: url('/static/img/home/city-new-york-high-rise-rainbow.jpg') no-repeat;
+    background-position: bottom;
     background-size: cover;
     height: 550px;
 }
@@ -66,6 +77,10 @@ body {
     color: #ffffff;
 }
 
+
+.blue-btn {
+    padding-top: 50px;
+}
 
 /* SOCIETE row od columns, making devider */ 
 
@@ -78,7 +93,7 @@ body {
     margin-right: auto;
 }
 
-.col-sm-4:not(:last-child) {
+.col-md-4:not(:last-child) {
     border-right: 1px solid #ccc;
 }
 
@@ -193,32 +208,32 @@ body {
 }
 
 .aimage {
-    background-image: url('/static/img/portfolio_new/portfolio1.jpg');
+    background-image: url('/static/img/portfolio_new/erasmus_cities-27.jpg');
     background-size: cover;
     background-position: center;
 }
 .bimage {
-    background-image: url('/static/img/portfolio_new/portfolio2.jpg');
+    background-image: url('/static/img/portfolio_new/erasmus_cities-21.jpg');
     background-size: cover;
     background-position: center;
 }
 .cimage {
-    background-image: url('/static/img/portfolio_new/portfolio3.jpg');
+    background-image: url('/static/img/portfolio_new/erasmus_cities-22.jpg');
     background-size: cover;
     background-position: center;
 }
 .dimage {
-    background-image: url('/static/img/portfolio_new/portfolio4.jpg');
+    background-image: url('/static/img/portfolio_new/erasmus_cities-24.jpg');
     background-size: cover;
     background-position: center;
 }
 .eimage {
-    background-image: url('/static/img/portfolio_new/portfolio5.jpg');
+    background-image: url('/static/img/portfolio_new/.jpg');
     background-size: cover;
     background-position: center;
 }
 .fimage {
-    background-image: url('/static/img/portfolio_new/portfolio6.jpg');
+    background-image: url('/static/img/portfolio_new/erasmus_cities-19.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -240,7 +255,6 @@ body {
 .btn-lg.round {
     border-radius: 20px;
 }
-
 
 /* Footer */
 
@@ -265,6 +279,12 @@ body {
     text-align: center;
 }
 
+/* Clients Section */
+
+.clients {
+    height: 450px;
+}
+
 /* ==========================================================================
    SOCIETE custom styles
    ========================================================================== */
@@ -277,7 +297,7 @@ body {
 /* MISSION AND HISTORY */
     
 .living-room {
-    background: url('/static/img/about/bedroom-03.jpg') no-repeat center center;
+    background: url('/static/img/about/about_us_room.jpg') no-repeat top;
     background-size: cover;
     height: 550px;
 }
@@ -286,9 +306,6 @@ body {
     color: #ffffff;
 }
 
-.erasmus {
-    color: #51A59C;
-}
 
 .mission p, .apartment p {
     line-height: 2em;
