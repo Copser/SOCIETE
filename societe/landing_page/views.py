@@ -44,17 +44,6 @@ def about(request):
     return HttpResponse(t.render(c))
 
 
-def explore(request):
-    """TODO: Docstring for appartments, simple view for appartments page.
-    :returns: This function will return
-    appartments.html(Information about SOCIETE appartments)
-
-    """
-    return render_to_response(
-        'explore.html', context_instance=RequestContext(request)
-    )
-
-
 def page_not_found(request):
     """TODO: Docstring for page_not_found.
     :returns: 404.html error template
