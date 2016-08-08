@@ -285,6 +285,11 @@ body {
     height: 450px;
 }
 
+/* Happy Customer Carousel */
+
+.carousel-happy {
+    height: 350px;
+}
 /* ==========================================================================
    SOCIETE custom styles
    ========================================================================== */
@@ -338,12 +343,18 @@ body {
 
 /***
  *
- * EXPLORE(CITIES) PAGE
+ * CITIES PAGE
  *
  * ***/
 
 .cities {
-    background: url('/static/img/explore/newyork.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/newyork.jpg') no-repeat center center;
+    background-size: cover;
+    height: 550px;
+}
+
+.skopje {
+    background: url('/static/img/cities_img/skopje/skopje.jpg') no-repeat center center;
     background-size: cover;
     height: 550px;
 }
@@ -351,27 +362,27 @@ body {
 /* First image section */
 
 .first_image {
-    background: url('/static/img/explore/image_sections/bridge-01.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork5.png') no-repeat center center;
     background-size: cover;
     height: 250px;
 }
 
 
 .second_image {
-    background: url('/static/img/explore/image_sections/bridge-02.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/city-cars.png') no-repeat center center;
     background-size: cover;
     height: 250px;
 }
 
 .third_image {
-    background: url('/static/img/explore/image_sections/bridge-03.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork8.png') no-repeat center center;
     background-size: cover;
     height: 250px;
 }
 
 
 .fourth_image {
-    background: url('/static/img/explore/image_sections/astoria-60.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork1.png') no-repeat center center;
     background-size: cover;
     height: 520px;
 }
@@ -379,21 +390,21 @@ body {
 /* Second image section */
 
 .fifth_image {
-    background: url('/static/img/explore/image_sections/astoria-39.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork6.png') no-repeat center center;
     background-size: cover;
     height: 250px;
     margin-top: -250px;
 }
 
 .six_image {
-    background: url('/static/img/explore/image_sections/astoria-56.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork7.png') no-repeat center center;
     background-size: cover;
     height: 250px;
     margin-top: -250px;
 }
 
 .seventh_image {
-    background: url('/static/img/explore/image_sections/new_yorker_1.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork2.png') no-repeat center center;
     background-size: cover;
     height: 520px;
     margin-top: -250px;
@@ -402,14 +413,14 @@ body {
 /* Third image section */
 
 .eighth_image {
-    background: url('/static/img/explore/image_sections/new_yorker_2.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork4.png') no-repeat center center;
     background-size: cover;
     height: 250px;
     margin-top: -250px;
 }
 
 .nineth_image {
-    background: url('/static/img/explore/image_sections/astoria-65.jpg') no-repeat center center;
+    background: url('/static/img/cities_img/image_sections/newyork3.png') no-repeat center center;
     background-size: cover;
     height: 250px;
     margin-top: -250px;
