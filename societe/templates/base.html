@@ -96,7 +96,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
-                <li class=""><a href="{% url 'explore' %}">Explore</a></li>
             {% if user.is_authenticated %}
                 <li><a id="logout" href="/accounts/logout">Logout</a></li>
             {% else %}
@@ -159,8 +158,6 @@
                     <li><a class="text-muted" href="{% url 'index' %}">Home</a></li>
                     &nbsp;
                     <li><a class="text-muted" href="{% url 'about' %}">About Us</a></li>
-                    &nbsp;
-                    <li><a class="text-muted" href="{% url 'explore' %}">Explore</a></li>
              </div> 
           </div>
        </div>

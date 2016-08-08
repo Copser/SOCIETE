@@ -15,9 +15,11 @@ urlpatterns = [
 
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/', 'landing_page.views.about', name='about'),
-    url(r'^explore/', 'landing_page.views.explore', name='explore'),
     url(r'^contact/', 'contact.views.contact', name='contact'),
     url(r'^success/', 'contact.views.success', name='success'),
+
+    # cities
+    url(r'^cities/', include('cities.urls')),
 
     # robots.txt
     url(r'^robots.txt$',
