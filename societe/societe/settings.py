@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     # Project app
     'landing_page',
     'contact',
+    'cities',
     'reviews',
     'payments',
     'payments.paypal_app',
@@ -89,7 +90,10 @@ ROOT_URLCONF = 'societe.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'cities'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,6 +107,10 @@ TEMPLATES = [
                 'django.core.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
             ],
+#            'loaders': [
+#                'django.template.loaders.filesystem.Loader',
+#                'django.template.loaders.app_directories.Loader',
+#             ]
         },
     },
 ]
@@ -135,7 +143,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
