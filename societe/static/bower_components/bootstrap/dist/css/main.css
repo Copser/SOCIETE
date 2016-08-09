@@ -208,7 +208,7 @@ body {
 }
 
 .aimage {
-    background-image: url('/static/img/portfolio_new/erasmus_cities-27.jpg');
+    background-image: url('/static/img/portfolio_new/newyork_1.png');
     background-size: cover;
     background-position: center;
 }
@@ -218,7 +218,7 @@ body {
     background-position: center;
 }
 .cimage {
-    background-image: url('/static/img/portfolio_new/erasmus_cities-22.jpg');
+    background-image: url('/static/img/portfolio_new/night.png');
     background-size: cover;
     background-position: center;
 }
@@ -228,12 +228,12 @@ body {
     background-position: center;
 }
 .eimage {
-    background-image: url('/static/img/portfolio_new/.jpg');
+    background-image: url('/static/img/portfolio_new/skopje3.jpg');
     background-size: cover;
     background-position: center;
 }
 .fimage {
-    background-image: url('/static/img/portfolio_new/erasmus_cities-19.jpg');
+    background-image: url('/static/img/portfolio_new/skopje_1.jpg');
     background-size: cover;
     background-position: center;
 }
