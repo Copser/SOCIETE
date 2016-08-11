@@ -282,14 +282,17 @@ body {
 /* Clients Section */
 
 .clients {
-    height: 450px;
+    height: 500px;
 }
+
 
 /* Happy Customer Carousel */
 
-.carousel-happy {
-    height: 350px;
+.ceo_carousel .indicators .circle {
+  width: 60px;
+  height: 60px;
 }
+
 /* ==========================================================================
    SOCIETE custom styles
    ========================================================================== */

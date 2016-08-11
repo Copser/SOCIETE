@@ -4,7 +4,6 @@ $(document).ready(function(){
         $("#loginModal").modal('show');
     });
 
-
     $('.thumb').hover(function(){
         $(this).find('.caption').css('opacity','1');
     }, function(){
