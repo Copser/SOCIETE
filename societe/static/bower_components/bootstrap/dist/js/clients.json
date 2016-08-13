@@ -1,0 +1,27 @@
+{"clients":	{
+	"nick": {
+		"media-body": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus",
+		"media-heading": "NICK NICKOLAS",
+		"media-desc": "CEO NICOLAS"
+	},
+	"ann": {
+		"media-body": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus",
+		"media-heading": "ANN ROSE",
+		"media-desc": "CEO ROSE"
+	},
+	"dane": {
+		"media-body": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus",
+		"media-heading": "DAN DANNIN",
+		"media-desc": "CEO DANNING"
+	},
+	"jasy": {
+		"media-body": "cras sit amet nibh libero, in gravida nulla. nulla vel metus scelerisque ante sollicitudin commodo. cras purus odio, vestibulum in vulputate at, tempus viverra turpis. fusce condimentum nunc ac nisi vulputate fringilla. donec lacinia congue felis in faucibus",
+		"media-heading": "JASY FLOWER",
+		"media-desc": "CEO GARDEN"
+	},
+	"sen": {
+		"media-body": "cras sit amet nibh libero, in gravida nulla. nulla vel metus scelerisque ante sollicitudin commodo. cras purus odio, vestibulum in vulputate at, tempus viverra turpis. fusce condimentum nunc ac nisi vulputate fringilla. donec lacinia congue felis in faucibus",
+		"media-heading": "SEN SEN",
+		"media-desc": "CEO SENSEN"
+	}
+}}
