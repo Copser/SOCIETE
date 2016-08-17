@@ -6,3 +6,5 @@ societe/payments/__pycache__/models.cpython-34.pyc
 societe/landing_page/__pycache__/views.cpython-34.pyc
 societe/societe/__pycache__/settings.cpython-34.pyc
 societe/societe/__pycache__/
+societe/cities/__pycache__/urls.cpython-34.pyc
+societe/cities/__pycache__/views.cpython-34.pyc
