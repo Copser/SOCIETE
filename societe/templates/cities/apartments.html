@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% load reviews %}
+{% providers_media_js %}
+
+{% block content %}
+
+<!--Modal content-->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Login</h4>
+      </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 btn-group-vertical" role="group">
+                    <a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
+                    <a id="linkedin_login" href="{% provider_login_url 'linkedin' %}" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
+                    <a id="twitter_login" href="{% provider_login_url 'twitter' %}" class="btn btn-info btn-lg"><i class="fa fa-twitter"></i>&nbsp;Sign in with Twitter</a>
+                </div>
+            </div>
+            &nbsp;
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+     
+        </div>
+    </div>
+ </div> 
+</div><!--/ end modal -->
+
+<div class="container-fluid apartments">
+	<p style="padding:60px;"></p>
+	<h1 class="text-center">What if you come</br> here tomorrow?</h1>
+</div>
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+   </div> 
+</div><!--/ end container -->
+
+<div class="cotainer mission">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <span><img class="" src="/static/img/about/icons-09.png" alt="compass" width=90 height=90></span>
+        <h3><span class=""></span><span class="">APARTMENT No1</span></h3>
+         <hr width="5%">
+
+        &nbsp;
+        <p class="text-center">The stylish residence is nested on a large level block in a desirably tranquil cul-de-sac
+				location.</br> The house comes complete wuth two living rooms, a welcoming kitchen/dining area, two</br> bathrooms,
+				three bedrooms, a study and a laundry, and retains the value of peaceful living while</br> being conveniently
+				close to shops, school and transport.
+				</p>
+    </div>
+  </div>  
+</div><!--/ end container -->
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <p style="padding:25px;"></p>
+       </div>
+   </div> 
+</div><!--/ end container -->
+
+{% endblock %}
+
+
+{% block global_map %}
+
+<div class="container-fluid map">
+	<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 map-desc">
+				<h1 class="pull-left">Look for apartments in our</br> other locations</h1>
+				<a href="{% url 'index' %}"><button type="button" class="btn btn-info btn-lg pull-left">EXPLORE WITH ERASMUS</button></a>
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div id="abstract_map" class="tasky_wall_style careers">
+					<div class="blue_links global_map">
+						<div class="review_container">
+								{% if selected_layout %}
+								{% get_map_layout layout=selected_layout %}
+								{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+  <div class="container-fluid easy">
+     <div class="row">
+         <div class="col-xs-12 col-sm-12 col-md-2 col-md-push-2 col-lg-2 col-lg-push-2">
+            <img src="/static/img/join_societe/icons-08.png" class="hidden-xs img-rounded img-responsive pull-right lazy" alt="Responsive image" width=90 height=90>
+            <img src="/static/img/join_societe/icons-08.png" class="visible-xs img-rounded img-responsive" alt="Responsive image lazy" width=90 height=90>
+         </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-push-2 col-lg-6 col-lg-push-2 text-left" id="">
+            <h2 class="">Easy as One, Two, Three</h2>
+            <p>Enjoyed married an feeling delight as offered.</br> As admire roused length likely played pretty to no. Means had joy</br> miles her merry solid order.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <p style="padding: 5px"></p>
+            <button type="button" class="active btn btn-lg btn-info round" data-toggle="modal" data-target="#loginModal" >GET STARTED</button>
+            <p class="hidden-sm hidden-md hidden-lg" style="padding: 35px;"></p>
+            <p class="hidden-xs" style="padding: 5px;"></p>
+        </div>
+     </div> 
+  </div>
+
+    <div class="container-fluid hidden-xs visible-sm hidden-md hidden-lg">
+       <div class="row">
+           <!-- container devider -->
+          <p style="padding: 25px;"></p> 
+       </div><!--/end row -->
+    </div><!--/end container-fluid -->
+
+
+    <div class="container-fluid clients">
+			<div class="foil">
+       <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h2 class="text-center spec">Happy Clients</h2>
+          <p style="padding:5px"></p>
+          <p class="text-center"><span><i class="fa fa-3x fa-quote-left" arria-hidden="true"></i></span></p>
+          <p style="padding:10px"></p>
+					<div class="media-body text-center">
+						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</br> Cras purus
+						odio, vestibulum in vulputate at, tempus viverra turpis.</br> Fusce condimentum nunc ac nisi vulputate fringilla.</br>
+						Donec lacinia congue felis in faucibus
+          	<p style="padding:10px"></p>
+						<h4 class="media-heading lead">JANE GALADRIEL</h4>
+						<p class="media-desc">CEO TENKROUP</p>
+					</div>
+          <p style="padding:15px"></p>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center ceo_carousel">
+          <ol class="indicators list-inline">
+            <li>
+              <div class="circle">
+								<a class="clients-img" href="" data-thing="nick">
+									<img class="img-responsive img-circle"
+									src="/static/img/happy_clients/clients-01.png" alt="">
+								</a>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+								<a class="clients-img" href="" data-thing="ann">
+									<img class="img-responsive img-circle"
+									src="/static/img/happy_clients/clients-02.png" alt="">
+								</a>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+								<a class="clients-img" href="" data-thing="dane">
+									<img class="img-responsive img-circle"
+									src="/static/img/happy_clients/clients-03.png" alt="">
+								</a>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+								<a class="clients-img" href="" data-thing="jesy">
+									<img class="img-responsive img-circle"
+									src="/static/img/happy_clients/clients-04.png" alt="">
+								</a>
+							</div>
+            </li>
+            <li>
+              <div class="circle">
+								<a class="clients-img" href="" data-thing="sen">
+									<img class="img-responsive img-circle"
+									src="/static/img/happy_clients/clients-05.png" alt="">
+								</a>
+              </div>
+            </li>
+          </ol>
+          </div>
+        </div>
+       </div> 
+			</div>
+    </div>
+
+{% endblock %}
