@@ -11,9 +11,9 @@ body {
 		height: 55px;
 		text-align: center;
     border-radius: 35px;
-		padding: 0 6px;
-
+		padding: 0 15px;
 }
+
 
 /* text overline */
 .overline {
@@ -63,9 +63,6 @@ body {
     margin-right: 100px;
 }
 
-.navbar-brand {
-    margin-top: 10px;
-}
 
 .btn-sm.round {
     border-radius: 15px;
@@ -82,10 +79,6 @@ body {
     color: #ffffff;
 }
 
-
-.blue-btn {
-    padding-top: 50px;
-}
 
 /* SOCIETE row od columns, making devider */ 
 
@@ -479,8 +472,8 @@ body {
         }
 
         .navbar-brand {
-            padding-top: 20px;
-            padding-left: 5px;
+					margin-top: -45px;
+					margin-left: -10px;
         }
 
 
@@ -537,6 +530,9 @@ body {
             text-align: center;
         }
 
+        .navbar-brand {
+					margin-top: 10px;
+        }
  
     }
  
