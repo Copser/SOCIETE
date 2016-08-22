@@ -63,9 +63,6 @@ body {
     margin-right: 100px;
 }
 
-.navbar-brand {
-    margin-top: 10px;
-}
 
 .btn-sm.round {
     border-radius: 15px;
@@ -533,6 +530,9 @@ body {
             text-align: center;
         }
 
+        .navbar-brand {
+					margin-top: 10px;
+        }
  
     }
  
