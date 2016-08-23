@@ -88,8 +88,9 @@
             <span class="icon-bar"></span>
           </button>
           <span itemscope itemtype="http://schema.org/Brand" itemprop="brand"><a class="navbar-brand navbar-brand-mobile" href="{% url 'index' %}">
-                  <img class="hidden-xs" src="/static/img/LogoFinalErasmus-01.png" height=50 width=150 style="margin-left:100px;">
-                  <img class="visible-xs" src="/static/img/ErasmusHausLogo.png" height=120 width=120>
+                  <img class="hidden-xs" src="/static/img/LogoFinalErasmus-01.png" height=40 width=120>
+
+                  <img class="visible-xs" src="/static/img/LogoFinalErasmus-01.png" height=40 width=100>
           </a></span>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -99,14 +100,7 @@
             {% if user.is_authenticated %}
                 <li><a id="logout" href="/accounts/logout">Logout</a></li>
             {% else %}
-                <li class="pull-right hidden-xs hidden-sm" id="showlogin"><a href="#"><button type="button" class="btn btn-sm btn-info round">GET STARTED</button></a></li>
-                <li class="dropdown hidden-md hidden-lg" id="showlogin">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false"><button type="button" class="btn btn-sm btn-info round">GET STARTED</button></a>
-                    <ul class="dropdown-menu">
-                        <li class="btn-group-vertical"><a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-default navbar-btn"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
-                        <a id="linkedin_login" href="/accounts/linkedin/login" class="btn btn-default navbar-btn"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
-                        <a id="twitter_login" href="/accounts/twitter/login" class="btn btn-default navbar-btn"><i class="fa fa-twitter"></i>&nbsp;Sign in with Twitter</a></li>
-                    </ul>
+                <li class="pull-right"><a href="#" data-toggle="modal" data-target="#loginModal"><button type="button" class="btn btn-sm btn-info round">GET STARTED</button></a></li>
                 </li>
             {% endif %}
                 </ul>
@@ -141,7 +135,6 @@
                     <input type="hidden" name="hosted_button_id" value="9HQAR9DKYCBWW">
                     <button class="btn btn-sm" type="submit"><i class="fa fa-3x fa-cc-paypal" style="color:#777;" aria-hidden="true"></i></button>
             </form></li>
-                    <li><a class="btn btn-sm" id="customButton" href="{% url 'register' %}"><i class="fa fa-3x fa-cc-stripe" style="color:#777" aria-hidden="true"></i></a></li>
                 </ul>
              </div> 
              <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
@@ -192,13 +185,7 @@
     <!-- Stripe js support code, and publishable key -->
     <script src="{% static 'bower_components/bootstrap/dist/js/application.js' %}"></script>
     <!-- Stripe support javascript and jQuery code -->
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script src="{% static 'bower_components/jquery-ujs/src/rails.js' %}"></script>
-    <script type="text/javascript">
-    //<![CDATA[
-    Stripe.publishableKey = '{{ publishable }}';
-    //]]>
-    </script>
     
       {% analytical_body_bottom %}
   </body>
