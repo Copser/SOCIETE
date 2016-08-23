@@ -1,5 +1,4 @@
 body {
-    max-width: 1500px;
 }
 
 .spec {
@@ -38,7 +37,7 @@ body {
 /* Navbar */
 
 .navbar {
-    background: transparent;
+    background: #F2F2F2;
     border: none;
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
@@ -47,22 +46,10 @@ body {
     transition: all 0.6s ease-out;
 }
 
-.navbar.scrolled {
-    background: #F2F2F2;
-}
-
-.navbar-toggle {
-}
-
 .navbar-nav .navbar-nav li, .navbar-nav li a {
-    height: 80px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 30px;
 }
-
-.navbar-nav {
-    margin-right: 100px;
-}
-
 
 .btn-sm.round {
     border-radius: 15px;
@@ -72,7 +59,7 @@ body {
     background: url('/static/img/home/city-new-york-high-rise-rainbow.jpg') no-repeat;
     background-position: bottom;
     background-size: cover;
-    height: 550px;
+    height: 650px;
 }
 
 .jumbotron .haus {
@@ -450,103 +437,26 @@ body {
     height: 500px;
 }
 
-/*==========  Mobile First Method  ==========*/
- 
-    /* Custom, iPhone Retina */
-    @media only screen and (min-width : 320px){
-        .thumb-one img, .second-thumb img {
-            max-width: 1500px;
-        }
-        .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            vertical-align: top;
-        }
+/* Extra Small */
+@media(max-width:767px){
 
-        .navbar .navbar-collapse {
-            text-align: center;
-        }
+	 [class*="col-"] {
+		        width: 100%;
+						    }
 
-        .navbar-toggle {
-            margin-right: 15px;
-        }
+	.navbar-brand {
+		margin-top: -10px;
+	}
 
-        .navbar-brand {
-					margin-top: -45px;
-					margin-left: -10px;
-        }
+}
 
+/* Small */
+@media(min-width:768px) and (max-width:991px){
+}
 
-        #footerWrapper {
-            padding-left: 15px;
-        }
+/* Medium */
+@media(min-width:992px) and (max-width:1199px){
+}
 
-        .easy .round {
-            margin-left: 60px;
-        }
-
-        .easy img {
-            margin-left: 95px;
-        }
-    }
- 
-    /* Extra Small Devices, Phones */
-    @media only screen and (min-width : 480px){
-
-        .thumb-one img, .second-thumb img {
-            max-width: 1500px;
-        }
-
-        .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            vertical-align: top;
-        }
-
-        .navbar .navbar-collapse {
-            text-align: left;
-        }
-
-
-
-    }
- 
-    /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px){
-        .navbar-brand {
-            padding: 0;
-        }
-
-        .thumb-one img, .second-thumb img {
-            max-width: 1500px;
-        }
-        .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            vertical-align: top;
-        }
-
-        .navbar .navbar-collapse {
-            text-align: center;
-        }
-
-        .navbar-brand {
-					margin-top: 10px;
-        }
- 
-    }
- 
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px){
-        .thumb-one img, .second-thumb img {
-            max-width: 1500px;
-        }
- 
-    }
- 
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px){
-        .thumb-one img, .second-thumb img {
-            max-width: 1500px;
-        }
-    }
+/* Large */
+@media(min-width:1200px){}
