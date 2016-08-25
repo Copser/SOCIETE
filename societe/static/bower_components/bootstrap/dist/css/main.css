@@ -361,102 +361,77 @@ body {
     height: 550px;
 }
 
-/* First image section */
 
-.first_image {
-    background: url('/static/img/cities_img/image_sections/newyork5.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
+/* ---- grid ---- */
+
+
+/*
+   Spezific styling for salvattore
+   Feel free to edit it as you like
+   More info at http://salvattore.com
+ */
+.post img {
+    width: 100%;
 }
 
-
-.second_image {
-    background: url('/static/img/cities_img/image_sections/city-cars.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
+.post{
+  background: #ffffff;
+  padding: 10px;
+  margin: 5px 5px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+  z-index: 999;
 }
 
-.third_image {
-    background: url('/static/img/cities_img/image_sections/newyork8.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
+/* Salvattore Base Styles */
+.column {
+    float: left;
+}
+.size-1of4 {
+    width: 25%;
+}
+.size-1of3 {
+    width: 33.333%;
+}
+.size-1of1 {
+    width: 100%;
 }
 
-
-.fourth_image {
-    background: url('/static/img/cities_img/image_sections/newyork1.png') no-repeat center center;
-    background-size: cover;
-    height: 520px;
-}
-
-/* Second image section */
-
-.fifth_image {
-    background: url('/static/img/cities_img/image_sections/newyork6.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
-    margin-top: -250px;
-}
-
-.six_image {
-    background: url('/static/img/cities_img/image_sections/newyork7.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
-    margin-top: -250px;
-}
-
-.seventh_image {
-    background: url('/static/img/cities_img/image_sections/newyork2.png') no-repeat center center;
-    background-size: cover;
-    height: 520px;
-    margin-top: -250px;
-}
-
-/* Third image section */
-
-.eighth_image {
-    background: url('/static/img/cities_img/image_sections/newyork4.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
-    margin-top: -250px;
-}
-
-.nineth_image {
-    background: url('/static/img/cities_img/image_sections/newyork3.png') no-repeat center center;
-    background-size: cover;
-    height: 250px;
-    margin-top: -250px;
-}
 /***
  *
  * Success page  
- *
- * ***/
-
+ * * ***/ 
 #success {
     height: 500px;
 }
 
-/* Extra Small */
-@media(max-width:767px){
 
-	 [class*="col-"] {
-		        width: 100%;
-						    }
+@media screen and (min-width: 1px) and (max-width: 480px){
+    #posts[data-columns]::before {
+        content: '1 .column.size-1of1';
+    }
 
 	.navbar-brand {
 		margin-top: -10px;
 	}
-
 }
 
-/* Small */
-@media(min-width:768px) and (max-width:991px){
-}
+@media screen and (min-width: 481px) and (max-width: 767px){
+    #posts[data-columns]::before {
+        content: '3 .column.size-1of3';
+    }
 
-/* Medium */
-@media(min-width:992px) and (max-width:1199px){
-}
 
-/* Large */
-@media(min-width:1200px){}
+	.navbar-brand {
+		margin-top: -5px;
+	}
+}
+@media screen and (min-width:768px) and (max-width: 991px){
+    #posts[data-columns]::before {
+        content: '4 .column.size-1of4';
+    }
+}
+@media screen and (min-width:992px) and (max-width: 9999px){
+    #posts[data-columns]::before {
+        content: '4 .column.size-1of4';
+    }
+}

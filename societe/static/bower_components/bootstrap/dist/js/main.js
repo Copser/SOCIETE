@@ -39,3 +39,6 @@ $(document).ready(function(){
 //    checkScroll();
 //  });
 //}
+
+
+// external js: masonry.pkgd.js, imagesloaded.pkgd.js
