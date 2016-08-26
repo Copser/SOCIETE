@@ -1,6 +1,3 @@
-body {
-}
-
 .spec {
     font-family: 'Aladin', cursive;
 }
@@ -235,15 +232,8 @@ body {
 /* Easy Section */
 
 .easy {
-    margin: 0 auto;
     width: 100%;
     height: 200px;
-}
-
-.easy .btn {
-    position: absolute;
-    left: auto;
-    right: auto;
 }
 
 
@@ -419,6 +409,10 @@ body {
     #posts[data-columns]::before {
         content: '1 .column.size-1of1';
     }
+
+		.easy {
+			height: 370px;
+		}
 
 
 }
