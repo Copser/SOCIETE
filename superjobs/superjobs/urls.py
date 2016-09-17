@@ -17,4 +17,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    #
+    # collect
+    url(r'^$', 'collect.views.index', name='index'),
+    url(r'^apply/$', 'collect.views.apply', name='apply'),
+    url(r'^success/$', 'collect.views.success', name='success'),
+    url(r'^accounts/', include('allauth.urls')),
 ]
