@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -128,3 +128,18 @@ try:
     from .local_settings import *
 except Exception as e:
     pass
+
+# ALLAUTH Custom settings
+# Determines whether or not the user is automatically logged out by a mere GET request.
+# See documentation for the LogoutView for details.
+ACCOUNT_LOGOUT_ON_GET = False
+
+# Determines the e-mail verification method during signup – choose one of “mandatory”, “optional”, or “none”.
+# When set to “mandatory” the user is blocked from logging in until the email address is verified.
+# Choose “optional” or “none” to allow logins with an unverified e-mail address.
+# In case of “optional”, the e-mail verification mail is still sent,
+# whereas in case of “none” no e-mail verification mails are sent.
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+# login redirect url
+LOGIN_REDIRECT_URL = "/apply"
