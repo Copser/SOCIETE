@@ -21,7 +21,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,6 +44,9 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.linkedin',
     'bootstrap3',
 )
 
@@ -149,6 +152,41 @@ ACCOUNT_LOGOUT_ON_GET = False
 # In case of “optional”, the e-mail verification mail is still sent,
 # whereas in case of “none” no e-mail verification mails are sent.
 ACCOUNT_EMAIL_VERIFICATION = "none"
+
+# Request e-mail address from 3rd import party account provider?
+# E.g. using OpenID AX, or the Facebook “email” permission.
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+# Dictionary containing provider specific settings.
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        # we use facebook js_sdk instead od oauth2
+        'METHOD': 'js_sdk',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        # using AUTH_PARAMS to pass along other parametees
+        # to the FB.login JS SDK call
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        # field are fetch from the import Graph API
+        'FIELDS': ['first_name', 'last_name', 'email', 'birthday'],
+        # JS SDK return a short-lived token suitable for client-side use.
+        'EXCHANGE_TOKEN': True,
+        # Chose the current active language of the request
+        'LOCALE_FUNC': { lambda request: 'en_US'} ,
+        'VERIFIED_EMAIL': False,
+        # Facebook Graph API version
+        'VERSION': 'v2.7'
+    },
+    'linkedin': {
+        'SCOPE': ['r_emailaddress'],
+        'PROFILE_FIELDS': [
+            'id',
+            'first-name',
+            'last-name',
+            'email-address',
+            'public-profile-url'
+        ]
+    }
+}
 
 # login redirect url
 LOGIN_REDIRECT_URL = "/apply"
