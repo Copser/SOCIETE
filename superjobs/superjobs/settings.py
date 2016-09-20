@@ -21,7 +21,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -50,7 +50,7 @@ INSTALLED_APPS = (
     'bootstrap3',
 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
