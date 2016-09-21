@@ -141,7 +141,7 @@ except Exception as e:
 
 # ALLAUTH Custom settings
 #
-SITE_ID = 1
+SITE_ID = 2
 # Determines whether or not the user is automatically logged out by a mere GET request.
 # See documentation for the LogoutView for details.
 ACCOUNT_LOGOUT_ON_GET = False
