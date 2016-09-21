@@ -50,7 +50,7 @@ INSTALLED_APPS = (
     'bootstrap3',
 )
 
-SITE_ID = 'https://supejobs.herokuapp.com'
+SITE_ID = 2
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
