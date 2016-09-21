@@ -90,7 +90,7 @@ AUTHENTICATION_BACKENDS = (
 WSGI_APPLICATION = 'superjobs.wsgi.application'
 
 # this also use allauth
-site_id = 2
+site_id = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
