@@ -50,8 +50,6 @@ INSTALLED_APPS = (
     'bootstrap3',
 )
 
-SITE_ID = 1
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,6 +140,8 @@ except Exception as e:
     pass
 
 # ALLAUTH Custom settings
+#
+SITE_ID = 1
 # Determines whether or not the user is automatically logged out by a mere GET request.
 # See documentation for the LogoutView for details.
 ACCOUNT_LOGOUT_ON_GET = False
