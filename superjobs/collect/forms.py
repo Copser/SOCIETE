@@ -10,8 +10,9 @@ class ApplySuperView(ModelForm):
     TODO: Create class which will represent a form for are User to appy
 
     """
+    birthdate = forms.DateField(widget=extras.SelectDateWidget)
     class Meta:
         fields = ['first_name', 'last_name', 'email', 'telephone', 'mobile',
-                  'birthday', 'experience', 'references', 'hourly_rate',
+                  'birthdate', 'experience', 'references', 'hourly_rate',
                   'licences']
         model = ApplySuperForm

@@ -10,7 +10,6 @@ class ApplySuperForm(models.Model):
     email = models.EmailField(max_length=250)
     telephone = models.CharField(max_length=250, blank=True)
     mobile = models.CharField(max_length=250)
-    birthday = models.DateField(null=True)
     experience = models.TextField()
     references = models.TextField()
     hourly_rate = models.CharField(max_length=100)

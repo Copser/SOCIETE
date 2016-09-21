@@ -15,7 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -90,7 +90,7 @@ AUTHENTICATION_BACKENDS = (
 WSGI_APPLICATION = 'superjobs.wsgi.application'
 
 # this also use allauth
-SITE_ID = 1
+SITE_ID = 2
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
