@@ -89,7 +89,7 @@ AUTHENTICATION_BACKENDS = (
 
 WSGI_APPLICATION = 'superjobs.wsgi.application'
 
-# this also use allauth
+# this also use allauth, or we need to change it to 2
 SITE_ID = 1
 
 # Database
