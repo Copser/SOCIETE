@@ -21,7 +21,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,7 +90,7 @@ AUTHENTICATION_BACKENDS = (
 WSGI_APPLICATION = 'superjobs.wsgi.application'
 
 # this also use allauth, or we need to change it to 2
-SITE_ID = 1
+SITE_ID = 4
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
