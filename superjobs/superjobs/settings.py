@@ -89,8 +89,10 @@ AUTHENTICATION_BACKENDS = (
 
 WSGI_APPLICATION = 'superjobs.wsgi.application'
 
-# this also use allauth, or we need to change it to 2
-SITE_ID = 4
+# this SITE_ID we are using in local development
+# SITE_ID = 4
+# After research I've manually added SITE_ID on heroku and I'm using SITE_ID=2 in production
+SITE_ID = 2
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
