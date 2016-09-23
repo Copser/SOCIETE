@@ -18,6 +18,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     #
+    # django-contrib-flatpages
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
     # collect
     url(r'^$', 'collect.views.index', name='index'),
     url(r'^apply/$', 'collect.views.apply', name='apply'),
