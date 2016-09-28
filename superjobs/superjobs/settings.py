@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
     # app
     'collect',
+    'super_apply',
 
     # thirdpartyapp
     'allauth',
@@ -92,9 +93,9 @@ AUTHENTICATION_BACKENDS = (
 WSGI_APPLICATION = 'superjobs.wsgi.application'
 
 # this SITE_ID we are using in local development
-# SITE_ID = 4
+SITE_ID = 4
 # After research I've manually added SITE_ID on heroku and I'm using SITE_ID=2 in production
-SITE_ID = 2
+# SITE_ID = 2
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -125,10 +126,10 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Heroku Configurations
 # Parse database configuration from $DATABASE_URL
