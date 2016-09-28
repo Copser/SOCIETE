@@ -40,7 +40,7 @@ INSTALLED_APPS = (
 
     # app
     'collect',
-    'super_apply',
+    'labor',
 
     # thirdpartyapp
     'allauth',
