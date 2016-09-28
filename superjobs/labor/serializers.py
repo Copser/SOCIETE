@@ -9,7 +9,7 @@ class ReferenceSerializer(serializers.Serializer):
     company_name = serializers.CharField(max_length=255)
     company_email = serializers.EmailField(max_length=100)
     company_phone = serializers.CharField(max_length=255)
-    previous_job_title = serializers.CharField(max_length=255)
+    job_title = serializers.CharField(max_length=255)
 
     class Meta:
         model = Reference
