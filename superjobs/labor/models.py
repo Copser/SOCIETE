@@ -56,5 +56,3 @@ class ApplyForm(models.Model):
         returns: TODO
         """
         ordering = ('created',)
-
-# Create your models here.
