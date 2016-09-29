@@ -3,7 +3,7 @@ from .models import ApplyForm, Reference, Experience
 
 
 class ReferenceSerializer(serializers.Serializer):
-    """TODO:
+    """TODO: serialize Rreference Model
     returns: TODO
     """
     company_name = serializers.CharField(max_length=255)
@@ -18,7 +18,7 @@ class ReferenceSerializer(serializers.Serializer):
 
 
 class ExperienceSerializer(serializers.Serializer):
-    """TODO:
+    """TODO: Serialize Experience Model
     returns: TODO
     """
     work_experience = serializers.CharField(max_length=255)
@@ -28,3 +28,12 @@ class ExperienceSerializer(serializers.Serializer):
         model = Experience
         fields = ('work_experience', 'working_hours')
 
+
+class ApplyFormSerializer(serializers.ModelSerializer):
+    """TODO: Serialize ApplyForm Model, and we are adding ExperienceSerializer and ReferenceSerializer
+    to ApplyFormSerializer, because we want to nest them into ApplyForm
+    returns: TODO
+    """
+    class Meta:
+        model = ApplyForm
+        fields = '__all__'
