@@ -12,6 +12,5 @@ class ApplyFormView(ModelForm):
     birthdate = forms.DateField(widget=extras.SelectDateWidget(years=range(1987, 2010)))
     class Meta:
         model = ApplyForm
-        fields = ['first_name', 'last_name', 'email', 'telephone', 'mobile',
-                  'birthdate', 'experience', 'references', 'hourly_rate',
-                  'licences']
+        fields = ['full_name', 'email', 'mobile', 'hourly_rate', 'working_hours',
+                  'drivers_license', 'curriculum_vitae']
