@@ -33,6 +33,7 @@ class FutureLaborInfo(models.Model):
     """TODO:
     return: TODO
     """
+    labor_info = models.ForeignKey(LaborInfo, null=False, blank=True)
     future_working_hourse = models.CharField(max_length=255)
     hourly_rate = models.DecimalField(max_digits=4, decimal_places=2)
     drivers_license = models.CharField(max_length=6, choices=DRIVERS_CATEGORY_CHOICES)
