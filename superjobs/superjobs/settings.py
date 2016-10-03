@@ -39,8 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
 
     # app
-    'collect',
-    'labor',
+    'labor_apply',
 
     # thirdpartyapp
     'allauth',
