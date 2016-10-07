@@ -19,15 +19,28 @@ class LaborInfo(models.Model):
     mobile = models.CharField(max_length=100)
     birthdate = models.DateField(blank=True, null=True)
 
-    # previouse_relevant_working_references will be extended with formsets
-    previouse_relevant_working_references = models.CharField(max_length=255)
-
-    relevante_previouse_working_experience = models.TextField()
-    relevante_hospitality_experience = models.TextField()
-
     def __unicode__(self):
         return self.full_name
 
+
+class LaborReference(models.Model):
+    """TODO:
+    return: TODO
+    """
+    labor_info = models.ForeignKey(LaborInfo, null=False, blank=True)
+    company_name = models.CharField(max_length=255)
+    company_email = models.EmailField(max_length=255)
+    company_phone = models.CharField(max_length=100)
+    previous_job_title = models.CharField(max_length=255)
+
+
+class LaborExperience(models.Model):
+    """TODO:
+    return: TODO
+    """
+    labor_info = models.ForeignKey(LaborInfo, null=False, blank=True)
+    relevante_experience = models.TextField()
+    hospitality = models.TextField()
 
 class FutureLaborInfo(models.Model):
     """TODO:
