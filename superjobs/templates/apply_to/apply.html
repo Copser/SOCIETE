@@ -5,7 +5,7 @@
 
 {% block apply_content %}
 
-<h3><center>Contact Us</center></h3>
+<h3><center>Apply to </center></h3>
 
 <div class="container">
 	<div class="row">
@@ -13,7 +13,37 @@
 			<form action='.' method='POST'>
 				{% csrf_token %}
 				{{ help_text_and_errors|join:' ' }}
-				{% bootstrap_form form %}
+				{% bootstrap_form labor_form %}
+				{% buttons %}
+				<button type='submit' class='btn btn-primary'>Submit</button>
+				{% endbuttons %}
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+			<form action='.' method='POST'>
+				{% csrf_token %}
+				{{ help_text_and_errors|join:' ' }}
+				{% bootstrap_form labor_reference_form %}
+				{% buttons %}
+				<button type='submit' class='btn btn-primary'>Submit</button>
+				{% endbuttons %}
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+			<form action='.' method='POST'>
+				{% csrf_token %}
+				{{ help_text_and_errors|join:' ' }}
+				{% bootstrap_form labor_experience_form %}
+				{% buttons %}
+				<button type='submit' class='btn btn-primary'>Submit</button>
+				{% endbuttons %}
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+			<form action='.' method='POST'>
+				{% csrf_token %}
+				{{ help_text_and_errors|join:' ' }}
+				{% bootstrap_form labor_future_info_form %}
 				{% buttons %}
 				<button type='submit' class='btn btn-primary'>Submit</button>
 				{% endbuttons %}
