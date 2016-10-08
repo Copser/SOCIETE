@@ -20,17 +20,11 @@ from labor_apply.views import MainView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    #
     # django-contrib-flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
-    # collect
-    url(r'^$', 'labor_apply.views.index', name='index'),
-#    url(r'^apply/$', 'labor.views.apply', name='apply'),
-#    url(r'^success/$', 'labor.views.success', name='success'),
-    #
-    url(r'^apply/$', MainView.as_view(), name='apply'),
 
-    url(r'^labor_apply/', include('labor_apply.urls')),
+    url(r'^', include('labor_apply.urls')),
+
     #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),
 ]
