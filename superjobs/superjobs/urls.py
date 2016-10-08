@@ -15,14 +15,16 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from labor_apply.views import MainView
+
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    #
     # django-contrib-flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
-    # collect
-    url(r'^$', 'labor.views.index', name='index'),
-    url(r'^apply/$', 'labor.views.apply', name='apply'),
-    url(r'^success/$', 'labor.views.success', name='success'),
+
+    url(r'^', include('labor_apply.urls')),
+
+    #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),
 ]
