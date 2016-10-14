@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-{% load bootstrap3 %}
 
 
 {% block apply_content %}
@@ -12,41 +11,48 @@
 		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
 			<form action='.' method='POST'>
 				{% csrf_token %}
-				{{ help_text_and_errors|join:' ' }}
-				{% bootstrap_form labor_form %}
-				{% buttons %}
-				<button type='submit' class='btn btn-primary'>Submit</button>
-				{% endbuttons %}
-			</form>
-		</div>
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
-			<form action='.' method='POST'>
-				{% csrf_token %}
-				{{ help_text_and_errors|join:' ' }}
-				{% bootstrap_form labor_reference_form %}
-				{% buttons %}
-				<button type='submit' class='btn btn-primary'>Submit</button>
-				{% endbuttons %}
-			</form>
-		</div>
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
-			<form action='.' method='POST'>
-				{% csrf_token %}
-				{{ help_text_and_errors|join:' ' }}
-				{% bootstrap_form labor_experience_form %}
-				{% buttons %}
-				<button type='submit' class='btn btn-primary'>Submit</button>
-				{% endbuttons %}
-			</form>
-		</div>
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
-			<form action='.' method='POST'>
-				{% csrf_token %}
-				{{ help_text_and_errors|join:' ' }}
-				{% bootstrap_form labor_future_info_form %}
-				{% buttons %}
-				<button type='submit' class='btn btn-primary'>Submit</button>
-				{% endbuttons %}
+				{{ form.as_p }}
+				<fieldset>
+					<legend>Please fill out this form so you can successfilly apply for are current ongoin postion. </legend>
+					{{ labor_reference_form.management_form }}
+					{{ labor_reference_form.non_form_errors }}
+					{% for form in labor_reference_form %}
+							{{ form.id }}
+							<div class="inline {{ labor_reference_form.prefix }}">
+								{{ form.description.errors }}
+								{{ form.description.label_tag }}
+								{{ form.description }}
+							</div>
+					{% endfor %}
+				</fieldset>
+				<fieldset>
+					{{ labor_experience_form.management_form }}
+					{{ labor_experience_form.non_form_errors }}
+					{% for form in labor_experience_form %}
+							{{ form.id }}
+							<div class="inline {{ labor_experience_form.prefix }}">
+								{{ form.description.errors }}
+								{{ form.description.label_tag }}
+								{{ form.description }}
+							</div>
+					{% endfor %}
+				</fieldset>
+				<fieldset>
+					{{ future_labor_info_form.management_form }}
+					{{ future_labor_info_form.non_form_errors }}
+					{% for form in future_labor_info_form %}
+							{{ form.id }}
+							<div class="inline {{ future_labor_info_form.prefix }}">
+								{{ form.number.error }}
+								{{ form.number.label_tag }}
+								{{ form.number }}
+								{{ form.description.errors }}
+								{{ form.description.label_tag }}
+								{{ form.description }}
+							</div>
+					{% endfor %}
+				</fieldset>
+				<input type="submit" value="" class="submit" />
 			</form>
 		</div>
 	</div>
