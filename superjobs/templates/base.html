@@ -74,8 +74,23 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'bower_components/bootstrap/dist/js/main.js' %}"></script>
+
+    <!-- Include django dynamic formset jquery -->
+    <script src="{% static 'bower_components/bootstrap/dist/js/jquery.formset.js' %}"></script>
+		<script type="text/javascript">
+        $(function() {
+            $(".inline.{{ labor_reference_form.prefix }}").formset({
+                prefix: "{{ labor_reference_form.prefix }}",
+            })
+            $(".inline.{{ labor_experience_form.prefix }}").formset({
+                prefix: "{{ labor_experience_form.prefix }}",
+            })
+            $(".inline.{{ future_labor_info_form.prefix }}").formset({
+                prefix: "{{ future_labor_info_form.prefix }}",
+            })
+        })
+    </script>
   </body>
 </html>
