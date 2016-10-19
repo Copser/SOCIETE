@@ -36,10 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django.contrib.flatpages',
 
     # app
-    'labor_apply',
+    'labor_apply_app',
 
     # thirdpartyapp
     'allauth',
@@ -60,7 +59,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'superjobs.urls'
@@ -68,7 +66,10 @@ ROOT_URLCONF = 'superjobs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'apply_to'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
