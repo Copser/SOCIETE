@@ -57,7 +57,6 @@
 						<li class="active"><a href="{% url 'index' %}">Home</a></li>
 						<li><a href="#">About</a></li>
 						{% if user.is_authenticated %}
-						<li><a href="{% url 'apply' %}">Apply</a></li>
             <li><a href="/accounts/logout">Logout</a></li>
 						{% else %}
             <li><a href="/accounts/login">Login</a></li>
@@ -78,19 +77,7 @@
     <script src="{% static 'bower_components/bootstrap/dist/js/main.js' %}"></script>
 
     <!-- Include django dynamic formset jquery -->
-    <script src="{% static 'bower_components/bootstrap/dist/js/jquery.formset.js' %}"></script>
 		<script type="text/javascript">
-        $(function() {
-            $(".inline.{{ labor_reference_form.prefix }}").formset({
-                prefix: "{{ labor_reference_form.prefix }}",
-            })
-            $(".inline.{{ labor_experience_form.prefix }}").formset({
-                prefix: "{{ labor_experience_form.prefix }}",
-            })
-            $(".inline.{{ future_labor_info_form.prefix }}").formset({
-                prefix: "{{ future_labor_info_form.prefix }}",
-            })
-        })
     </script>
   </body>
 </html>
