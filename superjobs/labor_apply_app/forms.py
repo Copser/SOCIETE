@@ -16,6 +16,6 @@ class PersonalInfoForm(ModelForm):
                   'previous_job_title',
                   'relevante_experience', 'hospitality_experience',
                   'future_working_hours', 'hourly_wage', 'driver_license', 'curriculum_vitae']
-
-        def __init__(self, *args, **kwargs):
-            super(PersonalInfoForm, self).__init__(*args, **kwargs)
+        widgets = {
+            'hourly_wage': forms.NumberInput(attrs= {'min': '0', 'max': '35', 'step': '1'}),
+        }

@@ -27,7 +27,7 @@ class PersonalInfo(models.Model):
     hospitality_experience = models.TextField()
 
     future_working_hours = models.CharField(max_length=225)
-    hourly_wage = models.DecimalField(max_digits=2, decimal_places=2)
+    hourly_wage = models.DecimalField(max_digits=2, decimal_places=0)
     driver_license = models.CharField(max_length=10, choices=DRIVERS_CATEGORY_CHOICES)
     curriculum_vitae = models.FileField(upload_to='cv/')
     created = models.DateTimeField(auto_now_add=True)

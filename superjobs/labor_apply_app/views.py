@@ -2,10 +2,9 @@ from django.shortcuts import render, render_to_response, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
-from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
 
 from .forms import PersonalInfoForm
-from .models import PersonalInfo
 
 #Create your views here.
 def index(request):
@@ -18,44 +17,22 @@ def index(request):
     )
 
 
-class PersonalInfoCreateView(FormView):
+class PersonalInfoView(CreateView):
     """TODO: CreateView for PersonalInfoForm
     return: TODO
     """
-    template_name = 'apply_to/apply_now.html'
+    template_name = 'apply_now.html'
     form_class = PersonalInfoForm
     success_url = 'success/'
 
-    def get(self, form):
-        """TODO: define get request
-        return: TODO
-        """
-        self.object = None
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        return self.render_to_response(
-            self.get_context_data(form=form))
-
-    def post(self, form):
-        """TODO: Post request for PersonalInfoForm
-        return: TODO
-        """
-        self.object = None
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        if form.is_valid():
-            return self.form_valid(form)
-        else:
-            return self.form_class(form)
-
-    def form_valid(self, form):
+    def form_valid(self, form, *args, **kwargs):
         """TODO: Validate form
         return: TODO
         """
         self.object = form.save()
         return HttpResponseRedirect(self.get_success_url())
 
-    def form_invalid(self, form):
+    def form_invalid(self, form, *args, **kwargs):
         """TODO: handle invalid form request
         return: TODO
         """
