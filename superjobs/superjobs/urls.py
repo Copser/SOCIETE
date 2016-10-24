@@ -27,6 +27,7 @@ urlpatterns = [
 
     url(r'^apply_now/$', PersonalInfoView.as_view()),
     url(r'^success/$', TemplateView.as_view()),
+    url(r'^', include('labor_apply_app.urls')),
 
     #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),
