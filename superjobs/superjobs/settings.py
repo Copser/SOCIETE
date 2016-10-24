@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'labor_apply_app',
 
     # thirdpartyapp
+    'rest_framework',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
