@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'labor_apply_app',
 
     # thirdpartyapp
+    'rest_framework',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -305,4 +306,4 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 # login redirect url
-LOGIN_REDIRECT_URL = "/apply"
+LOGIN_REDIRECT_URL = "/apply_now"
