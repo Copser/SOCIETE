@@ -4,6 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 from django.views.generic.edit import CreateView
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
 from .forms import PersonalInfoForm
 
 #Create your views here.
@@ -38,3 +41,17 @@ class PersonalInfoView(CreateView):
         """
         return self.render_to_response(
             self.get_context_data(form=form))
+
+
+class PersonalInfoViewList(APIView):
+    """TODO:
+    return: TODO
+    """
+    pass
+
+
+class PersonalInfoViewDetail(APIView):
+    """TODO:
+    return: TODO
+    """
+    pass
