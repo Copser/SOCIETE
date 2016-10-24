@@ -16,7 +16,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from labor_apply_app.views import PersonalInfoView
+from rest_framework.urlpatterns import format_suffix_patterns
+
+from labor_apply_app.views import PersonalInfoView, PersonalInfoViewList, PersonalInfoViewDetail
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -27,8 +29,12 @@ urlpatterns = [
 
     url(r'^apply_now/$', PersonalInfoView.as_view()),
     url(r'^success/$', TemplateView.as_view()),
-    url(r'^', include('labor_apply_app.urls')),
+
+    url(r'info/$', PersonalInfoViewList.as_view()),
+    url(r'info/(?P<pk>[0-9]+)/$', PersonalInfoViewDetail.as_view()),
 
     #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
