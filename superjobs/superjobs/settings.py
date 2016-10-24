@@ -305,4 +305,4 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 # login redirect url
-LOGIN_REDIRECT_URL = "/apply"
+LOGIN_REDIRECT_URL = "/apply_now"
