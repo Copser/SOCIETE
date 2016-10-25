@@ -3,14 +3,15 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import RequestContext, loader
 from django.views.generic.edit import CreateView
+from django.contrib.auth.models import User
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics
 
 from .forms import PersonalInfoForm
 from .models import PersonalInfo
-from .serializers import PersonalInfoSerializer
+from .serializers import PersonalInfoSerializer, UserSerializer
 
 #Create your views here.
 def index(request):
@@ -90,3 +91,19 @@ class PersonalInfoViewDetail(APIView):
         info = self.get_object(pk)
         info.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class UserList(generics.ListAPIView):
+    """TODO: handle User persmission and authentication
+    return: TODO
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveAPIView):
+    """TODO: handle User permission and auth
+    return: TODO
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
