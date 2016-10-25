@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 import datetime
 
 # Create your models here.
@@ -39,3 +40,11 @@ class PersonalInfo(models.Model):
 
     class Meta:
         ordering = ('created',)
+
+
+class PersonalUserInfo(models.Model):
+    """TODO: Create User info for rest authentication and permission, this needs to be related to
+    PersonalInfo model
+    return: TODO
+    """
+    pass
