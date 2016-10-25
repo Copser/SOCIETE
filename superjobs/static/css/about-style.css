@@ -1,0 +1,447 @@
+/* Table of Contents
+
+    1. Import section
+    2. Basic Styles
+    3. Banner Section
+    4. People Section
+    5. Join Us
+    6. Footer
+    7. Default Style
+    8. Scrolling Up
+*/
+
+
+/* 1.Import section */
+
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+    @import 'https://fonts.googleapis.com/css?family=PT+Sans';
+
+
+
+
+/* 2.BASIC STYLES */
+
+    body{
+        font-family: 'PT Sans', sans-serif;
+        background: url(../img/banner/01.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+    }
+
+
+
+/* 3. HEADER */
+
+    #header .navbar{
+        min-height: 80px;
+        margin-bottom: 0;
+    }
+
+    .st-navbar{
+        background-color: #a2a0d8;
+        border-radius: 0;
+        font-family: 'PT Sans', sans-serif;
+        font-weight: 400;
+        border: none;
+    }
+
+    .st-navbar .navbar-toggle {
+        text-transform: uppercase;
+        font-size: 25px;
+        border-color: white;
+    }
+
+    .st-navbar a:focus {
+        outline: none;
+    }
+
+    .st-navbar .navbar-nav {
+        letter-spacing: 1px;
+        margin-top: 15px;
+    }
+
+    /* Brand Section */
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand{
+        font-size: 40px;
+        font-family: 'PT Sans', sans-serif;
+        color: white;
+        font-weight: bold;
+    }
+
+    .st-navbar .navbar-nav li a {
+        color: white;
+        font-size:20px;
+    }
+    .st-navbar .navbar-nav li a:hover {
+        outline: none;
+        color:#606060;
+    }
+    .st-navbar .navbar-nav li a:focus,
+    .st-navbar .navbar-nav li a:active {
+        color: #606060;
+    }
+
+    .st-navbar .navbar-nav li.active a {
+        color: #606060;
+    }
+
+    .st-navbar ul li.selected a{
+        color: #606060;
+    }
+
+    .st-navbar .navbar-nav li.active a:hover,
+    .st-navbar .navbar-nav li.active a:focus,
+    .st-navbar .navbar-nav li.active a:active {
+        color: #606060;
+    }
+
+    .st-navbar .navbar-toggle {
+        color: #a2a0d8;
+        text-transform: uppercase;
+        font-size: 10px;
+        border-color: #a2a0d8;
+    }
+
+    .st-navbar .navbar-toggle:hover,
+    .st-navbar .navbar-toggle:focus {
+        color: #a2a0d8;
+    }
+
+    .st-navbar .navbar-header{
+        margin-top: 25px;
+    }
+
+    .st-navbar .navbar-toggle .icon-bar{
+        background-color: #000;
+    }
+
+    .navbar-brand{
+        padding:0;
+    }
+
+    .navbar-brand img{
+        width:180px;
+        margin-top:-16px;
+    }
+
+    .apply{
+        background-color: white;
+        border-radius: 8px;
+    }
+
+    .st-navbar .navbar-nav li .apply{
+        color: #a2a0d8;
+        font-size:20px;
+    }
+
+    .st-navbar .navbar-nav li .apply:hover{
+        background-color:white;
+    }
+
+
+
+
+/*  3. BANNER SECTION */
+
+    .banner-text{
+        margin-top:250px;
+    }
+
+    .banner-text h1{
+        font-size: 55px;
+        color: white;
+        font-weight: bold;
+        line-height: 1.733;
+        font-family: 'PT Sans', sans-serif;
+    }
+
+
+    .overlay{
+        background-color: #f3f3f3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+
+
+
+/*  4. PEOPLE SECTION */
+
+    #people{
+        margin-top: 350px;
+        background-color: #e7f48a;
+        padding-bottom: 120px;
+    }
+
+    .people-say{
+        margin-top: 100px;
+    }
+
+    #people h1, #join-us h1{
+        font-size: 60px;
+        font-weight: 500px;
+        color: rgb(84, 84, 84);
+    }
+
+    .comment{
+        margin-top: 50px;
+        max-width: 460px;
+        transition: .5s all;
+        -webkit-transition: .5s all;
+        -moz-transition: .5s all;
+        -o-transition: .5s all;
+        -ms-transition: .5s all; 
+    }
+
+    .comment:hover{
+        transform:scale(1.1);
+        -webkit-transform:scale(1.1);
+        -o-transform:scale(1.1);
+        -moz-transform:scale(1.1);
+        -ms-transform:scale(1.1);
+    }
+
+    .single-comment{
+        background-color: white;
+        border-radius: 8px;
+        height: 538px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    }
+
+    .single-comment img{
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .single-comment h2{
+        float:right;
+        letter-spacing: 2px;
+        font-size: 28px;
+        color: rgb(84, 84, 84);
+        font-weight: bold;
+        margin-right: 35px;
+        margin-top: 60px;
+    }
+
+    .single-comment h2.resp-text{
+        margin-right: 65px;
+    }
+
+    .single-comment p{
+        font-size: 22px;
+        color: rgb(84, 84, 84);
+        line-height: 1.44;
+        padding-left: 20px;
+        padding-right: 20px;
+        letter-spacing: 2px;
+    }
+
+
+
+
+/*  5. JOIN US SECTION */
+
+    #join-us{
+        padding-bottom: 85px;
+    }
+
+    #join-us h1{
+        color:white;
+        font-weight: bold;
+    }
+
+    #join-us p{
+        font-size: 30px;
+        color: white;
+        font-weight: 500;
+    }
+
+    .button-apply{
+        width:250px;
+        height:80px;
+        margin:0 auto;
+        background-color: #a2a0d8;
+        opacity: 1;
+        border-radius: 8px;
+        margin-top: 75px;
+        border-color:#7e7bb7;
+        transition: .5s all;
+        -webkit-transition: .5s all;
+        -moz-transition: .5s all;
+        -o-transition: .5s all;
+        -ms-transition: .5s all; 
+    }
+
+    .button-apply a{
+        text-align: center;
+        text-decoration: none;
+        font-size: 35px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 0.98;
+        position: absolute;
+        width:250px;
+        margin-top: 25px;
+        transition: .5s all;
+        -webkit-transition: .5s all;
+        -moz-transition: .5s all;
+        -o-transition: .5s all;
+        -ms-transition: .5s all; 
+    }
+
+
+    .button-apply:hover{
+        box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        background-color: #7e7bb7;
+        transform:scale(1.2);
+        -webkit-transform:scale(1.2);
+        -o-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        -ms-transform:scale(1.2);
+    }
+
+
+
+
+
+/* 6. FOOTER */
+
+    #footer{
+        background-color: #a2a0d8;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    #footer a{
+        color: rgba(255, 255, 255, 0.4);
+    }
+    #footer a:hover{
+        color: #7e7bb7;
+    }
+
+    .footer-social-icons{
+
+        color:#7e7bb7;
+    }
+
+
+    .footer-social-icons a{
+        margin: 0 5px;
+        font-size: 16px;
+    }
+
+    .footer-social-icons i{
+        color:white;
+    }
+
+    .footer-social-icons i:hover{
+        color:#7371a4;
+    }
+
+
+    .footer-social-icons span{
+        margin-right: 10px;
+        font-size: 25px;
+        color:white;
+    }
+
+    .copyright p{
+        font-size: 25px;
+        color:white;
+    }
+
+
+/*  7. DEFAULT */
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 160px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: #a2a0d8;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, .15);
+        border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+
+    .dropdown-menu li:hover{
+
+    }
+
+    .dropdown-toggle {
+        color:black;
+        background-color:#a2a0d8;
+    }
+
+    .st-navbar .navbar-nav{
+         background-color:#a2a0d8;
+    }
+
+
+
+
+/* 8. SCROLLING UP */
+
+    .scroll-up {
+        position: fixed;
+        display: none;
+        z-index: 999;
+        bottom: 4.8em;
+        right: 1.8em;
+    }
+
+    .scroll-up ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    .scroll-up li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .scroll-up a {
+        background-color: #5c5a9a;
+        display: block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        line-height: 38px;
+        box-shadow: 0px 0px 5px #000;
+    }
+
+    .scroll-up a:hover,
+    .scroll-up a:active {
+        background-color: #f5f5f5;
+        color: #000;
+    }
