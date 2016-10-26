@@ -14,16 +14,6 @@ from .models import PersonalInfo
 from .serializers import PersonalInfoSerializer, UserSerializer
 
 #Create your views here.
-def index(request):
-    """TODO: Landing Page
-    return: TODO
-    """
-    return render_to_response(
-        'index.html',
-        context_instance=RequestContext(request)
-    )
-
-
 class PersonalInfoView(CreateView):
     """TODO: CreateView for PersonalInfoForm
     return: TODO

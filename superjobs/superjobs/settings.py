@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
 
     # app
+    'landing_page',
     'labor_apply_app',
 
     # thirdpartyapp

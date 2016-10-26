@@ -25,7 +25,7 @@ urlpatterns = [
     # django-contrib-flatpages
 
     # url(r'^apply_to/', include('labor_apply_app.urls')),
-    url(r'^$', 'labor_apply_app.views.index', name='index'),
+    url(r'^$', 'landing_page.views.index', name='index'),
 
     url(r'^apply_now/$', views.PersonalInfoView.as_view()),
 
