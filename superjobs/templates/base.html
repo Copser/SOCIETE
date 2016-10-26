@@ -1,4 +1,7 @@
 {% load staticfiles %}
+
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +24,8 @@
 		<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" >
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/responsive.css' %}" >
+		{% block about-styles %}
+		{% endblock %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,8 +55,16 @@
     <!-- IMAGES OVERFLOW / JOIN US-->
     <!-- IMAGES OVERFLOW / JOIN US -->
 		{% endblock %}
+
+		{% block about-content %}
+		{% endblock %}
     
+		{% block SignUp-content %}
+		{% endblock %}
     
+		{% block login-content %}
+		{% endblock %}
+
     <!-- FOOTER -->
 		{% include "footer.html" %}
     <!-- /FOOTER -->

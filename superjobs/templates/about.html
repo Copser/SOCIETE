@@ -2,7 +2,11 @@
 
 {% load staticfiles %}
 
-{% block content %}
+{% block about-styles %}
+		<link rel="stylesheet" href="{% static 'css/about-style.css' %}" >
+{% endblock %}
+
+{% block about-content %}
     <!-- BANNER SECTION -->
     <section id="banner-section">
         <div class="banner-text">
@@ -25,7 +29,7 @@
             </div>
             <div class="col-md-6 comment" style="float:left;">
                 <div class="single-comment">
-                    <img src="img/people/01.png" class="">
+                    <img src="/static/img/people/01.png" class="">
                     <h2>Jim Carter<br> Plumber</h2>
                     <br><br><br>
                     <p><em>?Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada purus enim, eget interdum est blandit sit amet. Morbi sed ipsum eu felis sodales aliquam. Fusce eu sem massa. Ut sagittis, magna id tincidunt tempor, mi ipsum lobortis enim, quis.?</em></p>
@@ -33,7 +37,7 @@
             </div>
             <div class="col-md-6 comment" style="float:right;">
                 <div class="single-comment" >
-                    <img src="img/people/02.png" class="">
+                    <img src="/static/img/people/02.png" class="">
                     <h2>Tom Lawrence<br> Carpenter</h2>
                     <br><br><br>
                     <p><em>?Donec ac purus facilisis, cursus arcu a, pharetra risus. Vivamus ultrices laoreet varius. Fusce quis mauris vehicula, cursus arcu non, iaculis justo. Integer fermentum congue nisi id maximus. Phasellus eleifend tortor et facilisis iaculis. Lore ipsum dolor.?</em></p>
@@ -41,7 +45,7 @@
             </div>
             <div class="col-md-6 comment" style="float:left;">
                 <div class="single-comment">
-                    <img src="img/people/03.png" class="">
+                    <img src="/static/img/people/03.png" class="">
                     <h2 class="resp-text">Ed Scott<br> HVAC</h2>
                     <br><br><br>
                     <p><em>?Donec ac purus facilisis, cursus arcu a, pharetra risus. Vivamus ultrices laoreet varius. Fusce quis mauris vehicula, cursus arcu non, iaculis justo. Integer fermentum congue nisi id maximus. Phasellus eleifend tortor et facilisis iaculis. Lore ipsum dolor.?</em></p>
@@ -49,7 +53,7 @@
             </div>
             <div class="col-md-6 comment" style="float:right;">
                 <div class="single-comment">
-                    <img src="img/people/04.png" class="">
+                    <img src="/static/img/people/04.png" class="">
                     <h2>Ella Elisson<br> Housekeeper</h2>
                     <br><br><br>
                     <p><em>?Donec ac purus facilisis, cursus arcu a, pharetra risus. Vivamus ultrices laoreet varius. Fusce quis mauris vehicula, cursus arcu non, iaculis justo. Integer fermentum congue nisi id maximus. Phasellus eleifend tortor et facilisis iaculis. Lore ipsum dolor.?</em></p>
