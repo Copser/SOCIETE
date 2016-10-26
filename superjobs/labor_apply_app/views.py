@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import RequestContext, loader
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -14,6 +15,7 @@ from .models import PersonalInfo
 from .serializers import PersonalInfoSerializer, UserSerializer
 
 #Create your views here.
+# @login_required(login_url='/accounts/signup')
 class PersonalInfoView(CreateView):
     """TODO: CreateView for PersonalInfoForm
     return: TODO
