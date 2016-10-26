@@ -8,27 +8,43 @@
 
 {% block login-content %}
 
-<p style="padding: 30px;"></p>
-<h1>{% trans "Sign In" %}</h1>
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 btn-group-vertical" role="group">
-                    <a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
-                    <a id="linkedin_login" href="{% provider_login_url 'linkedin' %}" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
-                </div>
-            </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>{% trans "Sign In" %}</h1>
 
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
+			<p>{% blocktrans %}If you have not created an account yet, then please
+			<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
+			<form class="login" method="POST" action="{% url 'account_login' %}">
+				{% csrf_token %}
+				{{ form.as_p }}
+				{% if redirect_field_value %}
+				<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+				{% endif %}
+				<a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+				<button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+			</form>
+			
+			<div class="row">
+				<p style="padding: 15px;"></p>
+			</div>
+
+									<div class="row">
+											<div class="col-xs-12 col-sm-6 col-sm-offset-3 btn-group-vertical" role="group">
+													<a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
+													<a id="linkedin_login" href="{% provider_login_url 'linkedin' %}" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
+											</div>
+									</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<p style="padding:20px;"></p>
+	</div>
+</div>
 {% endblock %}
