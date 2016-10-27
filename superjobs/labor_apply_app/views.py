@@ -1,8 +1,9 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import Http404
 from django.template import RequestContext, loader
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import FormView
+from django.views.generic import TemplateView
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -16,21 +17,13 @@ from .models import PersonalInfo
 from .serializers import PersonalInfoSerializer, UserSerializer
 
 #Create your views here.
-# @login_required(login_url='/accounts/signup')
-class PersonalInfoView(CreateView):
+class PersonalInfoView(FormView):
     """TODO: CreateView for PersonalInfoForm
     return: TODO
     """
     template_name = 'apply_now.html'
     form_class = PersonalInfoForm
-    success_url = 'success/'
-
-    def form_valid(self, form, *args, **kwargs):
-        """TODO: Validate form
-        return: TODO
-        """
-        self.object = form.save()
-        return HttpResponseRedirect(self.get_success_url())
+    success_url = '/success/'
 
     def form_invalid(self, form, *args, **kwargs):
         """TODO: handle invalid form request
@@ -39,14 +32,22 @@ class PersonalInfoView(CreateView):
         return self.render_to_response(
             self.get_context_data(form=form))
 
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        """TODO: this instance should give are views login protection
+    def form_valid(self, form, *args, **kwargs):
+        """TODO: Validate form
         return: TODO
         """
-        return super(PersonalInfoView, self).dispatch(*args, **kwargs)
+        self.object = form.save()
+        return super(PersonalInfoView, self).form_valid(form)
+
+#    @method_decorator(login_required)
+#    def dispatch(self, *args, **kwargs):
+#        """TODO: this instance should give are views login protection
+#        return: TODO
+#        """
+#        return super(PersonalInfoView, self).dispatch(*args, **kwargs)
 
 
+# RESTAPI Section
 class PersonalInfoViewList(APIView):
     """TODO: list all Personal info list, or create a new one
     return: TODO
