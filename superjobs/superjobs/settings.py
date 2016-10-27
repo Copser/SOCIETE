@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.linkedin',
     'bootstrap3',
+    'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,6 +64,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    # debug_toolbar MIDDLEWARE_CLASSES 
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'superjobs.urls'

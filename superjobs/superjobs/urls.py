@@ -12,32 +12,34 @@ class-based views
 including another URLconf
     1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.views.generic import TemplateView
 
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from labor_apply_app import views
 
-urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    # django-contrib-flatpages
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^admin/', include(admin.site.urls)),
+        # django-contrib-flatpages
 
-    # url(r'^apply_to/', include('labor_apply_app.urls')),
-    url(r'^$', 'landing_page.views.index', name='index'),
-    url(r'^about/$', 'landing_page.views.about', name='about'),
+        # url(r'^apply_to/', include('labor_apply_app.urls')),
+        url(r'^$', 'landing_page.views.index', name='index'),
+        url(r'^about/$', 'landing_page.views.about', name='about'),
 
-    url(r'^apply_now/$', views.PersonalInfoView.as_view()),
+        url(r'^apply_now/$', views.PersonalInfoView.as_view()),
 
-    url(r'info/$', views.PersonalInfoViewList.as_view()),
-    url(r'info/(?P<pk>[0-9]+)/$', views.PersonalInfoViewDetail.as_view()),
+        url(r'info/$', views.PersonalInfoViewList.as_view()),
+        url(r'info/(?P<pk>[0-9]+)/$', views.PersonalInfoViewDetail.as_view()),
 
-    url(r'users/$', views.UserList.as_view()),
-    url(r'users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
+        url(r'users/$', views.UserList.as_view()),
+        url(r'users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
 
-    #  Django Allauth
-    url(r'^accounts/', include('allauth.urls')),
-]
+        #  Django Allauth
+        url(r'^accounts/', include('allauth.urls')),
+    ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
