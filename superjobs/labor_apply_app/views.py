@@ -5,6 +5,7 @@ from django.template import RequestContext, loader
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -37,6 +38,13 @@ class PersonalInfoView(CreateView):
         """
         return self.render_to_response(
             self.get_context_data(form=form))
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        """TODO: this instance should give are views login protection
+        return: TODO
+        """
+        return super(PersonalInfoView, self).dispatch(*args, **kwargs)
 
 
 class PersonalInfoViewList(APIView):
