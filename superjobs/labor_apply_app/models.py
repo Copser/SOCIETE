@@ -35,7 +35,7 @@ class PersonalInfo(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.email
 
     class Meta:
