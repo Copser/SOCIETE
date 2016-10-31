@@ -19,7 +19,6 @@ from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from labor_apply_app import views
-from jobs.views import carpenterjobs
 
 
 if settings.DEBUG:
@@ -39,9 +38,6 @@ if settings.DEBUG:
 
         url(r'users/$', views.UserList.as_view()),
         url(r'users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
-
-        # url(r'^jobs/', include('jobs.urls')),
-        url(r'^carpenterjobs/$', 'jobs.views.carpenterjobs', name='carpenterjobs'),
 
         #  Django Allauth
         url(r'^accounts/', include('allauth.urls')),
