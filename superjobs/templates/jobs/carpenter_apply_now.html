@@ -13,7 +13,7 @@
 				{% if latest_jobs %}
 					<ul>
 						{% for carpenter_jobs in latest_jobs %}
-						<li>{{ carpenter_jobs.created_at}} | {{ carpenter_jobs.title }} | {{ carpenter_jobs.details }}</li>
+						<li>{{ carpenter_jobs.carpenter_ad_created_at }} | {{ carpenter_jobs.carpenter_ad_title }} | {{ carpenter_jobs.carpenter_ad_details }}</li>
 				{% endfor %}
 					</ul>
 				{% endif %}
