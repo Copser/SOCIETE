@@ -1,8 +1,19 @@
 from django.db import models
 
 # Create your models here.
+class CarpenterAd(models.Model):
+    """TODO: init CarpenterAd, we will register this model into Admin,
+            this model instance will be extended into RESTFramework
+    return: TODO
+    """
+    carpenter_ad_title = models.CharField(max_length=225)
+    carpenter_ad_details = models.TextField()
+    carpenter_ad_created_at = models.DateTimeField(auto_now=True)
+
+
 class HousekeepAd(models.Model):
-    """TODO: init CarpenterAd, we will register this model into Admin
+    """TODO: init HousekeepAd, we will register this model into Admin
+            this model instance will be extended into RESTFramework
     return: TODO
     """
     housekeep_ad_title = models.CharField(max_length=225)
@@ -14,7 +25,8 @@ class HousekeepAd(models.Model):
 
 
 class PlumbingAd(models.Model):
-    """TODO: init CarpenterAd, we will register this model into Admin
+    """TODO: init PlumbingAd, we will register this model into Admin
+            this model instance will be extended into RESTFramework
     return: TODO
     """
     plumbing_ad_title = models.CharField(max_length=225)
@@ -26,7 +38,8 @@ class PlumbingAd(models.Model):
 
 
 class ElectricalAd(models.Model):
-    """TODO: init CarpenterAd, we will register this model into Admin
+    """TODO: init ElectricalAd, we will register this model into Admin
+            this model instance will be extended into RESTFramework
     return: TODO
     """
     electrical_ad_title = models.CharField(max_length=225)
@@ -38,7 +51,8 @@ class ElectricalAd(models.Model):
 
 
 class ConstructionAd(models.Model):
-    """TODO: init CarpenterAd, we will register this model into Admin
+    """TODO: init ConstructionAd, we will register this model into Admin
+            this model instance will be extended into RESTFramework
     return: TODO
     """
     contruction_ad_title = models.CharField(max_length=225)
@@ -50,7 +64,8 @@ class ConstructionAd(models.Model):
 
 
 class HAVCAd(models.Model):
-    """TODO: init CarpenterAd, we will register this model into Admin
+    """TODO: init HAVCAd, we will register this model into Admin
+            this model instance will be extended into RESTFramework
     return: TODO
     """
     hvac_ad_title = models.CharField(max_length=225)
