@@ -40,8 +40,7 @@ INSTALLED_APPS = (
 
     # app
     'landing_page',
-    'labor_apply_app',
-    'jobs',
+    'jobs_post',
 
     # thirdpartyapp
     'rest_framework',
