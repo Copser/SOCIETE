@@ -18,8 +18,6 @@ from django.contrib import admin
 
 from rest_framework.urlpatterns import format_suffix_patterns
 
-from labor_apply_app import views
-
 
 if settings.DEBUG:
     import debug_toolbar
@@ -31,13 +29,6 @@ if settings.DEBUG:
         url(r'^$', 'landing_page.views.index', name='index'),
         url(r'^about/$', 'landing_page.views.about', name='about'),
 
-        url(r'^apply_now/$', views.PersonalInfoView.as_view()),
-
-        url(r'info/$', views.PersonalInfoViewList.as_view()),
-        url(r'info/(?P<pk>[0-9]+)/$', views.PersonalInfoViewDetail.as_view()),
-
-        url(r'users/$', views.UserList.as_view()),
-        url(r'users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
 
         #  Django Allauth
         url(r'^accounts/', include('allauth.urls')),
