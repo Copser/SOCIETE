@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block dispaly_jobs %}
+
+
+<div class="container">
+	<div class="row">
+		<p style="padding: 50px;"></p>
+	</div>
+</div>
+
+<div class="container">
+		{% if latest_jobs %}
+			{% for jobs in latest_jobs %}
+			<h3><a href="/jobs_guide/{{jobs.id}}">{{ jobs.jobs_advertisment_title }}</a></h3>
+			<p>{{ jobs.jobs_advertisment_description }}</p>
+			<p><em>{{ jobs.jobs_advertisment_created_at }}</em><p>
+			<a class="btn btn-info" href="#" role="button">Apply Now!</a>
+			{% endfor %}
+		{% endif %}
+</div>
+
+<div class="container">
+	<div class="row">
+		<p style="padding: 50px;"></p>
+	</div>
+</div>
+{% endblock %}
