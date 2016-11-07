@@ -4,3 +4,6 @@ jobs/migrations/0002_auto_20161029_0436.py
 jobs/migrations/0003_auto_20161031_2054.py
 jobs/migrations/0001_initial.py
 jobs/migrations/
+jobs_post/migrations/0003_auto_20161106_0643.py
+jobs_post/migrations/0004_auto_20161106_0644.py
+jobs_post/migrations/0005_auto_20161106_0706.py

@@ -29,6 +29,8 @@ if settings.DEBUG:
         url(r'^$', 'landing_page.views.index', name='index'),
         url(r'^about/$', 'landing_page.views.about', name='about'),
 
+        url(r'^jobs_guide/', 'jobs_post.views.jobs_guide', name='jobs_guide'),
+        url(r'^(?P<jobs_guide_id>\d+)/$', 'jobs_guide_id.views.jobs_guide_id', name='jobs_guide_id'),
 
         #  Django Allauth
         url(r'^accounts/', include('allauth.urls')),

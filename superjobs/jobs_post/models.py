@@ -8,17 +8,23 @@ class JobsAdvertisment(models.Model):
     """TODO: Create one model for Jobs representation, initiate choice field for are job categories, rest of the fields are simeple title, desctiption and create timestamp firld
     return: TODO
     """
-    jobs_advertisment_title = models.CharField(max_length=225)
-    jobs_advertisment_desctiption = models.TextField()
-    SELECT_THE_DESIRED_JOB_CATEGORY = (
-        (u'1', u'Carpenter'),
-        (u'2', u'Housekepp'),
-        (u'3', u'Plumbing'),
-        (u'4', u'Electrical'),
-        (u'5', u'Construction'),
-        (u'6', u'HVAC'),
+    CARPENTER = 1
+    HOUSEKEEP = 2
+    PLUMBING = 3
+    ELECTRICAL = 4
+    CONSTRUCTION = 5
+    HVAC = 6
+    JOBS_CHOICES = (
+        (CARPENTER, 'Carpenter'),
+        (HOUSEKEEP, 'Housekeep'),
+        (PLUMBING, 'Plumbing'),
+        (ELECTRICAL, 'Electrical'),
+        (CONSTRUCTION, 'Construction'),
+        (HVAC, 'HVAC'),
     )
-    jobs_categories = models.CharField(max_length=1, choices=SELECT_THE_DESIRED_JOB_CATEGORY)
+    jobs_advertisment_title = models.CharField(max_length=225)
+    jobs_advertisment_description = models.TextField()
+    jobs_categories = models.CharField(max_length=1, choices=JOBS_CHOICES, default=CARPENTER)
     jobs_advertisment_created_at = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
