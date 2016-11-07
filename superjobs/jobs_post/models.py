@@ -22,10 +22,17 @@ class JobsAdvertisment(models.Model):
         (CONSTRUCTION, 'Construction'),
         (HVAC, 'HVAC'),
     )
-    jobs_advertisment_title = models.CharField(max_length=225)
+    jobs_advertisment_title = models.CharField(
+        max_length=225
+    )
     jobs_advertisment_description = models.TextField()
-    jobs_categories = models.CharField(max_length=1, choices=JOBS_CHOICES, default=CARPENTER)
-    jobs_advertisment_created_at = models.DateTimeField(default=datetime.datetime.now)
+    jobs_categories = models.CharField(
+        max_length=1,
+        choices=JOBS_CHOICES,
+        default=CARPENTER)
+    jobs_advertisment_created_at = models.DateTimeField(
+        default=datetime.datetime.now
+    )
 
     def __str__(self):
         return self.jobs_advertisment_title
@@ -38,20 +45,39 @@ class JobsApplyTo(models.Model):
     """TODO: Define model for future Apply_now form
     return: TODO
     """
-    full_name = models.CharField(max_length=225)
-    email = models.EmailField(max_length=225)
-    mobile = models.CharField(max_length=225)
-    birthdate = models.DateField(blank=True, null=True)
+    full_name = models.CharField(
+        max_length=225
+    )
+    email = models.EmailField(
+        max_length=225
+    )
+    mobile = models.CharField(
+        max_length=225
+    )
+    birthdate = models.DateField(
+        blank=True,
+        null=True
+    )
 
-    previous_company_name = models.CharField(max_length=225)
-    previous_company_email = models.CharField(max_length=225)
-    previous_job_title = models.CharField(max_length=225)
+    previous_company_name = models.CharField(
+        max_length=225
+    )
+    previous_company_email = models.CharField(
+        max_length=225
+    )
+    previous_job_title = models.CharField(
+        max_length=225
+    )
 
     jobs_experience = models.TextField()
     hospitality_relations_experience = models.TextField()
 
-    working_hours = models.CharField(max_length=225)
-    choose_desired_working_hours_wage = models.DecimalField(max_digits=2, decimal_places=0)
+    working_hours = models.CharField(
+        max_length=225
+    )
+    choose_desired_working_hours_wage = models.DecimalField(
+        max_digits=2,
+        decimal_places=0)
 
     DRIVERS_CATEGORY_CHOICES = (
         (u'1', u'A'),
@@ -61,10 +87,16 @@ class JobsApplyTo(models.Model):
         (u'5', u'E'),
         (u'6', u'M'),
     )
-    type_of_driver_licences = models.CharField(max_length=1, choices=DRIVERS_CATEGORY_CHOICES)
-    applicants_cv = models.FileField(upload_to='CV/')
+    type_of_driver_licences = models.CharField(
+        max_length=1,
+        choices=DRIVERS_CATEGORY_CHOICES)
+    applicants_cv = models.FileField(
+        upload_to='CV/'
+    )
 
-    applicants_timestamp = models.DateTimeField(default=datetime.datetime.now)
+    applicants_timestamp = models.DateTimeField(
+        default=datetime.datetime.now
+    )
 
     def __str__(self):
         return self.email
