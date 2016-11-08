@@ -40,7 +40,6 @@ INSTALLED_APPS = (
 
     # app
     'landing_page',
-    'jobs_post',
 
     # thirdpartyapp
     'rest_framework',
@@ -75,7 +74,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'apply_to'),
-            os.path.join(BASE_DIR, 'templates', 'jobs_templates'),
+#            os.path.join(BASE_DIR, 'templates', 'jobs_templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -312,4 +311,4 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 # login redirect url
-LOGIN_REDIRECT_URL = "/apply_now"
+LOGIN_REDIRECT_URL = "/"
