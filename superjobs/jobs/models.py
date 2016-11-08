@@ -38,7 +38,7 @@ class Jobs(models.Model):
         return self.jobs_advertisment_title
 
     class Meta:
-        ordering = ['-jobs_advertisment_created_at']
+        ordering = ['-created_at']
 
 
 class ApplyTo(models.Model):
