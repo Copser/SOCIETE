@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from rest_framework.urlpatterns import format_suffix_patterns
+from jobs import views
 
 
 if settings.DEBUG:
@@ -29,7 +30,8 @@ if settings.DEBUG:
         url(r'^$', 'landing_page.views.index', name='index'),
         url(r'^about/$', 'landing_page.views.about', name='about'),
 
-        url(r'^jobs/$', 'jobs.views.jobs', name='jobs'),
+        url(r'^jobs/$', views.jobs, name='jobs'),
+        url(r'^(?P<job_url>\w+)/$', views.job, name='job'),
         # url(r'^jobs/', include('jobs.urls')),
 
         #  Django Allauth
