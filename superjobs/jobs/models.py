@@ -35,7 +35,7 @@ class Job(models.Model):
     )
 
     def __str__(self):
-        return self.jobs_advertisment_title
+        return self.job_title
 
     class Meta:
         ordering = ['-job_created_at']
