@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block isolated_jobs %}
+
+<div class="container">
+	<div class="row">
+		<h1 class="lead">Superjobs</h1>
+
+		{% if latest_jobs %}
+		<div class="panel">
+			<ul>
+				<h3><a href="#">{{ job.job_title }}</a></h3>
+				<p><em>{{ job.job_created_at }}</em></p>
+				<p>{{ job.job_description }}</p>
+			</ul>
+			<p>Go browse more<a href="/index">jobs.</a></p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
