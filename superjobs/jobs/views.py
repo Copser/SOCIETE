@@ -17,3 +17,14 @@ def jobs(request):
         job.url = job.job_title.replace(' ', '_')
     c = Context(context_dict)
     return HttpResponse(t.render(c))
+
+
+def job(request, job_url):
+    """TODO: create friendly view
+    return: TODO
+    """
+    single_job = get_object_or_404(Job,
+        job_title=job_url.replace('_', ' '))
+    t = loader.get_template('jobs/job.html')
+    c = Context({'single_job': single_job, })
+    return HttpResponse(t.render(c))
