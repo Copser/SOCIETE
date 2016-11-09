@@ -7,7 +7,7 @@ from .models import Job, ApplyToJob
 
 # Create your views here.
 def jobs(request):
-    """TODO: representing are jobs
+    """TODO: creting view to render jobs, and making it friendly by adding verbose url representation
     return: TODO
     """
     latest_jobs = Job.objects.all().order_by('-job_created_at')
@@ -20,7 +20,8 @@ def jobs(request):
 
 
 def job(request, job_url):
-    """TODO: create friendly view
+    """TODO: create views which will allocate every job to a single page, will making are views more
+    search engine fiendly
     return: TODO
     """
     single_job = get_object_or_404(Job,
