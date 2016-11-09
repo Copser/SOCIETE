@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 import datetime
 
 # Create your models here.
-class Job(models.Model):
+class Jobs(models.Model):
     """TODO: Create one model for Jobs representation, initiate choice field for are job categories, rest of the fields are simeple title, desctiption and create timestamp firld
     return: TODO
     """
@@ -22,26 +22,34 @@ class Job(models.Model):
         (CONSTRUCTION, 'Construction'),
         (HVAC, 'HVAC'),
     )
-    job_title = models.CharField(
+    jobs_title = models.CharField(
         max_length=225
     )
-    job_description = models.TextField()
-    job_categories = models.CharField(
+    jobs_description = models.TextField()
+    jobs_categories = models.CharField(
         max_length=1,
         choices=JOBS_CHOICES,
         default=CARPENTER)
-    job_created_at = models.DateTimeField(
+    jobs_created_at = models.DateTimeField(
         default=datetime.datetime.now
+    )
+    jobs_tag = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True
+    )
+    jobs_views = models.IntegerField(
+        default=0
     )
 
     def __str__(self):
-        return self.job_title
+        return self.jobs_title
 
     class Meta:
-        ordering = ['-job_created_at']
+        ordering = ['-jobs_created_at']
 
 
-class ApplyToJob(models.Model):
+class ApplyToJobs(models.Model):
     """TODO: Define model for future Apply_now form
     return: TODO
     """
