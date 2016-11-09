@@ -9,11 +9,14 @@ class PostAdmin(admin.ModelAdmin):
     return: TODO
     """
     fieldsets = [
-        ('Job General Information', {'fields': ['title',
-                                                 'description',
-                                                 'created_at',],
-                                      'classes': ['collapse']}),
-        ('Job Lists', {'fields': ['categories']}),]
+        ('Job General Information',
+         {'fields':
+          ['title',
+           'description',
+           'created_at',],
+           'classes': [
+               'collapse']}),
+    ]
 
 
 
