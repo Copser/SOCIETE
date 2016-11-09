@@ -8,28 +8,10 @@ class Post(models.Model):
     """TODO: Create one model for Jobs representation, initiate choice field for are job categories, rest of the fields are simeple title, desctiption and create timestamp firld
     return: TODO
     """
-    CARPENTER = 1
-    HOUSEKEEP = 2
-    PLUMBING = 3
-    ELECTRICAL = 4
-    CONSTRUCTION = 5
-    HVAC = 6
-    POST_CHOICES = (
-        (CARPENTER, 'Carpenter'),
-        (HOUSEKEEP, 'Housekeep'),
-        (PLUMBING, 'Plumbing'),
-        (ELECTRICAL, 'Electrical'),
-        (CONSTRUCTION, 'Construction'),
-        (HVAC, 'HVAC'),
-    )
     title = models.CharField(
         max_length=225
     )
     description = models.TextField()
-    categories = models.CharField(
-        max_length=1,
-        choices=POST_CHOICES,
-        default=CARPENTER)
     created_at = models.DateTimeField(
         default=datetime.datetime.now
     )
