@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block display_jobs %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h1 class="lead">Apply for SuperJobs</h1>
+
+			{% if latest_posts %}
+
+				<ul>
+				{% for post in latest_posts %}
+				<h3><a href="#">{{ post.title }}</a></h3>
+				<p><em>{{ post.created_at }}</em></p>
+				<p>{{ post.description }}</p>
+				{% endfor %}
+				</ul>
+
+			{% endif %}
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
