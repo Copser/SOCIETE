@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block sort_out_jobs %}
+
+<div class="container">
+	<div class="row">
+		<p style="padding:20px;"></p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+
+				<h2><a href="#">{{ single_post.title }}</a></h2>
+				<ul>
+				<p><em>{{ single_post.created_at }}</em></p>
+				<p>{{ single_post.description }}</p>
+				<a class="btn btn-default" href="#" role="button">Apply</a>
+				<p>Get back and browse more<a href="/blog/jobs"> jobs!</a></p>
+				</ul>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<p style="padding:50px;"></p>
+	</div>
+</div>
+
+{% endblock %}

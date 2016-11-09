@@ -40,7 +40,7 @@ INSTALLED_APPS = (
 
     # app
     'landing_page',
-    'jobs',
+    'blog',
 
     # thirdpartyapp
     'rest_framework',
@@ -75,7 +75,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'apply_to'),
-            os.path.join(BASE_DIR, 'templates', 'job'),
+            os.path.join(BASE_DIR, 'templates', 'jobs_templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

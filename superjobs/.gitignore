@@ -7,3 +7,4 @@ jobs/migrations/
 jobs_post/migrations/0003_auto_20161106_0643.py
 jobs_post/migrations/0004_auto_20161106_0644.py
 jobs_post/migrations/0005_auto_20161106_0706.py
+blog/migrations/0002_remove_post_categories.py
