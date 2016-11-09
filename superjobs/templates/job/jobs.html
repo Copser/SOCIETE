@@ -7,17 +7,10 @@
 	<div class="row">
 		<h1 class="lead">Superjobs</h1>
 
-		{% if latest_jobs %}
 		<div class="panel">
 			<ul>
-				{% for job in latest_jobs %}
-				<h3><a href="/job/{{ job.url }}">{{ job.job_title }}</a></h3>
-				<p><em>{{ job.job_created_at }}</em></p>
-				<p>{{ job.job_description }}</p>
-				{% endfor %}
 			</ul>
 		</div>
-		{% endif %}
 	</div>
 </div>
 
