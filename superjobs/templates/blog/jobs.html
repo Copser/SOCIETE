@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-8">
 			<h1 class="lead">Apply for SuperJobs</h1>
 
 			{% if latest_posts %}
@@ -20,6 +20,14 @@
 
 			{% endif %}
 
+		</div>
+		<div class="col-sm-4">
+			<h4>Most popular SuperJobs</h4>
+			<ul class="list-unstyled">
+				{% for popular_post in popular_posts %}
+				<li><a href="/blog/{{ popular_post.url }}">{{ popular_post.title }}</a></li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
 </div>
