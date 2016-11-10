@@ -5,6 +5,11 @@ from django.template import Context, loader
 from .models import Post, Apply
 
 # Create your views here.
+# helper function
+def encode_url(url):
+    return url.replace(' ', '_')
+
+
 def jobs(request):
     """TODO: create jobs view to list are current jobs, polish are urls so it can be more human readable,
     I'm creating and using for loop to replace spaces in post name with underscores, so title will be seen
@@ -12,14 +17,18 @@ def jobs(request):
     return: TODO
     """
     latest_posts = Post.objects.all().order_by('-created_at')
+    popular_posts = Post.objects.order_by('-views')[:5]
     t = loader.get_template(
         'blog/jobs.html'
     )
     context_dict = {
         'latest_posts': latest_posts,
+        'popular_posts': popular_posts,
     }
     for post in latest_posts:
-        post.url = post.title.replace(' ', '_')
+        post.url = encode_url(post.title)
+    for popular_post in popular_posts:
+        popular_post.url = encode_url(popular_post.title)
     c = Context(
         context_dict
     )
@@ -28,7 +37,7 @@ def jobs(request):
     )
 
 
-def post(request, post_id):
+def post(request, post_url):
     """TODO: creating post so we can sort out are jobs list, update post so it will suport underscore jobs
     searching
     return: TODO
