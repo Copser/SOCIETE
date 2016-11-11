@@ -1,8 +1,12 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from django.template import Context, loader
+from django.shortcuts import render, get_object_or_404, render_to_response
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template import Context, loader, RequestContext
+from django.views.generic.edit import FormView
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import Post, Apply
+from .forms import ApplyForm
 
 # Create your views here.
 # helper function
@@ -54,4 +58,43 @@ def post(request, post_url):
     })
     return HttpResponse(
         t.render(c)
+    )
+
+def apply(request):
+    """TODO: creating apply view so I can render are form
+    return: TODO
+    """
+    if request.method == 'POST':
+        form = Apply(request.POST)
+        if form.is_valid():
+            apply_form = form.save(commit=False)
+            apply_form.save()
+            messages.add_message(
+                request, messages.INFO, "You have successfully applied for\
+                this ongoin position. Thanks you."
+            )
+            return HttpResponseRedirect('/success')
+    else:
+        form = Apply()
+    t = loader.get_template(
+        'blog/apply.html'
+    )
+    c = RequestContext(
+        request,
+        {
+            'form': form,
+        }
+    )
+    return HttpResponse(
+        t.render(c)
+    )
+
+
+def success(request):
+    """TODO: create success views, we will display some information for are users
+    return: TODO
+    """
+    return render_to_response(
+        'blog/success.html',
+        context_instance=RequestContext(request)
     )
