@@ -14,7 +14,7 @@
 				<h3><a href="/blog/{{ post.url }}">{{ post.title }}</a></h3>
 				<p><em>{{ post.created_at }}</em></p>
 				<p>{{ post.description }}</p>
-				<a class="btn btn-default" href="#" role="button">Apply</a>
+				<a class="btn btn-default" href="{% url 'apply' %}" role="button">Apply</a>
 				{% endfor %}
 				</ul>
 
