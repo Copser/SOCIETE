@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block apply_form_to_job %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-4">
+			<form id="apply_form" action="post" action="/blog/apply_to/" enctype="multipart/form-data">
+				{% csrf_token %}
+				{% for hidden in form.hidden_fields %}
+					{{ hidden }}
+				{% endfor %}
+
+				{% for field in form.visible_fields %}
+					{{ fields.errors }}
+					{{ label_tag }}
+					{{ field }}
+				{% endfor %}
+
+				<input type="submit" name="submit" value="Apply To">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
