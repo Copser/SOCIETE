@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{# Load css and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django contrib messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block apply_form_to_job %}
+
+{# Display apply form #}
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-4">
+			<form class="form" method="post" action="." enctype="multipart/form-data">
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				{% buttons %}
+				<button type="Submit" class="btn btn-primary">
+					Submit
+				</button>
+				{% endbuttons %}
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
