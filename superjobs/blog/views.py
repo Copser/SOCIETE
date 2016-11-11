@@ -60,7 +60,7 @@ def post(request, post_url):
         t.render(c)
     )
 
-def apply(request):
+def apply_to(request):
     """TODO: creating apply view so I can render are form
     return: TODO
     """
@@ -77,7 +77,7 @@ def apply(request):
     else:
         form = Apply()
     t = loader.get_template(
-        'blog/apply.html'
+        'blog/apply_to.html'
     )
     c = RequestContext(
         request,
