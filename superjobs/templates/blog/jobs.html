@@ -4,22 +4,30 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-8">
 			<h1 class="lead">Apply for SuperJobs</h1>
 
 			{% if latest_posts %}
 
 				<ul>
 				{% for post in latest_posts %}
-				<h3><a href="/blog/{{ post.id }}">{{ post.title }}</a></h3>
+				<h3><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h3>
 				<p><em>{{ post.created_at }}</em></p>
 				<p>{{ post.description }}</p>
-				<a class="btn btn-default" href="#" role="button">Apply</a>
+				<a class="btn btn-default" href="{% url 'apply_to' %}" role="button">Apply</a>
 				{% endfor %}
 				</ul>
 
 			{% endif %}
 
+		</div>
+		<div class="col-sm-4">
+			<h4>Most popular SuperJobs</h4>
+			<ul class="list-unstyled">
+				{% for popular_post in popular_posts %}
+				<li><a href="/blog/{{ popular_post.slug }}">{{ popular_post.title }}</a></li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
 </div>

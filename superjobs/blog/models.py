@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from uuslug import uuslug
 import datetime
 
 # Create your models here.
@@ -23,9 +24,21 @@ class Post(models.Model):
     views = models.IntegerField(
         default=0
     )
+    slug = models.CharField(
+        max_length=100,
+        unique=True
+    )
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = uuslug(
+            self.title,
+            instance=self,
+            max_length=100
+    )
+        super(Post, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['-created_at']
