@@ -64,7 +64,7 @@ def apply_to(request):
             )
             return HttpResponseRedirect('/success')
     else:
-        form = Apply()
+        form = ApplyForm()
     t = loader.get_template('blog/apply_to.html')
     c = RequestContext(
         request,
