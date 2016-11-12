@@ -10,7 +10,7 @@ from .forms import ApplyForm
 
 
 # helper function
-def popular_posts():
+def get_popular_posts():
     popular_posts = Post.objects.order_by('-views')[:5]
     return popular_posts
 
@@ -31,7 +31,7 @@ def jobs(request):
     return HttpResponse(t.render(c))
 
 
-def post(request, post_url):
+def post(request, slug):
     """TODO: creating post so we can sort out are jobs list, update post so it will suport underscore jobs
     searching
     return: TODO
