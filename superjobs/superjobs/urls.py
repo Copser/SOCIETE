@@ -23,7 +23,8 @@ if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         url(r'^admin/', include(admin.site.urls)),
-        # django-contrib-flatpages
+        # include debug_toolbar urls
+        url(r'^__debug__/', include(debug_toolbar.urls)),
 
         # url(r'^apply_to/', include('labor_apply_app.urls')),
         url(r'^$', 'landing_page.views.index', name='index'),
