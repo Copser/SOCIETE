@@ -8,12 +8,13 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, Apply
 from .forms import ApplyForm
 
-# Create your views here.
+
 # helper function
-def encode_url(url):
-    return url.replace(' ', '_')
+def popular_posts():
+    popular_posts = Post.objects.order_by('-views')[:5]
+    return popular_posts
 
-
+# Create your views here.
 def jobs(request):
     """TODO: create jobs view to list are current jobs, polish are urls so it can be more human readable,
     I'm creating and using for loop to replace spaces in post name with underscores, so title will be seen
@@ -21,24 +22,13 @@ def jobs(request):
     return: TODO
     """
     latest_posts = Post.objects.all().order_by('-created_at')
-    popular_posts = Post.objects.order_by('-views')[:5]
-    t = loader.get_template(
-        'blog/jobs.html'
-    )
+    t = loader.get_template('blog/jobs.html')
     context_dict = {
         'latest_posts': latest_posts,
-        'popular_posts': popular_posts,
+        'popular_posts': get_popular_posts(),
     }
-    for post in latest_posts:
-        post.url = encode_url(post.title)
-    for popular_post in popular_posts:
-        popular_post.url = encode_url(popular_post.title)
-    c = Context(
-        context_dict
-    )
-    return HttpResponse(
-        t.render(c)
-    )
+    c = Context(context_dict)
+    return HttpResponse(t.render(c))
 
 
 def post(request, post_url):
@@ -46,26 +36,23 @@ def post(request, post_url):
     searching
     return: TODO
     """
-    single_post = get_object_or_404(
-        Post,
-        title=post_url.replace('_', ' ')
-    )
-    t = loader.get_template(
-        'blog/post.html'
-    )
-    c = Context({
+    single_post = get_object_or_404(Post, slug=slug)
+    single_post.views += 1
+    single_post.save()
+    t = loader.get_template('blog/post.html')
+    context_dict = {
         'single_post': single_post,
-    })
-    return HttpResponse(
-        t.render(c)
-    )
+        'popular_posts': get_popular_posts(),
+    }
+    c = Context(context_dict)
+    return HttpResponse(t.render(c))
 
 def apply_to(request):
     """TODO: creating apply view so I can render are form
     return: TODO
     """
     if request.method == 'POST':
-        form = Apply(request.POST)
+        form = Apply(request.POST, request.FILES)
         if form.is_valid():
             apply_form = form.save(commit=False)
             apply_form.save()
@@ -76,18 +63,14 @@ def apply_to(request):
             return HttpResponseRedirect('/success')
     else:
         form = Apply()
-    t = loader.get_template(
-        'blog/apply_to.html'
-    )
+    t = loader.get_template('blog/apply_to.html')
     c = RequestContext(
         request,
         {
             'form': form,
         }
     )
-    return HttpResponse(
-        t.render(c)
-    )
+    return HttpResponse(t.render(c))
 
 
 def success(request):
