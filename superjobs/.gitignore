@@ -10,3 +10,4 @@ jobs_post/migrations/0005_auto_20161106_0706.py
 blog/migrations/0002_remove_post_categories.py
 blog/migrations/0003_post_slug.py
 blog/migrations/0004_auto_20161112_1919.py
+blog/migrations/0005_auto_20161112_1954.py
