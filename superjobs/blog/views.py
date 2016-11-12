@@ -16,9 +16,9 @@ def get_popular_posts():
 
 # Create your views here.
 def jobs(request):
-    """TODO: create jobs view to list are current jobs, polish are urls so it can be more human readable,
-    I'm creating and using for loop to replace spaces in post name with underscores, so title will be seen
-    with underscores
+    """TODO: create jobs view to list are current jobs,
+    polish are urls so it can be more human readable,
+    slug field added
     return: TODO
     """
     latest_posts = Post.objects.all().order_by('-created_at')
@@ -32,8 +32,8 @@ def jobs(request):
 
 
 def post(request, slug):
-    """TODO: creating post so we can sort out are jobs list, update post so it will suport underscore jobs
-    searching
+    """TODO: creating post so we can sort out are jobs list,
+    slug field added
     return: TODO
     """
     single_post = get_object_or_404(Post, slug=slug)
@@ -48,7 +48,9 @@ def post(request, slug):
     return HttpResponse(t.render(c))
 
 def apply_to(request):
-    """TODO: creating apply view so I can render are form
+    """TODO: apply view will render ApplyForm,
+    we are using django-bootstrap3 to style are form,
+    and it will suport file upload for
     return: TODO
     """
     if request.method == 'POST':
@@ -74,7 +76,8 @@ def apply_to(request):
 
 
 def success(request):
-    """TODO: create success views, we will display some information for are users
+    """TODO: create success views,
+    we will display some information for are users
     return: TODO
     """
     return render_to_response(
