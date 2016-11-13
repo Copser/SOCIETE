@@ -52,6 +52,8 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.linkedin',
     'bootstrap3',
     'debug_toolbar',
+    'django_nose',
+    'django_pdb',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,6 +67,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django_pdb.middleware.PdbMiddleware',
 )
 
 ROOT_URLCONF = 'superjobs.urls'
@@ -98,6 +101,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 WSGI_APPLICATION = 'superjobs.wsgi.application'
+
+
+# Nose configuration
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # this SITE_ID we are using in local development
 SITE_ID = 4
