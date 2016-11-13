@@ -64,6 +64,8 @@ def apply_to(request):
                 this ongoin position. Thanks you."
             )
             return HttpResponseRedirect('/success')
+        else:
+            print(form.errors)
     else:
         form = ApplyForm()
     t = loader.get_template('blog/apply_to.html')
