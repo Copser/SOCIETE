@@ -15,6 +15,7 @@ def get_popular_posts():
     return popular_posts
 
 # Create your views here.
+# @login_required(login_url='/accounts/signup')
 def jobs(request):
     """TODO: create jobs view to list are current jobs,
     polish are urls so it can be more human readable,
@@ -63,6 +64,8 @@ def apply_to(request):
                 this ongoin position. Thanks you."
             )
             return HttpResponseRedirect('/success')
+        else:
+            print(form.errors)
     else:
         form = ApplyForm()
     t = loader.get_template('blog/apply_to.html')

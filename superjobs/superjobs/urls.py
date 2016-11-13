@@ -16,7 +16,6 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from rest_framework.urlpatterns import format_suffix_patterns
 
 
 if settings.DEBUG:
@@ -35,5 +34,3 @@ if settings.DEBUG:
         #  Django Allauth
         url(r'^accounts/', include('allauth.urls')),
     ]
-
-urlpatterns = format_suffix_patterns(urlpatterns)
