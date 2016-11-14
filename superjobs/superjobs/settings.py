@@ -24,6 +24,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
 # ALLOWED_HOSTS = ['*']
+# For Production
 ALLOWED_HOSTS = ['https://supremejobs.herokuapp.com/']
 
 # Application definition
