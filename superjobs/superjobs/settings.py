@@ -26,7 +26,7 @@ DEBUG = False
 # Local Hosts
 # ALLOWED_HOSTS = ['*']
 # For Production
-ALLOWED_HOSTS = ['https://supremejobs.herokuapp.com/']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 # Application definition
 
