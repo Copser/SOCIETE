@@ -15,7 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -106,9 +106,9 @@ WSGI_APPLICATION = 'superjobs.wsgi.application'
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # this SITE_ID we are using in local development
-SITE_ID = 4
+# SITE_ID = 4
 # After research I've manually added SITE_ID on heroku and I'm using SITE_ID=2 in production
-# SITE_ID = 2
+SITE_ID = 2
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -139,9 +139,9 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 from .dev_settings import *
