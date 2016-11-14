@@ -80,7 +80,7 @@ def apply_to(request):
 
 def success(request):
     """TODO: create success views,
-    we will display some information for are users
+    we will display useful information for new jobs applicants
     return: TODO
     """
     return render_to_response(
