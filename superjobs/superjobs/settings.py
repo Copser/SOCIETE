@@ -23,6 +23,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# Local Hosts
 # ALLOWED_HOSTS = ['*']
 # For Production
 ALLOWED_HOSTS = ['https://supremejobs.herokuapp.com/']
