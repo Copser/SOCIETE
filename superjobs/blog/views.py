@@ -5,7 +5,12 @@ from django.views.generic.edit import FormView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from .models import Post, Apply
+from .serialziers import PostSerializer
 from .forms import ApplyForm
 
 
@@ -47,6 +52,49 @@ def post(request, slug):
     }
     c = Context(context_dict)
     return HttpResponse(t.render(c))
+
+
+@api_view(['GET', 'POST'])
+def post_list(request, format=None):
+    """TODO: List all jobs, or create new jobs
+    return: TODO
+    """
+    if request.method == 'GET':
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def post_detail(request, pk, format=None):
+    """TODO: Retreive, update, delete post instance
+    return: TODO
+    """
+    try:
+        post = Post.objects.get(pk=pk)
+    except Post.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid():
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 def apply_to(request):
     """TODO: apply view will render ApplyForm,
