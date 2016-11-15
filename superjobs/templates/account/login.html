@@ -1,5 +1,6 @@
 {% extends "account/base.html" %}
 
+
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
@@ -27,7 +28,11 @@
 			</form>
 			
 			<div class="row">
+			<div class="col-md-12">
 				<p style="padding: 15px;"></p>
+				<a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
+				<a id="linkedin_login" href="/accounts/login/" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
+			</div>
 			</div>
 
 		</div>
