@@ -1,6 +1,4 @@
 {% extends "account/base.html" %}
-{% load socialaccount %}
-{% providers_media_js %}
 
 {% load i18n %}
 
@@ -32,12 +30,6 @@
 				<p style="padding: 15px;"></p>
 			</div>
 
-									<div class="row">
-											<div class="col-xs-12 col-sm-6 col-sm-offset-3 btn-group-vertical" role="group">
-													<a id="facebook_login" href="/accounts/facebook/login" method="js-sdk" class="btn btn-primary btn-lg"><i class="fa fa-facebook"></i>&nbsp;Sign in with Facebook</a>
-													<a id="linkedin_login" href="{% provider_login_url 'linkedin' %}" class="btn btn-primary btn-lg"><i class="fa fa-linkedin"></i>&nbsp;Sign in with LinkedIn</a>
-											</div>
-									</div>
 		</div>
 	</div>
 </div>
