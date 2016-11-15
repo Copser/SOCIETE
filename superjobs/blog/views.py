@@ -55,7 +55,7 @@ def post(request, slug):
 
 
 @api_view(['GET', 'POST'])
-def post_list(request, format=None):
+def posts_list(request, format=None):
     """TODO: List all jobs, or create new jobs
     return: TODO
     """
@@ -71,8 +71,9 @@ def post_list(request, format=None):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @api_view(['GET', 'PUT', 'DELETE'])
-def post_detail(request, pk, format=None):
+def posts_detail(request, pk, format=None):
     """TODO: Retreive, update, delete post instance
     return: TODO
     """
