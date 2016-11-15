@@ -18,19 +18,17 @@ from django.contrib import admin
 
 
 
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns = [
-        url(r'^admin/', include(admin.site.urls)),
-        # include debug_toolbar urls
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+    # include debug_toolbar urls
+    url(r'^__debug__/', include(debug_toolbar.urls)),
 
-        # url(r'^apply_to/', include('labor_apply_app.urls')),
-        url(r'^$', 'landing_page.views.index', name='index'),
-        url(r'^about/$', 'landing_page.views.about', name='about'),
+    # url(r'^apply_to/', include('labor_apply_app.urls')),
+    url(r'^$', 'landing_page.views.index', name='index'),
+    url(r'^about/$', 'landing_page.views.about', name='about'),
 
-        url(r'^blog/', include('blog.urls')),
+    url(r'^blog/', include('blog.urls')),
 
-        #  Django Allauth
-        url(r'^accounts/', include('allauth.urls')),
-    ]
+    #  Django Allauth
+    url(r'^accounts/', include('allauth.urls')),
+]
