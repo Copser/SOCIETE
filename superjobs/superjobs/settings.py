@@ -27,8 +27,7 @@ DEBUG = False
 # Local Hosts
 # ALLOWED_HOSTS = ['*']
 # For Production
-ALLOWED_HOSTS = ['.herokuapp.com']
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -49,6 +48,9 @@ INSTALLED_APPS = (
     'rest_framework',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.linkedin',
     'bootstrap3',
     'debug_toolbar',
     'django_nose',
