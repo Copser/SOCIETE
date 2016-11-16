@@ -3,11 +3,11 @@ from rest_framework import serializers
 from .models import Post
 
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     """TODO: def Post serializer
     return: TODO
     """
     class Meta:
         model = Post
-        fields = ('url', 'id', 'title', 'description',
+        fields = ('id', 'title', 'description',
                   'created_at', 'tag', 'views', 'slug')
