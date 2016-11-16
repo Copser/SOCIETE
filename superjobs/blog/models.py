@@ -18,6 +18,11 @@ class Post(models.Model):
     authentication and permissions
     return: TODO
     """
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='posts',
+        on_delete=models.CASCADE
+    )
     title = models.CharField(
         max_length=225
     )
