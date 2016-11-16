@@ -4,13 +4,15 @@ from django.template import Context, loader, RequestContext
 from django.views.generic.edit import FormView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import generics
 
 from .models import Post, Apply
-from .serialziers import PostSerializer
+from .serialziers import PostSerializer, UserSerializer
 from .forms import ApplyForm
 
 
@@ -95,6 +97,23 @@ def posts_detail(request, pk, format=None):
     elif request.method == 'DELETE':
         post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# Use Generic class-based views to represent are user
+class UserList(generics.ListAPIView):
+    """TODO: create read-only view for user representation
+    return: TODO
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveAPIView):
+    """TODO: create read-only view for user representation
+    return: TODO
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 def apply_to(request):
