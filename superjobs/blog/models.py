@@ -6,7 +6,16 @@ import datetime
 
 # Create your models here.
 class Post(models.Model):
-    """TODO: Create one model for Jobs representation, initiate choice field for are job categories, rest of the fields are simeple title, desctiption and create timestamp firld
+    """TODO: Create one model for Jobs representation,
+    this models is represented with title, description,
+    created_at, tag, views and slug field.
+    I'm using standard slug logic to generate valid
+    urls.
+
+    This model is extended in serializers and for this
+    model we have setup and PostSerializer, I'm adding
+    owner for Post so it will be used for django-rest-framework
+    authentication and permissions
     return: TODO
     """
     title = models.CharField(
