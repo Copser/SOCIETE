@@ -10,12 +10,8 @@ class PostAdmin(admin.ModelAdmin):
     """
     fieldsets = [
         ('Job General Information',
-         {'fields':
-          ['title',
-           'description',
-           'created_at',],
-           'classes': [
-               'collapse']}),
+         {'fields': ['title', 'description', 'tag', 'created_at'],
+           'classes': ['collapse']}),
     ]
 
 
