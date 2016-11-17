@@ -101,13 +101,15 @@ def posts_detail(request, pk, format=None):
 
 # Use Generic class-based views to represent are user
 class UserList(generics.ListAPIView):
-    """TODO: create read-only view for user representation
+    """TODO: create read-only view for user representation,
+    associationg posts with user by adding perform_create
+    method
     return: TODO
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-    def preform_create(self, serializer):
+    def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
