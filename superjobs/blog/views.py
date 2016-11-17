@@ -107,6 +107,9 @@ class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+    def preform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class UserDetail(generics.RetrieveAPIView):
     """TODO: create read-only view for user representation
