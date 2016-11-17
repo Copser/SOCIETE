@@ -11,3 +11,14 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ('id', 'title', 'description',
                   'created_at', 'tag', 'views', 'slug')
+
+
+class UserSerializer(serializer.ModelSerializer):
+    """TODO: representing posts(jobs) owner
+    return: TODO
+    """
+    posts = serializers.PrimaryKeyRelatedField(many=True, queryset=Post.objects.all())
+
+    class Meta:
+        model = User
+        field = ('id', 'username', 'posts')
