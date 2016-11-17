@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 
 from .models import Post
 
@@ -13,7 +14,7 @@ class PostSerializer(serializers.ModelSerializer):
                   'created_at', 'tag', 'views', 'slug')
 
 
-class UserSerializer(serializer.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     """TODO: representing posts(jobs) owner
     return: TODO
     """
