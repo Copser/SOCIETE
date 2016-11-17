@@ -8,6 +8,7 @@ class PostSerializer(serializers.ModelSerializer):
     """TODO: def Post serializer
     return: TODO
     """
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Post
         fields = ('id', 'title', 'description',
