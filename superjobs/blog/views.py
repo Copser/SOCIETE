@@ -10,9 +10,10 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import generics
+from rest_framework import permissions
 
 from .models import Post, Apply
-from .serialziers import PostSerializer, UserSerializer
+from .serialziers import PostSerializer
 from .forms import ApplyForm
 
 
@@ -100,20 +101,33 @@ def posts_detail(request, pk, format=None):
 
 
 # Use Generic class-based views to represent are user
-class UserList(generics.ListAPIView):
-    """TODO: create read-only view for user representation
-    return: TODO
-    """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
-class UserDetail(generics.RetrieveAPIView):
-    """TODO: create read-only view for user representation
-    return: TODO
-    """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+#class UserList(generics.ListAPIView):
+#    """TODO: create read-only view for user representation,
+#    associationg posts with user by adding perform_create
+#    method
+#    Add permissions class IsAuthenticatedOrReadOnly so we can
+#    restrict who owners, if owner is authenticated he will have
+#    read-write access, if not he will only have read-only access
+#    return: TODO
+#    """
+#    queryset = User.objects.all()
+#    serializer_class = UserSerializer
+#    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+#
+#    def perform_create(self, serializer):
+#        serializer.save(owner=self.request.user)
+#
+#
+#class UserDetail(generics.RetrieveAPIView):
+#    """TODO: create read-only view for user representation
+#    Add permissions class IsAuthenticatedOrReadOnly so we can
+#    restrict who owners, if owner is authenticated he will have
+#    read-write access, if not he will only have read-only access
+#    return: TODO
+#    """
+#    queryset = User.objects.all()
+#    serializer_class = UserSerializer
+#    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 def apply_to(request):
