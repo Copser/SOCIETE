@@ -137,7 +137,7 @@ def apply_to(request):
     return: TODO
     """
     if request.method == 'POST':
-        form = Apply(request.POST, request.FILES)
+        form = Apply(request.POST)
         if form.is_valid():
             apply_form = form.save(commit=False)
             apply_form.save()

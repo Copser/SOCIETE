@@ -103,12 +103,6 @@ class Apply(models.Model):
         max_length=1,
         choices=DRIVERS_CATEGORY_CHOICES)
 
-    applicants_cv = models.FileField(
-        upload_to='CV/',
-        blank=True,
-        null=True
-    )
-
     applicants_timestamp = models.DateTimeField(
         default=datetime.datetime.now
     )
