@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'django_nose',
     'django_pdb',
+    'axes',
 )
 
 MIDDLEWARE_CLASSES = (

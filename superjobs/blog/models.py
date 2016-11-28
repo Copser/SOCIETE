@@ -70,7 +70,6 @@ class Apply(models.Model):
         blank=True,
         null=True
     )
-
     previous_company_name = models.CharField(
         max_length=225
     )
@@ -80,17 +79,14 @@ class Apply(models.Model):
     previous_job_title = models.CharField(
         max_length=225
     )
-
     jobs_experience = models.TextField()
     hospitality_relations_experience = models.TextField()
-
     working_hours = models.CharField(
         max_length=225
     )
     choose_desired_working_hours_wage = models.DecimalField(
         max_digits=2,
         decimal_places=0)
-
     DRIVERS_CATEGORY_CHOICES = (
         (u'1', u'A'),
         (u'2', u'B'),
@@ -102,13 +98,11 @@ class Apply(models.Model):
     type_of_driver_licences = models.CharField(
         max_length=1,
         choices=DRIVERS_CATEGORY_CHOICES)
-
     applicants_cv = models.FileField(
-        upload_to='CV/',
-        blank=True,
-        null=True
+                upload_to='resume/',
+                blank=True,
+                null=True
     )
-
     applicants_timestamp = models.DateTimeField(
         default=datetime.datetime.now
     )

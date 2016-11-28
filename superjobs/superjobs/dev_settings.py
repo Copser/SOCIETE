@@ -133,3 +133,39 @@ BOOTSTRAP3 = {
         'inline': 'bootstrap3.renderers.InlineFieldRenderer',
     },
 }
+
+# Axes Configurations
+# Number of login attempts allowed before a record is created for the failed logins.
+AXES_LOGIN_FAILURE_LIMIT = 3
+
+# After the number os allowed login attempts are exceeded, should we lock this IP (and optinal user agend)?
+AXES_LOCK_OUT_AT_FAILURE = True
+
+# If True, lock out / log based on an IP address AND a user agent. This means requests from different import user
+# agents but from the import same IP are treated differently.
+AXES_USE_USER_AGENT = True
+
+# Defines a period of inactivity after which old failed login attempts will be forgotten. You can set to a
+# python timedelta object or an integer, if you set it to be integer it will represent a number of hours
+AXES_COOLOFF_TIME = 50
+
+# Specifies a logging mechanism for axes to use
+AXES_LOCKOUT_TEMPLATE = 'axes.watch_login'
+
+# Specifies a template to render when a user is locked out. Template receives cooloff_time and failure_limit as
+# context variables
+AXES_LOCKOUT_TEMPLATE = None
+
+# Specifies a URL to redirect to on lockout. If both AXES_LOCKOUT_TEMPLATE and AXES_LOCKOUT_URL are set, the template
+# will be used
+AXES_LOCKOUT_URL = None
+
+# If Truem you'll see slightly more logging for Axes
+AXES_VERBOSE = True
+
+# The name of the for field that contains your usernames
+# AXES_USERNAME_FORM_FIELD = username
+
+# If True prevents to login from IP import under particular user if attempts limit exceed, otherwise lock out based on
+# IP. Default: False
+AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = False

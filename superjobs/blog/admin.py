@@ -15,13 +15,12 @@ class PostAdmin(admin.ModelAdmin):
     ]
 
 
-
+@admin.register(Apply)
 class ApplyAdmin(admin.ModelAdmin):
     """TODO: register apply_to form
     return: TODO
     """
-    model = Apply
+    pass
 
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(Apply, ApplyAdmin)
