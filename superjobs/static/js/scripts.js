@@ -220,3 +220,10 @@ jQuery(function($){
 
     }()); 
 });
+
+//---------------------------------------
+// Dynamic date
+//---------------------------------------
+var date = (new Date()).getFullYear();
+
+document.getElementById("dynamic_year").innerHTML = date;
