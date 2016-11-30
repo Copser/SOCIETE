@@ -1,33 +1,85 @@
 {% extends "base.html" %}
 
 {% block display_jobs %}
+    <!-- HEADER -->
+    <header id="header">
+    <nav class="navbar st-navbar navbar-default navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#st-navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+								<a class="navbar-brand" href="{% url 'index' %}"><img src="/static/img/logo1.png" alt="Welcome to SuperJobs"></a>
+            </div>
+            <div id="st-navbar-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+									<li class="active"><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'about' %}">About</a></li>
+									<li><a href="{% url 'jobs' %}">Career</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+													{% if user.is_authenticated %}
+                            <li><a id="logout" href="/accounts/logout"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+													{% else %}
+                            <li><a href="/accounts/signup"><i class="fa fa-user" aria-hidden="true"></i> SignUp</a></li>
+                            <li><a href="/accounts/login"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+													{% endif %}
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <!-- /HEADER -->
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8">
-			<h1 class="lead">Apply for SuperJobs</h1>
+		<div>
+			<p style="padding:10px;"></p>
+		</div>
+	</div>
+</div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+		
 			{% if latest_posts %}
-
-				<ul>
 				{% for post in latest_posts %}
-				<h3><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h3>
-				<p><em>{{ post.created_at }}</em></p>
-				<p>{{ post.description }}</p>
-				<a class="btn btn-default" href="{% url 'apply_to' %}" role="button">Apply</a>
+				<h3 class="page-header"><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h3>
+					<p><em>{{ post.created_at }}</em></p>
+					<p class="lead">{{ post.description }}</p>
+					<a class="btn btn-lg btn-default" href="{% url 'apply_to' %}" role="button">Apply</a>
 				{% endfor %}
-				</ul>
-
 			{% endif %}
 
 		</div>
-		<div class="col-sm-4">
-			<h4>Most popular SuperJobs</h4>
-			<ul class="list-unstyled">
-				{% for popular_post in popular_posts %}
-				<li><a href="/blog/{{ popular_post.slug }}">{{ popular_post.title }}</a></li>
-				{% endfor %}
-			</ul>
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<h3>Most popular SuperJobs</h3>
+				</div>
+				<div class="panel-body">
+					{% for popular_post in popular_posts %}
+					<p class="lead"><a href="/blog/{{ popular_post.slug }}">{{ popular_post.title }}</p>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div>
+			<p style="padding:10px;"></p>
 		</div>
 	</div>
 </div>
