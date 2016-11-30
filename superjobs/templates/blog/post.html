@@ -47,17 +47,29 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-12 text-center">
 
-				<h2><a href="#">{{ single_post.title }}</a></h2>
-				<ul>
-				<p><em>{{ single_post.created_at }}</em></p>
-				<p>{{ single_post.description }}</p>
-				<p>Tag: {{ single_post.tag }}</p>
-				<a class="btn btn-default" href="#" role="button">Apply</a>
-				<p>Get back and browse more<a href="/blog/jobs"> jobs!</a></p>
-				</ul>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="lead">{{ single_post.title }}</h1>
+				</div>
+				<div class="panel-body">
+					<p class="lead">{{ single_post.description }}</p>
+					<p>Tag: {{ single_post.tag }}</p>
+					<p><em>{{ single_post.created_at }}</em></p>
+				</div>
+				<div class="panel-footer">
+					<a class="btn btn-default" href="#" role="button">Apply</a>
+				</div>
+			</div>
 
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12 text-center">
+					<p class="lead">Get back and browse more<a href="/blog/jobs"> jobs!</a></p>
 		</div>
 	</div>
 </div>
