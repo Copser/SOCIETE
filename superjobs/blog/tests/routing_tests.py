@@ -1,6 +1,5 @@
 import pytest
 
-from django.conf import settings
 from django.test import TestCase
 from django.core.urlresolvers import resolve, reverse
 from django.shortcuts import render_to_response
