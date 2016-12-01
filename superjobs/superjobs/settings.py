@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'django_nose',
     'django_pdb',
     'axes',
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -139,6 +140,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+# from utils.misc import get_git_changeset
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
