@@ -2,6 +2,7 @@ import pytest
 from django.test import TestCase
 
 from django.core.urlresolvers import resolve
+from django.shortcuts import render_to_response
 
 from landing_page.views import index, about
 
@@ -38,3 +39,19 @@ class MainPageTest(TestCase):
         """
         about = self.client.get('/about')
         assert about.status_code, 200
+
+    def test_if_index_html_template_is_returned(self):
+        """TODO: test return if actual template is used
+        return: TODO
+        """
+        index = self.client.get('/')
+        assert index.content, \
+                render_to_response("index.html").content
+
+    def test_if_about_html_template_is_returned(self):
+        """TODO: test return if actual template is used
+        return: TODO
+        """
+        index = self.client.get('/about/')
+        assert index.content, \
+                render_to_response("about.html").content
