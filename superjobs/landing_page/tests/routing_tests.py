@@ -17,35 +17,35 @@ class MainPageTest(TestCase):
         retun: TODO
         """
         main_page = resolve('/')
-        assert main_page.func
+        assert main_page.func == index
 
     def test_root_resolvers_to_about_view(self):
         """TODO: test about page url routing
         return: TODO
         """
         about_page = resolve('/about/')
-        assert about_page.func
+        assert about_page.func == about
 
     def test_returns_appropriate_main_page_status_code(self):
         """TODO: test main page return proper status code
         return: TODO
         """
         index = self.client.get('/')
-        assert index.status_code, 200
+        assert index.status_code == 200
 
     def test_returns_appropriate_about_page_status_code(self):
         """TODO: test about page return proper status code
         return: TODO
         """
-        about = self.client.get('/about')
-        assert about.status_code, 200
+        about = self.client.get('/about/')
+        assert about.status_code == 200
 
     def test_if_index_html_template_is_returned(self):
         """TODO: test return if actual template is used
         return: TODO
         """
         index = self.client.get('/')
-        assert index.content, \
+        assert index.content == \
                 render_to_response("index.html").content
 
     def test_if_about_html_template_is_returned(self):
@@ -53,5 +53,5 @@ class MainPageTest(TestCase):
         return: TODO
         """
         index = self.client.get('/about/')
-        assert index.content, \
+        assert index.content == \
                 render_to_response("about.html").content
