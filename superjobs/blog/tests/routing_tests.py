@@ -46,3 +46,17 @@ class JobsPageTest(TestCase):
         """
         apply_to_page_url = resolve('/blog/apply_to/')
         assert apply_to_page_url.func
+
+    def test_success_to_resolve_to_success_url_views(self):
+        """TODO: testing success views url routung, should return success url
+        return: TODO
+        """
+        success_page_url = resolve('/blog/success/')
+        assert success_page_url.func
+
+    def test_return_appropriate_post_page_status_code(self):
+        """TODO: test post page status code
+        return: TODO
+        """
+        post_page_status_code = self.client.get('/blog/post/')
+        assert post_page_status_code, 200
