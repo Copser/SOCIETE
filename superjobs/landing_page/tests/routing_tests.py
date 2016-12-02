@@ -17,14 +17,14 @@ class MainPageTest(TestCase):
         retun: TODO
         """
         main_page = resolve('/')
-        assert main_page.func, index
+        assert main_page.func
 
     def test_root_resolvers_to_about_view(self):
         """TODO: test about page url routing
         return: TODO
         """
         about_page = resolve('/about/')
-        assert about_page.func, about
+        assert about_page.func
 
     def test_returns_appropriate_main_page_status_code(self):
         """TODO: test main page return proper status code
