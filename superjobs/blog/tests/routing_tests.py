@@ -44,5 +44,5 @@ class JobsPageTest(TestCase):
         """TODO: testing apply_to views url routing, should return apply_to url
         return: TODO
         """
-        apply_to_page_url = resolve('blog/apply_to')
+        apply_to_page_url = resolve('/blog/apply_to/')
         assert apply_to_page_url.func
