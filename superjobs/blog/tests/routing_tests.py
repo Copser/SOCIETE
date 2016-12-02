@@ -67,3 +67,19 @@ class JobsPageTest(TestCase):
         """
         jobs_page_status_code = self.client.get('/blog/jobs/')
         assert jobs_page_status_code.status_code == 200
+
+    def test_posts_list_api_return_proper_status_code(self):
+        """TODO: test posts_list api status code, should return 200
+        status_code if page exists
+        return: TODO
+        """
+        posts_lists_status_code = self.client.get('/blog/posts/')
+        assert posts_lists_status_code.status_code == 200
+
+    def test_posts_detail_api_return_proper_status_code(self):
+        """TODO: test posts_detail api status code, should return 200
+        status_code if page exists
+        return: TODO
+        """
+        posts_detail_status_code = self.client.get('/blog/posts/1/')
+        assert posts_detail_status_code.status_code == 200
