@@ -26,12 +26,12 @@ class TestPostCaseModel():
         assert post_jobs.tag == "plumbing, housekeep"
         assert post_jobs.slug == "testjob"
 
-    def test_str_method_return_self_title(self):
+    def test_post_str_method_return_self_title(self):
         """TODO: testing will __str__ method return title
         return: TODO
         """
-        post_method = Post(title="My Job Title")
-        assert str(post_method) == post_method.title
+        post_string_method = Post(title="My Job Title")
+        assert str(post_string_method) == post_string_method.title
 
 
 @pytest.mark.django_db
@@ -40,13 +40,41 @@ class TestApplyCase():
     using the same mark @pytest.mark.django_db
     return: TODO
     """
-    apply_method = Apply(
-        full_name="John Doe",
-        email="johndoe@example.com",
-        mobile="",
-        birthdate="10. 14. 1984",
-    )
-    assert apply_method.full_name == "John Doe"
-    assert apply_method.email == "johndoe@example.com"
-    assert apply_method.mobile == ""
-    assert apply_method.birthdate == "10. 14. 1984"
+    def test_apply_models_custom_fields(self):
+        """TODO: test apply model method fields
+        return: TODO
+        """
+        apply_method = Apply(
+            full_name="John Doe",
+            email="johndoe@example.com",
+            mobile="",
+            birthdate="10. 14. 1984",
+            previous_company_name = "company",
+            previous_company_email = "email",
+            previous_job_title = "job title",
+            jobs_experience = "extend job experience",
+            hospitality_relations_experience = "I have it",
+            working_hours = "10+ hours per day",
+            choose_desired_working_hours_wage = "24.5",
+            type_of_driver_licences = "f"
+        )
+
+        assert apply_method.full_name == "John Doe"
+        assert apply_method.email == "johndoe@example.com"
+        assert apply_method.mobile == ""
+        assert apply_method.birthdate == "10. 14. 1984"
+        assert apply_method.previous_company_name == "company"
+        assert apply_method.previous_company_email == "email"
+        assert apply_method.previous_job_title == "job title"
+        assert apply_method.jobs_experience == "extend job experience"
+        assert apply_method.hospitality_relations_experience == "I have it"
+        assert apply_method.working_hours == "10+ hours per day"
+        assert apply_method.choose_desired_working_hours_wage == "24.5"
+        assert apply_method.type_of_driver_licences == "f"
+
+    def test_apply_str_method_return_self_title(self):
+        """TODO: testing will __str__ method return title
+        return: TODO
+        """
+        apply_string_method = Apply(email="email@email.com")
+        assert str(apply_string_method) == apply_string_method.email
