@@ -16,8 +16,9 @@ class TestCaseModel():
         """TODO: testing post field, will be create correctly
         return: TODO
         """
-        post_jobs = Post(title="TestJob", description="We need you!")
+        post_jobs = Post(title="TestJob", description="We need you!", tag="plumbing, housekeep")
         post_jobs.save()
         assert post_jobs.title == "TestJob"
         assert post_jobs.description == "We need you!"
+        assert post_jobs.tag == "plumbing, housekeep"
 
