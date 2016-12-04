@@ -19,5 +19,5 @@ class TestCaseModel():
         post_jobs = Post(title="TestJob", description="We need you!")
         post_jobs.save()
         assert post_jobs.title == "TestJob"
-        assert post_jobs.description == "We need You!"
+        assert post_jobs.description == "We need you!"
 
