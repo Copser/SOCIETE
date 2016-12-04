@@ -26,3 +26,10 @@ class TestCaseModel():
         assert post_jobs.tag == "plumbing, housekeep"
         assert post_jobs.slug == "testjob"
 
+    def test_str_method_return_self_title(self):
+        """TODO: testing will __str__ method return title
+        return: TODO
+        """
+        post_method = Post(title="My Job Title")
+        assert str(post_method) == post_method.title
+
