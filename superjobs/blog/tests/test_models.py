@@ -24,5 +24,5 @@ class TestCaseModel():
         assert post_jobs.title == "TestJob"
         assert post_jobs.description == "We need you!"
         assert post_jobs.tag == "plumbing, housekeep"
-        assert post_jobs.slug == "test-job"
+        assert post_jobs.slug == "testjob"
 
