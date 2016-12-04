@@ -6,7 +6,7 @@ from blog.models import Post, Apply
 pytestmark = pytest.mark.django_db
 
 @pytest.mark.django_db
-class TestCaseModel():
+class TestPostCaseModel():
     """TODO: Testing are model database, I will use pytest.marks
     because I need to access my database, @pytest.mark.django_db
     return: TODO
@@ -33,3 +33,20 @@ class TestCaseModel():
         post_method = Post(title="My Job Title")
         assert str(post_method) == post_method.title
 
+
+@pytest.mark.django_db
+class TestApplyCase():
+    """TODO: create test case for apply model method,
+    using the same mark @pytest.mark.django_db
+    return: TODO
+    """
+    apply_method = Apply(
+        full_name="John Doe",
+        email="johndoe@example.com",
+        mobile="",
+        birthdate="10. 14. 1984",
+    )
+    assert apply_method.full_name == "John Doe"
+    assert apply_method.email == "johndoe@example.com"
+    assert apply_method.mobile == ""
+    assert apply_method.birthdate == "10. 14. 1984"
