@@ -52,6 +52,6 @@ class MainPageTest(TestCase):
         """TODO: test return if actual template is used
         return: TODO
         """
-        index = self.client.get('/about/')
-        assert index.content == \
+        about = self.client.get('/about/')
+        assert about.content == \
                 render_to_response("about.html").content
