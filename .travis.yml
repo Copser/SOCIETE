@@ -1,11 +1,13 @@
 language: python
-
 python:
-  - "3.4"
-
-# command to install dependencies
+- '3.4'
 install:
-  - pip install -r requirements.txt
-
-# command to tun tests
+- pip install -r requirements.txt
 script: pytest
+deploy:
+  provider: heroku
+  api_key:
+    secure: hsYgi5YFAyv0As5vrxqb2OnpeZnN1F8PX+2YMEKxTKr0K7DMlBRSliFlCJlqMZQbAPLJyDzwD9fywKlrJrD0chHAZkiCNVUTEfGBJYcJGLJBjhjBv5h/C/sqHZnjuN5Irv6aeSeapiZxdg6O0XRYAh3sROfTjneLHlq0NZICAPhq7PU2Wg1AukqrATiWejUd9nM2N9Hk+D+6H7jPwWnNiFALQqDyDl5sbv2aOy5IpvcioAwOQ3gjdEPC/DHD0Q7yZjbQ9evR383wEOY1yHUBY1nvC2Yceh+P81MQxSvh0FwOX+4jeGf1QolZSlhonzk+W8sH2Q39SaBYE31wPm9ExCEmKLk0b1FQCQ2V6PaTr4lqWZI+edBBr/oj0/C4tIcKCrD4n/QnwrOKI3FHAkoR8rFA94khDPhjiGPuaGtEcOo+NLTGGC+9VStBQbUc94ov25rUMRsijNKa/2Z2flmvHPwwg7Tj/7tWTvjVZuLkVflgJOdVDFJvN/d3DKUd+y1xhThjldHl9I4Nd1YlIWb1cdGxroE1ZpmFppzGcI5vhrqXTi7ZKriWSwMlC0Q9Qa0MtiP3gQHfsQ1zqzFwjnQSuD10B+YZK1e8kiGW4jnX9aQrDBCjo9hL7sXGd8V+14MAf3ULwDRhhD7NBpmnHXz+ZHHIAG32/I+ZSEcwhg3nELY=
+  app: supremejobs
+  on:
+    repo: Copser/supervisor
