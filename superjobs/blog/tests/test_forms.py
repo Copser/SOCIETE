@@ -1,27 +1,52 @@
-import pytest
-from django import forms
-
 from blog.forms import ApplyForm
 
-def test_apply_to_form_data_validation_for_invalid_data(self):
-    """TODO: testing data validation in ApplyForm
+import unittest
+import pytest
+
+
+class FormTesterMixin():
+    """TODO: Help us validate are form, pass in the class of the form,
+    the name of the field expected to have an error, the expected error
+    message (you can add this with pytest), and the data to initialize
+    the form.
+    FormTesterMixin will do all appropriate validation and provide a
+    helpful error message that will tell us the failure and what
+    data triggered the failure.
     return: TODO
     """
-    form = ApplyForm(
-        {
-            'full_name': 'John Doe',
-            'email': 'johndoe@gmail.com',
-            'mobile': '',
-            'birthdate': '10.14.1984',
-            'previous_company_name': 'Company Name',
-            'previous_company_email': 'company@example.com',
-            'previous_job_title': 'mad hatter',
-            'jobs_experience': 'I have it',
-            'hospitality_relations_experience': 'I have this to',
-            'working_hours': '200',
-            'choose_desired_working_hours_wage': '10$',
-            'type_of_driver_licences': 'A'}
-    )
+    def assertFormError(self, form_cls, excepted_error_name,
+                        excepted_error_msg, data):
 
-    assert form.is_valid() == True
+        from pprint import pformat
+        test_form = form_cls(data=data)
 
+        self.assertEquals(
+            test_form.errors[excepted_error_name],
+            excepted_error_msg,
+            msg="Expected {}: Actual {}: using data {}".format(
+                test_form.errors[excepted_error_name],
+                excepted_error_msg, pformat(data)
+            )
+        )
+
+
+class TestFormCase(unittest.TestCase, FormTesterMixin):
+    """TODO: Constructing series of ApplyForm test about form validation
+    and field validation
+    return: TODO
+    """
+    def test_apply_to_form_data_validation_for_invalid_data(self):
+        """TODO: testing data validation in ApplyForm
+        return: TODO
+        """
+        invalid_data_list = [
+            {'data': {'full_name': 'John Doe'},
+             'error': ('email', [u'This field is required.'])},
+            {'data': {'emai': 'johndoe@example.com'},
+            'error': ('full_name', [u'This field is required.'])}
+        ]
+
+        for invalid_data in invalid_data_list:
+            self.assertFormError(ApplyForm, invalid_data['error'][0],
+                   invalid_data['error'][1],
+                   invalid_data["data"])
