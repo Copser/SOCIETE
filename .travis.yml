@@ -3,7 +3,7 @@ python:
 - '3.4'
 install:
 - pip install -r requirements.txt
-script: pytest
+script: pytest superjobs/
 deploy:
   provider: heroku
   api_key:
