@@ -66,7 +66,7 @@ class JobsPageTest(TestCase):
         return: TODO
         """
         jobs_page_status_code = self.client.get('/blog/jobs/')
-        assert jobs_page_status_code.status_code == 200
+        assert jobs_page_status_code.status_code == 302
 
     def test_posts_list_api_return_proper_status_code(self):
         """TODO: test posts_list api status code, should return 200
