@@ -3,7 +3,12 @@ python:
 - '3.4'
 install:
 - pip install -r requirements.txt
-script: pytest
+env:
+	global:
+		secure: E4jYD0znJZV2uLdP+d6gUCjUcL1omboZviJuBqyItSO4omQ3BCt/daRMjn21aw6mlDllGtE9LKUfMOQtdgT0qPv9Ho9rdfsxxgPhq6INdAqhnNINKTDP+X4gkU1piASoXxDYkdcDLxfsuKiRCqhXVE+rU54+k/8GcPR9hRPz2R/fuSQFJ7L8dlIk4tWf2vSReqlPO814+ZT7YMjPmgbBbibH4OisoRJKoEDmplah0Kk64nGiWP8sdooLYRT1LHG/323GAcfRQLfNdxHIlfQBUa/SaIu/0SyasyRd42hYzkKnksuNGYYD5MbKbvO6r2f2jt3ohH87GydOWUS9v50GpZlfGiXwwYtvGOpSTZgUG8UJkCqAX99fcm7xZYzVQEEU+OoDZa8acdhs7XvRUsKQfj/a1EsX7ECgpkloYEC3NgmOjkpNRIa8dpJ1R3LrmECjReTDOfmQ8oPzCXBeflaFbK/DnUApmF0U3IMDzvdleN6Nz4GLHtXSeoZrP4wKqDd9VbJgWL/qz9knt/nBT9+AN/KjYb5vOMb+Zmn1w9EwUVQMJipoUPw7wYEdGBKrZJW5YrRcr8AOm0/Gp7wVUPl1BbpJqNr8+2AYaLCL41yDQh/fENQUEDpTWcImT2q8Lf4G6h9O+to9RcW5dAwodY6LnwquJyVMYMOjaR+0u7NP7kc=
+script:
+	- export SECRET_KEY=$SECRET_KEY
+	- pytest
 deploy:
   provider: heroku
   api_key:
@@ -11,5 +16,3 @@ deploy:
   app: supremejobs
   on:
     repo: Copser/supervisor
-dd:
-  secure: E4jYD0znJZV2uLdP+d6gUCjUcL1omboZviJuBqyItSO4omQ3BCt/daRMjn21aw6mlDllGtE9LKUfMOQtdgT0qPv9Ho9rdfsxxgPhq6INdAqhnNINKTDP+X4gkU1piASoXxDYkdcDLxfsuKiRCqhXVE+rU54+k/8GcPR9hRPz2R/fuSQFJ7L8dlIk4tWf2vSReqlPO814+ZT7YMjPmgbBbibH4OisoRJKoEDmplah0Kk64nGiWP8sdooLYRT1LHG/323GAcfRQLfNdxHIlfQBUa/SaIu/0SyasyRd42hYzkKnksuNGYYD5MbKbvO6r2f2jt3ohH87GydOWUS9v50GpZlfGiXwwYtvGOpSTZgUG8UJkCqAX99fcm7xZYzVQEEU+OoDZa8acdhs7XvRUsKQfj/a1EsX7ECgpkloYEC3NgmOjkpNRIa8dpJ1R3LrmECjReTDOfmQ8oPzCXBeflaFbK/DnUApmF0U3IMDzvdleN6Nz4GLHtXSeoZrP4wKqDd9VbJgWL/qz9knt/nBT9+AN/KjYb5vOMb+Zmn1w9EwUVQMJipoUPw7wYEdGBKrZJW5YrRcr8AOm0/Gp7wVUPl1BbpJqNr8+2AYaLCL41yDQh/fENQUEDpTWcImT2q8Lf4G6h9O+to9RcW5dAwodY6LnwquJyVMYMOjaR+0u7NP7kc=
