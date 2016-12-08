@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     # app
     'landing_page',
     'blog',
+    'candidate_form',
 
     # thirdpartyapp
     'rest_framework',
