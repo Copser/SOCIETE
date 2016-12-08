@@ -169,3 +169,6 @@ AXES_VERBOSE = True
 # If True prevents to login from IP import under particular user if attempts limit exceed, otherwise lock out based on
 # IP. Default: False
 AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = False
+
+# Crispy forms will use BOOTSTRAP3 TEMPLATE PACK
+CRISPY_TEMPLATE_PACK = "bootstrap3"
