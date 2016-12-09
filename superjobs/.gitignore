@@ -16,3 +16,4 @@ blog/migrations/
 .cache/
 ../.cache/
 ../.coverage
+candidate_form/migrations/0001_initial.py
