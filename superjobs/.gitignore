@@ -17,3 +17,4 @@ blog/migrations/
 ../.cache/
 ../.coverage
 candidate_form/migrations/0001_initial.py
+candidate_form/migrations/0002_multilingualmodelidea.py
