@@ -11,6 +11,8 @@ from utils.choices import FIVE_BOROUGH, SKILL_CHOICE_TYPE, \
         TRAINING_CHOICE_FIELD, EXPERIENCE_CHOICE_TYPE, \
         WORK_HOURS_CHOICE_FIELD, WORK_PERMIT_CHOICE_FIELD, \
         DRIVERS_LICENSE_CHOICE_FIELD
+from utils.fields import MultilingualCharField, \
+        MultilingualTextField
 
 
 # Create your models here.
@@ -146,3 +148,33 @@ class CandindateFormModel(models.Model):
 
     def __str__(self):
         return self.email
+
+
+@python_2_unicode_compatible
+class MultilingualModelIdea(models.Model):
+    """TODO: Crete MultilingualModelField, this is just a small
+    example of what we can do, for future notice we are going to
+    extend this model instance.
+    MultilingualModelField contains:
+        - title - this is related to MultilingualCharField
+        - description - this is related to MultilingualTextField
+
+    Both MultilingualCharField and MultilingualTextField are defined in
+    utils/fields.py and they are representing django multilingual mechanism
+    return: TODO
+    """
+    title = MultilingualCharField(
+        _("Title"),
+        max_length=225
+    )
+    description = MultilingualTextField(
+        _("Description"),
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _("MultilingualModelIdea")
+        verbose_name_plural = _("MultilingualModelIdeas")
+
+    def __str__(self):
+        return self.title
