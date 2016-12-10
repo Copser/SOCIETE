@@ -1,3 +1,5 @@
+# superjobs/settings.py
+# -*- coding: UTF-8 -*-
 """
 Django settings for superjobs project.
 
@@ -130,6 +132,12 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ("en", "English"),
+    ("de", "Deutsch"),
+    ("fr", "Francis"),
+)
 
 TIME_ZONE = 'UTC'
 
