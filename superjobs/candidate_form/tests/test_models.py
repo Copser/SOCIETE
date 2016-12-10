@@ -50,7 +50,7 @@ def test_candidate_form_models_field():
     # 
     assert candidate_info.candidate_skill == "Housekeep"
     assert candidate_info.candidate_experience == "One Year +"
-    assert candidate_info.candidate_experience == "Two Year"
+    assert candidate_info.candidate_hospitality_experience == "Two Year"
     assert candidate_info.candidate_training == "Self Taught"
     #
     # Additional Information
