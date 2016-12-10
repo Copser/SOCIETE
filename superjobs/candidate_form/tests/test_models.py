@@ -58,4 +58,12 @@ def test_candidate_form_models_field():
     assert candidate_info.work_hours == "30+"
     assert candidate_info.payed_per_hour == "20.0"
     assert candidate_info.valid_work_permit == "Yes"
-    assert candidate_info.drivers_license == "B"
+    assert candidate_info.drivers_license == "C"
+
+@pytest.mark.django_db
+def test_candidate_form_str_method_return_string():
+    """TODO: testing str method to see will it return string
+    return:TODO
+    """
+    candidate_form_str_method = CandindateFormModel(email="johndoe@gmail.com")
+    assert str(candidate_form_str_method) == candidate_form_str_method.email
