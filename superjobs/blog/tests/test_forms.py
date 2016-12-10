@@ -1,8 +1,6 @@
 # blog/tests/test_forms.py
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
-from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
 
 import unittest
 import pytest
@@ -10,7 +8,6 @@ import pytest
 from blog.forms import ApplyForm
 
 
-@python_2_unicode_compatible
 class FormTesterMixin():
     """TODO: Help us validate are form, pass in the class of the form,
     the name of the field expected to have an error, the expected error
@@ -37,7 +34,6 @@ class FormTesterMixin():
         )
 
 
-@python_2_unicode_compatible
 class TestFormCase(unittest.TestCase, FormTesterMixin):
     """TODO: Constructing series of ApplyForm test about form validation
     and field validation

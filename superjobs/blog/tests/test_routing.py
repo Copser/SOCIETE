@@ -1,8 +1,6 @@
 # blog/tests/test_routing.py
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
-from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
 from django.test import TestCase
 
 from django.core.urlresolvers import resolve, reverse
@@ -14,7 +12,6 @@ from blog.views import jobs, post, posts_list, posts_detail, \
 import pytest
 
 
-@python_2_unicode_compatible
 class JobsPageTest(TestCase):
     """TODO: testing blog/ routing, we want to see if are pages are
     wired correctly
