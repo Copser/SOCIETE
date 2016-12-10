@@ -79,7 +79,7 @@ class CandindateFormModel(models.Model):
     )
     city = models.CharField(
         _("City"),
-        max_length=6,
+        max_length=100,
         choices=FIVE_BOROUGH
     )
     street_address = models.CharField(
