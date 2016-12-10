@@ -74,7 +74,7 @@ class CandindateFormModel(models.Model):
     )
     mobile_phone_number = models.CharField(
         validators=[mobile_phone_regex],
-        max_length=15,
+        max_length=100,
         blank=True
     )
     city = models.CharField(
@@ -91,22 +91,22 @@ class CandindateFormModel(models.Model):
     # Experience Information fields
     candidate_skill = models.CharField(
         _("Skill"),
-        max_length=6,
+        max_length=100,
         choices=SKILL_CHOICE_TYPE
     )
     candidate_experience = models.CharField(
         _("Real Experience"),
-        max_length=7,
+        max_length=100,
         choices=EXPERIENCE_CHOICE_TYPE
     )
     candidate_hospitality_experience = models.CharField(
         _("Hospitality Experience"),
-        max_length=7,
+        max_length=100,
         choices=EXPERIENCE_CHOICE_TYPE
     )
     candidate_training = models.CharField(
         _("Handyman Training"),
-        max_length=4,
+        max_length=100,
         choices=TRAINING_CHOICE_FIELD
     )
     reference_letter = models.FileField(
@@ -118,22 +118,23 @@ class CandindateFormModel(models.Model):
     # Other Informations
     work_hours = models.CharField(
         _("Work Hours"),
-        max_length=4,
+        max_length=100,
         choices=WORK_HOURS_CHOICE_FIELD
     )
     payed_per_hour = models.DecimalField(
         _("Timetable"),
-        max_digits=2,
-        decimal_places=1
+        max_digits=11,
+        decimal_places=2,
+        null=True
     )
     valid_work_permit = models.CharField(
         _("Valid Work Permit"),
-        max_length=2,
+        max_length=100,
         choices=WORK_PERMIT_CHOICE_FIELD
     )
     drivers_license = models.CharField(
         _("Driver License"),
-        max_length=6,
+        max_length=100,
         choices=DRIVERS_LICENSE_CHOICE_FIELD
     )
     upload_cv = models.FileField(
