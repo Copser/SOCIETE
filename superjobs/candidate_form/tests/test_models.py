@@ -57,5 +57,5 @@ def test_candidate_form_models_field():
     #
     assert candidate_info.work_hours == "30+"
     assert candidate_info.payed_per_hour == "20.0"
-    assert candidate_info.valid_work_permit == "No"
+    assert candidate_info.valid_work_permit == "Yes"
     assert candidate_info.drivers_license == "B"
