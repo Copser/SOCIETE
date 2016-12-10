@@ -1,3 +1,6 @@
+# blog/views.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader, RequestContext

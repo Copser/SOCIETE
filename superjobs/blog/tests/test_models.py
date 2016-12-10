@@ -1,3 +1,8 @@
+# blog/tests/test_models.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import python_2_unicode_compatible
 import pytest
 
 from blog.models import Post, Apply
@@ -5,6 +10,7 @@ from blog.models import Post, Apply
 
 pytestmark = pytest.mark.django_db
 
+@python_2_unicode_compatible
 @pytest.mark.django_db
 class TestPostCaseModel():
     """TODO: Testing are model database, I will use pytest.marks
@@ -34,6 +40,7 @@ class TestPostCaseModel():
         assert str(post_string_method) == post_string_method.title
 
 
+@python_2_unicode_compatible
 @pytest.mark.django_db
 class TestApplyCase():
     """TODO: create test case for apply model method,

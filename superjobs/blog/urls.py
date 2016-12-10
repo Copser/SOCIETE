@@ -1,3 +1,6 @@
+# blog/forms.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 from django.conf.urls import url, include
 from rest_framework.urlpatterns import format_suffix_patterns
 
