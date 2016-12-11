@@ -18,10 +18,10 @@ def apply_for_job(request):
             form.save()
             return redirect("message_to_user_well_done")
     else:
-        form = CandidateForm(request)
+        form = CandidateForm()
 
     return render(
         request,
         "candidate_apply.html",
-        {"form": form}
+        {"form": form},
     )
