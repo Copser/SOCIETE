@@ -33,17 +33,9 @@ class CandidateForm(forms.ModelForm):
             self.helper.form_method = "POST"
 
             self.fields["city"].widget = \
-                    forms.RadioSelect()
+                forms.RadioSelect()
             # delete empty choice for the type
-            del self.fields["city",
-                            "skill",
-                            "candidate_experience",
-                            "candidate_hospitality_experience",
-                            "candidate_training",
-                            "work_hours",
-                            "payed_per_hour",
-                            "valid_work_permit",
-                            "drivers_license" ].choices[0]
+            del self.fields["city"].choices[0]
 
             self.helper.layout = layout.Layout(
                 layout.Fieldset(
@@ -131,10 +123,14 @@ class CandidateForm(forms.ModelForm):
                         {% trans "Avaliable formats are PDF and docx.Minimal size is 25 mb." %}</p>
                         """,
                     ),
-                    title=_("Upload CV"),
+                    title=_(
+                        "Upload CV"
+                    ),
                     css_id="upload_cv_fieldset",
                 ),
                 bootstrap.FormActions(
-                    layout.Submit("submit", _("Submit")),
+                    layout.Submit(
+                        "submit", _("Save")
+                    ),
                 )
             )
