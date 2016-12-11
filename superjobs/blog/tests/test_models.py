@@ -1,3 +1,6 @@
+# blog/tests/test_models.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 import pytest
 
 from blog.models import Post, Apply

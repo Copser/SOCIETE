@@ -1,3 +1,5 @@
+# superjobs/settings.py
+# -*- coding: UTF-8 -*-
 """
 Django settings for superjobs project.
 
@@ -43,6 +45,8 @@ INSTALLED_APPS = (
     # app
     'landing_page',
     'blog',
+    'candidate_form',
+    'utils',
 
     # thirdpartyapp
     'rest_framework',
@@ -81,7 +85,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'apply_to'),
-            os.path.join(BASE_DIR, 'templates', 'jobs_templates'),
+            os.path.join(BASE_DIR, 'templates', 'candidate_form'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,6 +132,12 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ("en", "English"),
+    ("de", "Deutsch"),
+    ("fr", "Francis"),
+)
 
 TIME_ZONE = 'UTC'
 

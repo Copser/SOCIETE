@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^about/$', 'landing_page.views.about', name='about'),
 
     url(r'^blog/', include('blog.urls')),
+    url(r'^candidate_form/', include('candidate_form.urls')),
 
     #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),

@@ -1,3 +1,8 @@
+# blog/models.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -5,6 +10,7 @@ from uuslug import uuslug
 import datetime
 
 # Create your models here.
+@python_2_unicode_compatible
 class Post(models.Model):
     """TODO: Create one model for Jobs representation,
     this models is represented with title, description,
@@ -53,6 +59,7 @@ class Post(models.Model):
         ordering = ['-created_at']
 
 
+@python_2_unicode_compatible
 class Apply(models.Model):
     """TODO: Define model for future Apply_now form
     return: TODO

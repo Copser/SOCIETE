@@ -1,4 +1,6 @@
-import pytest
+# blog/tests/test_routing.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 from django.test import TestCase
 
 from django.core.urlresolvers import resolve, reverse
@@ -6,6 +8,9 @@ from django.shortcuts import render_to_response
 
 from blog.views import jobs, post, posts_list, posts_detail, \
         apply_to, success
+
+import pytest
+
 
 class JobsPageTest(TestCase):
     """TODO: testing blog/ routing, we want to see if are pages are

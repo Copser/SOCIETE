@@ -1,7 +1,11 @@
-from blog.forms import ApplyForm
+# blog/tests/test_forms.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 
 import unittest
 import pytest
+
+from blog.forms import ApplyForm
 
 
 class FormTesterMixin():
