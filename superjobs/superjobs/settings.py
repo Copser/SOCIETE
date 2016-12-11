@@ -85,7 +85,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'apply_to'),
-            os.path.join(BASE_DIR, 'templates', 'jobs_templates'),
+            os.path.join(BASE_DIR, 'templates', 'candidate_form'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
