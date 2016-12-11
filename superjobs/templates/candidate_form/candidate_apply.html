@@ -1,9 +1,10 @@
 {# templates/candidate_form/candidate_apply.html #}
-{% extends "base.py" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
 {% block candidate_apply_form %}
-
-	{% crispy form %}
-
+	<form method="post" action="." enctype="multipart/form-data">
+		{% csrf_token %}
+		{% crispy form %}
+	</form>
 {% endblock %}
