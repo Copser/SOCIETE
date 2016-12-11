@@ -1,16 +1,18 @@
 # candidate_form/forms.py
 # -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+
 from django import forms
 from django.utils.translation import ugettext_lazy as _,\
         ugettext
 
-from crispy_form.helper import FormHelper
-from crispy_form import layout, bootstrap
+from crispy_forms.helper import FormHelper
+from crispy_forms import layout, bootstrap
 
 from candidate_form.models import CandindateFormModel
 
 
-class CandindateForm(forms.ModelForm):
+class CandidateForm(forms.ModelForm):
     """TODO: Deffine model form for CandindateFormModel,
     I'm attaching a form helper to the form in the
     initialization method itself
