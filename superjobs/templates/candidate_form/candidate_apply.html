@@ -48,7 +48,16 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-4">
+			<ul class="list-group">
+				<li class="list-group-item">Personal Information</li>
+				<li class="list-group-item">Confirm Mobile Phone Number</li>
+				<li class="list-group-item">Experience Information</li>
+				<li class="list-group-item">Other Information</li>
+			</ul>
+		</div>
+
+		<div class="col-sm-6 col-sm-offset-1">
 			{% if form.is_multipart %}
 			<form method="post" action="." enctype="multipart/form-data">
 			{% else %}
