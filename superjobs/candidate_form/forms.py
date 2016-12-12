@@ -129,8 +129,6 @@ class CandidateForm(forms.ModelForm):
                     css_id="upload_cv_fieldset",
                 ),
                 bootstrap.FormActions(
-                    layout.Submit(
-                        "submit", _("Save")
-                    ),
+                    layou.Submit("submit", _("Submit")),
                 )
             )
