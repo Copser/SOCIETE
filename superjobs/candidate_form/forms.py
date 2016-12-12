@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_lazy as _,\
 
 from crispy_forms.helper import FormHelper
 from crispy_forms import layout, bootstrap
+from crispy_forms.bootstrap import InlineField
 
 from candidate_form.models import CandindateFormModel
 
@@ -30,6 +31,7 @@ class CandidateForm(forms.ModelForm):
 
             self.helper = FormHelper()
             self.helper.form_action = ""
+            self.helper.form_class = "form-inline"
             self.helper.form_method = "POST"
 
             self.fields["city"].widget = \
@@ -40,13 +42,9 @@ class CandidateForm(forms.ModelForm):
             self.helper.layout = layout.Layout(
                 layout.Fieldset(
                     _("Personal Information"),
-                    layout.Field(
+                    InlineField(
                         "first_name",
-                        css_class="input-block-level"
-                    ),
-                    layout.Field(
                         "last_name",
-                        css_class="input-block-level"
                     ),
                     layout.Field(
                         bootstrap.PrependedText("email", "@",
@@ -54,6 +52,7 @@ class CandidateForm(forms.ModelForm):
                                                 placeholder="youremail@example.com"),
                     ),
                     layout.Div(
+                        InlineField(
                         bootstrap.PrependedText("mobile_phone_number",
                                                 """<span class="glyphicon glyphicon-earphone">
                                                 </span>""",
@@ -62,6 +61,7 @@ class CandidateForm(forms.ModelForm):
                                                 """<span class="glyphicon glyphicon-earphone">
                                                 </span>""",
                                                 css_class="input-block-level"),
+                        ),
                     ),
                     layout.Field(
                         "city"
