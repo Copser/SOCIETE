@@ -1,6 +1,7 @@
 # candidate_form/models.py
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
+import datetime
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -77,6 +78,11 @@ class CandindateFormModel(models.Model):
         max_length=100,
         blank=True
     )
+    confirm_mobile_phone_number = models.CharField(
+        validators=[mobile_phone_regex],
+        max_length=100,
+        blank=True
+    )
     city = models.CharField(
         _("City"),
         max_length=100,
@@ -140,6 +146,9 @@ class CandindateFormModel(models.Model):
     upload_cv = models.FileField(
         _("Upload CV"),
         upload_to="candidate_cv/",
+    )
+    created_at = models.DateTimeField(
+        default=datetime.datetime.now
     )
 
     class Meta:
