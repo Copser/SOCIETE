@@ -1,23 +1,27 @@
+{# templates/base.html #}
 {% load staticfiles %}
 
 {% load socialaccount %}
 
 
 <!DOCTYPE html>
-<html lang="en">
+{% load i18n %}
+<html lang="{{ LANGUAGE_CODE }}">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>SuperJobs</title>
-    
+		<title>{% block title %}{% endblock %}{% trans "SuperJobs" %}</title>
 		<!--Page Description -->
+		{% block metatags %}
     <meta name="description" content="SuperJobs. Want to earn money? Are handy with various tool's? Join with us">
 		<!-- Key Words -->
     <meta name="keywords" content="SuperJobs, housekeep, plumbing, construction, electrical, carpenter, ventilation, hvac, heating">
+		{% endblock %}
 
+		{% block base_stylesheet %}
     <!-- Main CSS file -->
 		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
 		<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" >
@@ -25,7 +29,6 @@
 		<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" >
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/responsive.css' %}" >
-		{% block about-styles %}
 		{% endblock %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -78,7 +81,8 @@
     <div class="scroll-up">
         <ul><li><a href="#header"><i class="fa fa-angle-up"></i></a></li></ul>
     </div>
-    
+   	
+		{% block base_js %}
     <!-- JS -->
 		<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>         <!-- jQuery -->
 		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>      <!-- Bootstrap -->
@@ -94,7 +98,8 @@
 		<script type="text/javascript" src="{% static 'js/animatescroll.min.js' %}"></script> <!-- animatescroll -->
 		<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>            <!-- Scripts -->
 		<script src="https://unpkg.com/vue/dist/vue.js"></script> <!-- VueJS -->
-    
+		{% endblock %}
+   
 </body>
 
 </html>
