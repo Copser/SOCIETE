@@ -25,14 +25,19 @@ class CandidateForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_method = "POST"
         self.helper.form_action = ""
-        self.helper.form_class = "form-inline"
 
         self.helper.layout = layout.Layout(
             layout.Fieldset(
                 _("Personal Information"),
-                InlineField(
+                layout.Field(
                     "first_name",
+                    css_class="input-block-level",
+                    placeholder="First Name"
+                ),
+                layout.Field(
                     "last_name",
+                    css_class="input-block-level",
+                    placeholder="Last Name"
                 ),
                 layout.Field(
                     bootstrap.PrependedText("email", "@",
@@ -40,23 +45,30 @@ class CandidateForm(forms.ModelForm):
                                             placeholder="youremail@example.com"),
                 ),
                 layout.Div(
-                    InlineField(
                     bootstrap.PrependedText("mobile_phone",
                                             """<span class="glyphicon glyphicon-earphone">
                                             </span>""",
-                                            css_class="input-block-level"),
+                                            css_class="input-block-level",
+                                            placeholder="Mobile Phone Number"),
                     bootstrap.PrependedText("confirm_mobile_phone",
                                             """<span class="glyphicon glyphicon-earphone">
                                             </span>""",
-                                            css_class="input-block-level"),
-                    ),
+                                            css_class="input-block-level",
+                                            placeholder="Confirm Mobile Phone Number"),
                 ),
                 layout.Field(
-                    "city"
+                    "city",
+                ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "Where do you live in New York? Thank you." %}</p>
+                    """,
                 ),
                 layout.Field(
                     "street_address",
-                    css_class="input-block-level"
+                    css_class="input-block-level",
+                    placeholder="You're Street Address"
                 ),
             ),
             layout.Fieldset(
@@ -64,43 +76,78 @@ class CandidateForm(forms.ModelForm):
                 layout.Field(
                     "candidate_skill"
                 ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "Please apply for just one profile we have listed for you. Thank you." %}</p>
+                    """,
+                ),
                 layout.Field(
                     "candidate_experience"
-                ),
-                layout.Field(
-                    "candidate_hospitality_experience"
-                ),
-                layout.Field(
-                    "candidate_training"
-                ),
-                layout.Field(
-                    "reference_letter"
                 ),
                 layout.HTML(
                     u"""{% load i18n %}
                     <p class="help-block">
-                    {% trans "Avaliable formats are PDF and docx.Minimal size is 25 mb." %}</p>
+                    {% trans "How much real experience do you have?." %}</p>
                     """,
                 ),
-                title=_(
-                    "Upload Reference Letter"
+                layout.Field(
+                    "candidate_hospitality_experience"
                 ),
-                css_id="reference_letter_fieldset",
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "How much real Hospitality Experience do you have?" %}</p>
+                    """,
+                ),
+                layout.Field(
+                    "candidate_training"
+                ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "Where did you get you're training from, plese select only one field" %}</p>
+                    """,
+                ),
             ),
             layout.Fieldset(
                 _("Other Informations"),
                 layout.Field(
                     "work_hours"
                 ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "How much time are you planing to spend on the job?" %}</p>
+                    """,
+                ),
                 layout.Field(
                     "payed_per_hour",
                     css_class="input-block-level"
                 ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "What would be you're wanted wage?"  %}</p>
+                    """,
+                ),
                 layout.Field(
                     "valid_work_permit"
                 ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "Do you have a Valid Work Permit?" %}</p>
+                    """,
+                ),
                 layout.Field(
                     "drivers_license"
+                ),
+                layout.HTML(
+                    u"""{% load i18n %}
+                    <p class="help-block">
+                    {% trans "What kind a drivers licence do you possess?" %}</p>
+                    """,
                 ),
                 layout.Field(
                     "upload_cv"
@@ -125,5 +172,5 @@ class CandidateForm(forms.ModelForm):
         model = CandindateFormModel
         fields = ["first_name", "last_name", "email", "mobile_phone", "confirm_mobile_phone",
                   "city", "street_address", "candidate_skill", "candidate_experience",
-                  "candidate_hospitality_experience", "candidate_training", "reference_letter",
-                  "work_hours", "payed_per_hour", "valid_work_permit", "drivers_license", "upload_cv"]
+                  "candidate_hospitality_experience", "candidate_training", "work_hours",
+                  "payed_per_hour", "valid_work_permit", "drivers_license", "upload_cv"]
