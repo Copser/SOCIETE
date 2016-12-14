@@ -20,7 +20,7 @@ class CandidateForm(forms.ModelForm):
     return: TODO
     """
     def __init__(self, *args, **kwargs):
-        super(CandindateForm, self).__init__(*args, **kwargs)
+        super(CandidateForm, self).__init__(*args, **kwargs)
 
         self.helper = FormHelper()
         self.helper.form_method = "POST"
@@ -78,10 +78,10 @@ class CandidateForm(forms.ModelForm):
                 ),
                 layout.HTML(
                     u"""{% load i18n %}
-                    <p class="help-block">{% trans
-                    "Avaliable formats are PDF, docx.
-                    Minimal size is 25mb." %}</p>
-                """),
+                    <p class="help-block">
+                    {% trans "Avaliable formats are PDF and docx.Minimal size is 25 mb." %}</p>
+                    """,
+                ),
                 title=_(
                     "Upload Reference Letter"
                 ),
@@ -117,7 +117,7 @@ class CandidateForm(forms.ModelForm):
                 css_id="upload_cv_fieldset",
             ),
             bootstrap.FormActions(
-                layou.Submit("submit", _("Submit")),
+                layout.Submit("submit", _("Submit")),
             )
         )
 
