@@ -8,9 +8,18 @@ from django.views.generic import FormView
 from candidate_form.forms import CandidateForm
 
 # Create your views here.
-class ApplyFormView(FormView):
+class CandidateFormView(FormView):
     """TODO: Render CandidateForm which will inherit from FormView
     return: TODO
     """
-    tempate_name = 'candidate_form/candidate_apply.html'
+    template_name = 'candidate_form/candidate_apply.html'
     form_class = CandidateForm
+    success_url = '/success/'
+
+    def form_valid(self, form):
+        """TODO: You need to pass objects from form and to
+        cleaned_data method on them before you pass
+        return super(CandidateForm, self).form_valid(form)
+        return: TODO
+        """
+        return super(CandidateFormView, self).form_valid(form)
