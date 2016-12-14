@@ -17,7 +17,7 @@ def test_candidate_form_models_field():
         first_name="John",
         last_name="Doe",
         email="johndoe@gmail.com",
-        mobile_phone_number="3876543434343",
+        mobile_phone="3876543434343",
         city="New York",
         street_address="Broadway",
         #
@@ -42,7 +42,7 @@ def test_candidate_form_models_field():
     assert candidate_info.first_name == "John"
     assert candidate_info.last_name == "Doe"
     assert candidate_info.email == "johndoe@gmail.com"
-    assert candidate_info.mobile_phone_number == "3876543434343"
+    assert candidate_info.mobile_phone == "3876543434343"
     assert candidate_info.city == "New York"
     assert candidate_info.street_address == "Broadway"
     #
