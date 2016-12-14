@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader, RequestContext
-from django.views.generic.edit import FormView
+from django.views.generic import FormView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -103,64 +103,19 @@ def posts_detail(request, pk, format=None):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-# Use Generic class-based views to represent are user
-#class UserList(generics.ListAPIView):
-#    """TODO: create read-only view for user representation,
-#    associationg posts with user by adding perform_create
-#    method
-#    Add permissions class IsAuthenticatedOrReadOnly so we can
-#    restrict who owners, if owner is authenticated he will have
-#    read-write access, if not he will only have read-only access
-#    return: TODO
-#    """
-#    queryset = User.objects.all()
-#    serializer_class = UserSerializer
-#    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-#
-#    def perform_create(self, serializer):
-#        serializer.save(owner=self.request.user)
-#
-#
-#class UserDetail(generics.RetrieveAPIView):
-#    """TODO: create read-only view for user representation
-#    Add permissions class IsAuthenticatedOrReadOnly so we can
-#    restrict who owners, if owner is authenticated he will have
-#    read-write access, if not he will only have read-only access
-#    return: TODO
-#    """
-#    queryset = User.objects.all()
-#    serializer_class = UserSerializer
-#    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-
-
-def apply_to(request):
-    """TODO: apply view will render ApplyForm,
-    we are using django-bootstrap3 to style are form,
-    and it will suport file upload for
+class ApplyFormView(FormView):
+    """TODO: Render CandidateForm which will inherit from FormView
     return: TODO
     """
-    if request.method == 'POST':
-        form = Apply(request.POST)
-        if form.is_valid():
-            apply_form = form.save(commit=False)
-            apply_form.save()
-            messages.add_message(
-                request, messages.INFO, "You have successfully applied for\
-                this ongoin position. Thanks you."
-            )
-            return HttpResponseRedirect('/success')
-        else:
-            print(form.errors)
-    else:
-        form = ApplyForm()
-    t = loader.get_template('blog/apply_to.html')
-    c = RequestContext(
-        request,
-        {
-            'form': form,
-        }
-    )
-    return HttpResponse(t.render(c))
+    template_name = 'blog/apply_to.html'
+    form_class = ApplyForm
+    success_url = '/success/'
+
+    def form_valid(self, form):
+        """TODO: return super(CandidateForm, self).form_valid(form)
+        return: TODO
+        """
+        return super(ApplyFormView, self).form_valid(form)
 
 
 def success(request):

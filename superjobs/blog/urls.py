@@ -15,7 +15,8 @@ urlpatterns = [
 #    url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
 
     url(r'^jobs/$', views.jobs, name='jobs'),
-    url(r'^apply_to/$', views.apply_to, name='apply_to'),
+    url(r'^apply_to/$', ApplyFormView.as_view(), name='apply_to'),
+#    url(r'^apply_to/$', views.apply_to, name='apply_to'),
     url(r'^success/$', views.success, name='success'),
     url(r'^(?P<slug>[\w|\-]+)/$', views.post, name='post'),
 ]
