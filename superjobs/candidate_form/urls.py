@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 from django.conf.urls import url, include
 
-from candidate_form import views
+from candidate_form.views import ApplyFormView
 
 
 urlpatterns = [
-    url(r'^apply_for_job/$', views.apply_for_job, name='apply_for_job'),
+    url(r'^apply_form/$', ApplyFormView.as_view(), name='apply_form'),
 ]
