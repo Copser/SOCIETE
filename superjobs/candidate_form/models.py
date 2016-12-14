@@ -73,12 +73,12 @@ class CandindateFormModel(models.Model):
         message="Phone number must be entered in the format:'+999999999'.\
                 Up to 15 digits allowed."
     )
-    mobile_phone_number = models.CharField(
+    mobile_phone = models.CharField(
         validators=[mobile_phone_regex],
         max_length=100,
         blank=True
     )
-    confirm_mobile_phone_number = models.CharField(
+    confirm_mobile_phone = models.CharField(
         validators=[mobile_phone_regex],
         max_length=100,
         blank=True
