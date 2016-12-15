@@ -15,7 +15,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
 
-from .models import Post, Apply
+from .models import Post, ApplyFormModel
 from .serialziers import PostSerializer
 from .forms import ApplyForm
 

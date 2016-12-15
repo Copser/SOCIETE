@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 from django.contrib import admin
 
-from .models import Post, Apply
+from .models import Post, ApplyFormModel
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
@@ -18,7 +18,7 @@ class PostAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(Apply)
+@admin.register(ApplyFormModel)
 class ApplyAdmin(admin.ModelAdmin):
     """TODO: register apply_to form
     return: TODO
