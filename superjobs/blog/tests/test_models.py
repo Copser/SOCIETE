@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 import pytest
 
-from blog.models import Post, Apply
+from blog.models import Post, ApplyFormModel
 
 
 pytestmark = pytest.mark.django_db
