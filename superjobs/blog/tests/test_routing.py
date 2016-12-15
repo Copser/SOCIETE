@@ -7,7 +7,9 @@ from django.core.urlresolvers import resolve, reverse
 from django.shortcuts import render_to_response
 
 from blog.views import jobs, post, posts_list, posts_detail, \
-        apply_to, success
+        success
+
+from blog.views import ApplyFormView
 
 import pytest
 
