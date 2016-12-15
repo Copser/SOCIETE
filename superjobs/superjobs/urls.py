@@ -1,3 +1,6 @@
+# urls.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 """superjobs URL Configuration
 
 the `urlpatterns` list routes URLs to views. For more information please see:
@@ -30,6 +33,7 @@ urlpatterns = [
     #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar
