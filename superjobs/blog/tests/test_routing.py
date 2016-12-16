@@ -45,13 +45,6 @@ class JobsPageTest(TestCase):
         posts_detail_jobs_api = resolve('/blog/posts/1/')
         assert posts_detail_jobs_api.func == posts_detail
 
-    def test_apply_to_resolvers_to_apply_to_view(self):
-        """TODO: testing apply_to views url routing, should return apply_to url
-        return: TODO
-        """
-        apply_to_page_url = resolve('/blog/apply_to/')
-        assert apply_to_page_url.func == apply_to
-
     def test_success_to_resolve_to_success_url_views(self):
         """TODO: testing success views url routung, should return success url
         return: TODO
@@ -71,7 +64,7 @@ class JobsPageTest(TestCase):
         return: TODO
         """
         jobs_page_status_code = self.client.get('/blog/jobs/')
-        assert jobs_page_status_code.status_code == 302
+        assert jobs_page_status_code.status_code == 200
 
     def test_posts_list_api_return_proper_status_code(self):
         """TODO: test posts_list api status code, should return 200
