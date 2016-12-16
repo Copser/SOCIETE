@@ -23,4 +23,9 @@ candidate_form/migrations/0002_multilingualmodelidea.py
 candidate_form/migrations/0003_auto_20161210_2011.py
 candidate_form/migrations/0004_auto_20161210_2038.py
 candidate_form/migrations/0005_auto_20161210_2040.py
+<<<<<<< HEAD
 >>>>>>> 497fb9537206a0b2309bfb5e25bbd5eac620dc18
+=======
+candidate_form/migrations/0006_auto_20161213_2008.py
+candidate_form/migrations/0007_auto_20161213_2018.py
+>>>>>>> rest_framework_development_branch

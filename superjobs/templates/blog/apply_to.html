@@ -1,15 +1,10 @@
+{# templates/blog/apply_to.html #}
 {% extends "base.html" %}
 
-{% load bootstrap3 %}
+{% load i18n %}
+{% load crispy_forms_tags %}
 
-{# load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
-
-{% block apply_form_to_job %}
+{% block candidate_apply_form %}
     <!-- HEADER -->
     <header id="header">
     <nav class="navbar st-navbar navbar-default navbar-inverse">
@@ -49,27 +44,37 @@
 
 <div class="container">
 	<div class="row">
-		<p style="padding:30px;"></p>
+		<p style="padding:10px;"></p>
 	</div>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-sm-4">
+			<ul class="list-group">
+				<li class="list-group-item">Personal Information</li>
+				<li class="list-group-item">Confirm Mobile Phone Number</li>
+				<li class="list-group-item">Experience Information</li>
+				<li class="list-group-item">Other Information</li>
+			</ul>
+		</div>
+
+		<div class="col-sm-6 col-sm-offset-1">
 			{% if form.is_multipart %}
-			<form class="form" method="post" action="{% url 'apply_to' %}" enctype="multipart/form-data">
+			<form method="post" action="." enctype="multipart/form-data">
 			{% else %}
-			<form class="form" method="post" action="{% url 'apply_to' %}">
+			<form action="." method="post">
 			{% endif %}
 				{% csrf_token %}
-				{% bootstrap_form form %}
-				{% buttons %}
-				<button type="submit" class="btn btn-primary">
-					Submit
-				</button>
-				{% endbuttons %}
+				{% crispy form %}
 			</form>
 		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<p style="padding:25px;"></p>
 	</div>
 </div>
 

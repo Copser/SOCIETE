@@ -7,7 +7,7 @@ from django.core.urlresolvers import resolve, reverse
 from django.shortcuts import render_to_response
 
 from blog.views import jobs, post, posts_list, posts_detail, \
-        apply_to, success
+        success, ApplyFormView
 
 import pytest
 
@@ -44,13 +44,6 @@ class JobsPageTest(TestCase):
         """
         posts_detail_jobs_api = resolve('/blog/posts/1/')
         assert posts_detail_jobs_api.func == posts_detail
-
-    def test_apply_to_resolvers_to_apply_to_view(self):
-        """TODO: testing apply_to views url routing, should return apply_to url
-        return: TODO
-        """
-        apply_to_page_url = resolve('/blog/apply_to/')
-        assert apply_to_page_url.func == apply_to
 
     def test_success_to_resolve_to_success_url_views(self):
         """TODO: testing success views url routung, should return success url
