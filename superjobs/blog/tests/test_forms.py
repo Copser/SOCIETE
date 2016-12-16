@@ -44,10 +44,10 @@ class TestFormCase(unittest.TestCase, FormTesterMixin):
         return: TODO
         """
         invalid_data_list = [
-            {'data': {'full_name': 'John Doe'},
-             'error': ('email', [u'This field is required.'])},
-            {'data': {'emai': 'johndoe@example.com'},
-            'error': ('full_name', [u'This field is required.'])}
+            {'data': {'first_name': 'John'},
+             'error': ('last_name', [u'This field is required.'])},
+            {'data': {'last_name': 'Doe'},
+             'error': ('first_name', [u'This field is required.'])},
         ]
 
         for invalid_data in invalid_data_list:
