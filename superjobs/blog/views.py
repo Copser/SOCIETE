@@ -123,13 +123,3 @@ def apply_to(request):
             {"form": form},
         )
     )
-
-def success(request):
-    """TODO: create success views,
-    we will display useful information for new jobs applicants
-    return: TODO
-    """
-    return render_to_response(
-        'blog/success.html',
-        context_instance=RequestContext(request)
-)
