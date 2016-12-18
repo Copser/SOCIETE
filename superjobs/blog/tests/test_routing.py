@@ -6,8 +6,7 @@ from django.test import TestCase
 from django.core.urlresolvers import resolve, reverse
 from django.shortcuts import render_to_response
 
-from blog.views import jobs, post, posts_list, posts_detail, \
-        success, ApplyFormView
+from blog.views import jobs, posts_list, posts_detail, apply_to
 
 import pytest
 
@@ -22,29 +21,27 @@ class JobsPageTest(TestCase):
         return: TODO
         """
         jobs_page = resolve('/blog/jobs/')
+        jobs_page_status_code = self.client.get('/blog/jobs/')
         assert jobs_page.func == jobs
-
-    def test_post_resolvers_to_post_view(self):
-        """TODO: testing post views routung, shold return post url
-        return: TODO
-        """
-        post_page = resolve('/blog/post/')
-        assert post_page.func == post
+        assert jobs_page_status_code.status_code == 200
 
     def test_post_list_resolvers_to_post_list_api_view(self):
         """TODO: testing posts_list url routing, should return posts_list
         return: TODO
         """
         posts_list_jobs_api = resolve('/blog/posts/')
+        posts_lists_status_code = self.client.get('/blog/posts/')
         assert posts_list_jobs_api.func == posts_list
+        assert posts_lists_status_code.status_code == 200
 
     def test_post_detail_resolvers_to_post_deatail_api_view(self):
         """TODO: testing posts_detail url api routing, should return posts_detail
         return: TODO
         """
-        posts_detail_jobs_api = resolve('/blog/posts/1/')
-        assert posts_detail_jobs_api.func == posts_detail
+        posts_detail_api = resolve('/blog/posts/1/')
+        assert posts_detail_api.func == posts_detail
 
+<<<<<<< HEAD
     def test_success_to_resolve_to_success_url_views(self):
         """TODO: testing success views url routung, should return success url
         return: TODO
@@ -73,6 +70,8 @@ class JobsPageTest(TestCase):
         """
         posts_lists_status_code = self.client.get('/blog/posts/')
         assert posts_lists_status_code.status_code == 200
+=======
+>>>>>>> rest_framework_development_branch
 
     def test_apply_to_return_proper_status_code(self):
         """TODO: test apply_to status code return 200
@@ -80,10 +79,3 @@ class JobsPageTest(TestCase):
         """
         apply_to_status_code = self.client.get('/blog/apply_to/')
         assert apply_to_status_code.status_code == 200
-
-    def test_success_return_proper_status_code(self):
-        """TODO: test success status code return 200
-        return: TODO
-        """
-        success_status_code = self.client.get('/blog/success/')
-        assert success_status_code.status_code == 200
