@@ -79,11 +79,11 @@ class ApplyFormModel(models.Model):
     choices.py
 
     In Personal Information we will make:
-        - name - char field
+        - first_name - char field
         - last name - char field
         - email - email field
-        - mobile phone number - integer field
-        - confirm mobile phone number - we will use twillio
+        - mobile phone - integer field
+        - confirm mobile phone - we will use twillio
         - city - Once city for the beginning New York City
                 but I will add choice field about which part
                 of the NYC do you live?
@@ -91,17 +91,15 @@ class ApplyFormModel(models.Model):
         - street address - char field
 
     Experience Information will contain:
-        - skill - choices
+        - candidate_skill - choices
         - candidate_experience -  choices
-        - candidate_hospitality_experience - char field
-        - handyman_training - where did you get it - choices
-        - tool - text field
-        - reference_letter - upload file field
+        - candidate_hospitality_experience - choices
+        - candidate_training - choices
 
     Other Information will contain:
-        - work_hours - how many hours you will be working - choices
+        - work_hours - choices
         - payment_per_hour - decimal field
-        - work_permit - choices
+        - valid_work_permit - choices
         - drivers_license - choices
         - upload_cv - upload file field
     return: TODO
@@ -119,7 +117,6 @@ class ApplyFormModel(models.Model):
     email = models.EmailField(
         _("Email"),
         max_length=225,
-        blank=True
     )
     mobile_phone_regex = RegexValidator(
         regex=r'^\+?1?\d{9,15}$',
@@ -129,12 +126,10 @@ class ApplyFormModel(models.Model):
     mobile_phone = models.CharField(
         validators=[mobile_phone_regex],
         max_length=100,
-        blank=True
     )
     confirm_mobile_phone = models.CharField(
         validators=[mobile_phone_regex],
         max_length=100,
-        blank=True
     )
     city = models.CharField(
         _("City"),
@@ -167,11 +162,6 @@ class ApplyFormModel(models.Model):
         _("Handyman Training"),
         max_length=100,
         choices=TRAINING_CHOICE_FIELD
-    )
-    reference_letter = models.FileField(
-        _("Reference Letter"),
-        upload_to="reference_letter/",
-        blank=True
     )
 
     # Other Informations
