@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader, RequestContext
-from django.views.generic import FormView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -22,7 +21,7 @@ from .forms import ApplyForm
 
 # helper function
 def get_popular_posts():
-    popular_posts = Post.objects.order_by('-views')[:5]
+    popular_posts = Post.objects.order_by("-views")[:5]
     return popular_posts
 
 # Create your views here.
@@ -33,11 +32,11 @@ def jobs(request):
     slug field added
     return: TODO
     """
-    latest_posts = Post.objects.all().order_by('-created_at')
-    t = loader.get_template('blog/jobs.html')
+    latest_posts = Post.objects.all().order_by("-created_at")
+    t = loader.get_template("blog/jobs.html")
     context_dict = {
-        'latest_posts': latest_posts,
-        'popular_posts': get_popular_posts(),
+        "latest_posts": latest_posts,
+        "popular_posts": get_popular_posts(),
     }
     c = Context(context_dict)
     return HttpResponse(t.render(c))
@@ -51,26 +50,26 @@ def post(request, slug):
     single_post = get_object_or_404(Post, slug=slug)
     single_post.views += 1
     single_post.save()
-    t = loader.get_template('blog/post.html')
+    t = loader.get_template("blog/post.html")
     context_dict = {
-        'single_post': single_post,
-        'popular_posts': get_popular_posts(),
+        "single_post": single_post,
+        "popular_posts": get_popular_posts(),
     }
     c = Context(context_dict)
     return HttpResponse(t.render(c))
 
 
-@api_view(['GET', 'POST'])
+@api_view(["GET", "POST"])
 def posts_list(request, format=None):
     """TODO: List all jobs, or create new jobs
     return: TODO
     """
-    if request.method == 'GET':
+    if request.method == "GET":
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
 
-    elif request.method == 'POST':
+    elif request.method == "POST":
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -78,7 +77,7 @@ def posts_list(request, format=None):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(["GET", "PUT", "DELETE"])
 def posts_detail(request, pk, format=None):
     """TODO: Retreive, update, delete post instance
     return: TODO
@@ -88,42 +87,39 @@ def posts_detail(request, pk, format=None):
     except Post.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    if request.method == 'GET':
+    if request.method == "GET":
         serializer = PostSerializer(post)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
+    elif request.method == "PUT":
         serializer = PostSerializer(post, data=request.data)
         if serializer.is_valid():
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    elif request.method == 'DELETE':
+    elif request.method == "DELETE":
         post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-class ApplyFormView(FormView):
-    """TODO: Render CandidateForm which will inherit from FormView
-    return: TODO
+def apply_to(request):
+    """TODO: ApplyForm validation logic
+    request: TODO
     """
-    template_name = 'blog/apply_to.html'
-    form_class = ApplyForm
-    success_url = '/success/'
+    if request.method == "POST":
+        form = ApplyForm(
+            data=request.POST,
+            files=request.FILES,
+        )
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/success")
+    else:
+        form = ApplyForm()
 
-    def form_valid(self, form):
-        """TODO: return super(CandidateForm, self).form_valid(form)
-        return: TODO
-        """
-        return super(ApplyFormView, self).form_valid(form)
-
-
-def success(request):
-    """TODO: create success views,
-    we will display useful information for new jobs applicants
-    return: TODO
-    """
     return render_to_response(
-        'blog/success.html',
-        context_instance=RequestContext(request)
+        "blog/apply_to.html",
+        context_instance=RequestContext(
+            request,
+            {"form": form},
+        )
     )

@@ -27,6 +27,7 @@ urlpatterns = [
     # url(r'^apply_to/', include('labor_apply_app.urls')),
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/$', 'landing_page.views.about', name='about'),
+    url(r'^success/$', 'landing_page.views.success', name='success'),
 
     url(r'^blog/', include('blog.urls')),
 
