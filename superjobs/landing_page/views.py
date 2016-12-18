@@ -22,3 +22,13 @@ def about(request):
         'about.html',
         context_instance=RequestContext(request)
     )
+
+def success(request):
+    """TODO: create success views,
+    we will display useful information for new jobs applicants
+    return: TODO
+    """
+    return render_to_response(
+        'success.html',
+        context_instance=RequestContext(request)
+)
