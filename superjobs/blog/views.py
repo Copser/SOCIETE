@@ -25,11 +25,7 @@ def get_popular_posts():
     return popular_posts
 
 # Create your views here.
-<<<<<<< HEAD
-@login_required(login_url='/accounts/signup')
-=======
 @login_required(login_url='/accounts/login')
->>>>>>> rest_framework_development_branch
 def jobs(request):
     """TODO: create jobs view to list are current jobs,
     polish are urls so it can be more human readable,
