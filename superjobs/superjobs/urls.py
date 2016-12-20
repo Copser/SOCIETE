@@ -19,15 +19,14 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-
+from landing_page import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    # url(r'^apply_to/', include('labor_apply_app.urls')),
-    url(r'^$', 'landing_page.views.index', name='index'),
-    url(r'^about/$', 'landing_page.views.about', name='about'),
-    url(r'^success/$', 'landing_page.views.success', name='success'),
+    url(r'^$', views.index, name='index'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^success/$', views.success, name='success'),
 
     url(r'^blog/', include('blog.urls')),
 
