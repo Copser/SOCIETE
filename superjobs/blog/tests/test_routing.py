@@ -10,6 +10,7 @@ from blog.views import jobs, posts_list, posts_detail, apply_to
 
 import pytest
 
+@pytest.mark.django_db
 class BlogTests(TestCase):
     def test_jobs_resolvers_to_blog_jobs(self):
         jobs_page = resolve("/blog/jobs/")
