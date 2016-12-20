@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils import timezone
 from django.core.validators import RegexValidator
 from django.db import models
 from django.contrib.auth.models import User
@@ -39,7 +40,7 @@ class Post(models.Model):
     )
     description = models.TextField()
     created_at = models.DateTimeField(
-        default=datetime.datetime.now
+        default=timezone.now
     )
     tag = models.CharField(
         max_length=20,
