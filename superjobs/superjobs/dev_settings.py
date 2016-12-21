@@ -174,7 +174,6 @@ AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = False
 CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 # MAMCACHE Heroku Configuration
-
 os.environ['MEMCACHE_SERVERS'] = os.environ.get('MEMCACHIER_SERVERS', '').replace(',', ';')
 os.environ['MEMCACHE_USERNAME'] = os.environ.get('MEMCACHIER_USERNAME', '')
 os.environ['MEMCACHE_PASSWORD'] = os.environ.get('MEMCACHIER_PASSWORD', '')
