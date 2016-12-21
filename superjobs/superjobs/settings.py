@@ -74,6 +74,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django_pdb.middleware.PdbMiddleware',
+    # utils
+    'utils.middleware.ThreadLocalMiddleware',
 )
 
 ROOT_URLCONF = 'superjobs.urls'
