@@ -113,7 +113,7 @@ def apply_to(request):
             files=request.FILES,
         )
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
             return HttpResponseRedirect("/success")
     else:
         form = ApplyForm()
