@@ -19,17 +19,19 @@ def inform_administrations(sender, **kwargs):
     created = kwargs["created"]
     if created:
         context = {
-            "title": instance.title,
-            "link": instance.get_ur(),
+            "first_name": instance.first_name,
+            "last_name": instance.last_name,
+            "email": instance.email,
         }
         plain_text_message = """
-        A new Form for for "%(title)s" has been created.
-        You can preview it at %(link)s.""" % context
+        A new applicant "%(first_name)s","%(last_name)s", "%(email)s", has applied for
+        one of posted jobs.
+        You can preview it at administration.""" % context
         html_message = """
-        <p>A new viral video called "%(title)s" has beed created.</p>
-        <p>You can priview it <a href="%(link)s">here</a></p>""" % context
+        <p>A new apply form superjobs was created by "%(first_name)s", "%(last_name)s", "%(email)s"</p>
+        <p>Check the administration.</p>""" % context
 
-        mail_admin(
+        mail_admins(
             subject="New Job Form was Added at superjobs.com",
             message=plain_text_message,
             html_message=html_message,

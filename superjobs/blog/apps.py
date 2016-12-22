@@ -10,3 +10,4 @@ class ApplyFormModelAppConfig(AppConfig):
 
     def ready(self):
         from .signals import inform_administrations
+        from .checks import setings_check
