@@ -6,6 +6,9 @@ from rest_framework import generics
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
+from rest_framework.decorators import detail_route
+
+from .permissions import IsApplied
 
 from blog.models import Post
 from .serializers import PostSerializer
