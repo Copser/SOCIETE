@@ -13,7 +13,7 @@ class PostListView(generics.ListAPIView):
     return: TODO
     """
     queryset = Post.objects.all()
-    serializers_class = PostSerializer
+    serializer_class = PostSerializer
 
 
 class PostDetailView(generics.RetrieveAPIView):
@@ -22,4 +22,4 @@ class PostDetailView(generics.RetrieveAPIView):
     return: TODO
     """
     queryset = Post.objects.all()
-    serializers_class = PostSerializer
+    serializer_class = PostSerializer
