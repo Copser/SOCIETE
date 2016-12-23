@@ -177,3 +177,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap3"
 ADMINS = (
     ("Petar Pilipovic", "petar@literatillc.com"),
 )
+
+# RESTframework Permission classes configuration
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ]
+}
