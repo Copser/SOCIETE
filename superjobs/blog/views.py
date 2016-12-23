@@ -19,11 +19,7 @@ def get_popular_posts():
     return popular_posts
 
 # Create your views here.
-<<<<<<< HEAD
-#@login_required(login_url='/accounts/login')
-=======
-# @login_required(login_url='/accounts/login')
->>>>>>> rest_framework_development_branch
+@login_required(login_url='/accounts/login')
 def jobs(request):
     """TODO: create jobs view to list are current jobs,
     polish are urls so it can be more human readable,
@@ -40,7 +36,7 @@ def jobs(request):
     return HttpResponse(t.render(c))
 
 
-# @login_required(login_url='/accounts/login')
+@login_required(login_url='/accounts/login')
 def post(request, slug):
     """TODO: creating post so we can sort out are jobs list,
     slug field added
@@ -58,7 +54,7 @@ def post(request, slug):
     return HttpResponse(t.render(c))
 
 
-# @login_required(login_url='/accounts/login')
+@login_required(login_url='/accounts/login')
 def apply_to(request):
     """TODO: ApplyForm validation logic
     request: TODO
