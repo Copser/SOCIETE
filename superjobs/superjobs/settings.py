@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     # app
     'landing_page',
     'blog',
+    'blog.api',
     'utils',
 
     # thirdpartyapp
