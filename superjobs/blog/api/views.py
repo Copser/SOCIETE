@@ -3,6 +3,9 @@
 from __future__ import unicode_literals
 
 from rest_framework import generics
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
+
 from blog.models import Post
 from .serializers import PostSerializer
 
@@ -12,6 +15,8 @@ class PostListView(generics.ListAPIView):
     using rest_framework generics.ListAPIView
     return: TODO
     """
+    authentication_classes = (BasicAuthentication, )
+    permission_classes = (IsAuthenticated, )
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
