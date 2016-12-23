@@ -21,6 +21,7 @@ from django.contrib import admin
 
 from landing_page import views
 
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
