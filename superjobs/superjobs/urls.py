@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^success/$', views.success, name='success'),
 
     url(r'^blog/', include('blog.urls')),
+    url(r'^api/', include('blog.api.urls', namespace='api')),
 
     #  Django Allauth
     url(r'^accounts/', include('allauth.urls')),
