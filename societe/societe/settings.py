@@ -40,14 +40,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
     # Project app
     'landing_page',
     'contact',
     'cities',
     'reviews',
-    # 'payments',
-    'contractors',
-    'payments.paypal_app',
+
     # instaled third party app
     'debug_toolbar',
     'stripe',

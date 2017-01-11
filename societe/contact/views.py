@@ -1,3 +1,7 @@
+# contact/views.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext, loader
@@ -5,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .forms import ContactView
+from .models import ContactForm
 
 
 # Create your views here.
@@ -29,14 +34,11 @@ def contact(request):
             return HttpResponseRedirect('/success')
     else:
         form = ContactView()
-    t = loader.get_template('contact.html')
+    t = loader.get_template('arange.html')
     c = RequestContext(request, {'form': form, })
     return HttpResponse(t.render(c))
 
-
 def success(request):
     """TODO: Docstring for success.
-    :returns: TODO
-
     """
     return render(request, 'success.html')
