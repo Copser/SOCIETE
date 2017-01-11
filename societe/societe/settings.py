@@ -43,7 +43,7 @@ INSTALLED_APPS = (
 
     # Project app
     'landing_page',
-    'contact',
+    'check_in',
     'cities',
     'reviews',
 

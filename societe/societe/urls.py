@@ -4,7 +4,6 @@ from django.contrib import admin
 from django.shortcuts import render_to_response
 
 from payments import views
-from contact import views
 
 urlpatterns = [
     # Examples:
@@ -17,8 +16,6 @@ urlpatterns = [
 
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/', 'landing_page.views.about', name='about'),
-
-    url(r'^contact', include('contact.urls')),
 
     # cities
     url(r'^cities/', include('cities.urls')),
