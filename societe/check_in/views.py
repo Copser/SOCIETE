@@ -22,14 +22,14 @@ def arange(request):
     return: TODO
     """
     if request.method == "POST":
-        form = InitialCharacteristicModel(
+        form = InitialCharacteristicForm(
             data=request.POST,
         )
         if form.is_valid():
             form.save(commit=False)
             return HttpResponseRedirect('/success/')
     else:
-        form = InitialCharacteristicModel()
+        form = InitialCharacteristicForm()
 
     return render_to_response(
         "check_in/arange.html",
