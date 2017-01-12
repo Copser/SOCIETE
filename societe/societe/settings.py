@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -53,7 +53,7 @@ INSTALLED_APPS = (
     'analytical',
     'axes',
     'autocomplete_light',
-    'bootstrap3',
+    'crispy_forms',
     'datetimewidget',
     'django_countries',
     'allauth',
@@ -149,10 +149,10 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Writing configuration for Heroku deployment
 # Parse database configuration from $DATABASE_URL
@@ -485,11 +485,5 @@ GOOGLE_ANALYTICS_DISPLAY_ADVERTISING = True
 # Tracking site speed on Google analytics
 GOOGLE_ANALYTICS_SITE_SPEED = True
 
-# BrainTree Credential Keys
-BRAINTREE_MERCHANT_ID = 'x6kghwrrz78wkh4z'
-BRAINTREE_PUBLIC_KEY = '47thpt69sxgp55wp'
-BRAINTREE_PRIVATE_KEY = '445bc0e9744f8e2104ee68a8695c8bbd'
-
-# Stripe Key's
-TEST_SECRET_KEY = 'sk_test_FVUY4lCrJIN0jRcHaKcvBCVz'
-TEST_PUBLISHABLE_KEY = 'pk_test_ENGdOydvGd7mIyOj89lJV88f'
+# Crispy forms will use BOOTSTRAP3 TEMPLATE PACK
+CRISPY_TEMPLATE_PACK = "bootstrap3"

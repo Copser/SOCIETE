@@ -3,7 +3,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from django.contrib import admin
 from django.shortcuts import render_to_response
 
-from payments import views
 
 urlpatterns = [
     # Examples:
@@ -16,6 +15,9 @@ urlpatterns = [
 
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/', 'landing_page.views.about', name='about'),
+
+
+    url(r'^check_in/', include('check_in.urls')),
 
     # cities
     url(r'^cities/', include('cities.urls')),
