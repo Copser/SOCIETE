@@ -1,0 +1,36 @@
+{# templates/check_in/arange.html #}
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block arange_form %}
+
+<div class="container">
+	<div class="row">
+		<p style="padding:10px;"></p>
+	</div>
+</div>
+
+<div class="container">
+
+		<div class="col-sm-8 col-sm-offset-2">
+			{% if form.is_multipart %}
+			<form method="post" action="." enctype="multipart/form-data">
+			{% else %}
+			<form action="." method="post">
+			{% endif %}
+				{% csrf_token %}
+				{% crispy form %}
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<p style="padding:25px;"></p>
+	</div>
+</div>
+
+{% endblock %}

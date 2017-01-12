@@ -1,8 +1,8 @@
 from django.conf.urls import include, url
+from rest_framework.urlpatterns import format_suffix_patterns
 from django.contrib import admin
 from django.shortcuts import render_to_response
 
-from payments import views
 
 urlpatterns = [
     # Examples:
@@ -15,8 +15,9 @@ urlpatterns = [
 
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/', 'landing_page.views.about', name='about'),
-    url(r'^contact/', 'contact.views.contact', name='contact'),
-    url(r'^success/', 'contact.views.success', name='success'),
+
+
+    url(r'^check_in/', include('check_in.urls')),
 
     # cities
     url(r'^cities/', include('cities.urls')),
@@ -28,8 +29,8 @@ urlpatterns = [
 
     # url(r'^paypal/', include('paypal.standard.ipn.urls')),
     # stripe authentication payment urls
-    url(r'^register/', views.register, name='register'),
-    url(r'^thank_you/', views.thank_you, name='thank_you'),
+    # url(r'^register/', views.register, name='register'),
+    # url(r'^thank_you/', views.thank_you, name='thank_you'),
 
     # allauth urls
     # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),

@@ -32,15 +32,14 @@
 }
 
 /* Navbar */
+.navbar_social {
+    background: #F2F2F2;
+		top:60px;
+}
 
 .navbar {
     background: #F2F2F2;
     border: none;
-    -webkit-transition: all 0.6s ease-out;
-    -moz-transition: all 0.6s ease-out;
-    -o-transition: all 0.6s ease-out;
-    -ms-transition: all 0.6s ease-out;
-    transition: all 0.6s ease-out;
 }
 
 .navbar-nav .navbar-nav li, .navbar-nav li a {
@@ -63,7 +62,7 @@
 }
 
 .jumbotron {
-    background: url('/static/img/home/city-new-york-high-rise-rainbow.jpg') no-repeat;
+    background-image: url('/static/img/portfolio_new/erasmus_cities-21.jpg');
     background-position: bottom;
     background-size: cover;
     height: 650px;
@@ -205,9 +204,9 @@
     background-position: center;
 }
 .bimage {
-    background-image: url('/static/img/portfolio_new/erasmus_cities-21.jpg');
+    background: url('/static/img/home/city-new-york-high-rise-rainbow.jpg') no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 }
 .cimage {
     background-image: url('/static/img/portfolio_new/night.png');
