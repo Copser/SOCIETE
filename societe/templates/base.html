@@ -78,6 +78,45 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+ <!-- Fixed navbar -->
+    <nav class="navbar_social navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+						<li><a href="" class="text-danger">ERASMUS IS UNDER CONSTRUCTION, THANKS!</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+						<li><a href="https://www.facebook.com/erasmushausnyc"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-skype fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">vytousa</a></li>
+              </ul>
+            </li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-whatsapp fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">+1 718-909-3303</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
     <nav id="myNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -114,7 +153,7 @@
     {% block content %}
     {% endblock %}
     
-    {% block form %}
+    {% block arange_form %}
     {% endblock %}
 
     {% block global_map %}
@@ -144,7 +183,7 @@
              </div> 
              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <h3><strong>EMAIL US:</strong></h3> 
-                <p class="text-muted"><a href="#" style="color:#777;"><i class="fa fa-2x fa-envelope-o" aria-hidden="true"></i> erasmushaus@gmail.com</a></p>
+                <p class="text-muted"><a href="#" style="color:#777;"><i class="fa fa-2x fa-envelope-o" aria-hidden="true"></i> hous@erasmushaus.com</a></p>
              </div>
              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <h5 class=""><strong>MENU:</strong></h5>
@@ -158,14 +197,6 @@
        <div class="row">
            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
            <p align="center">© 2015 Erasmus Haus</p>
-            <ul class="list-unstyled list-inline">
-                <li><a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-lg fa-google-plus"></i></a></li>
-                <li><a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-lg fa-facebook"></i></a></li>
-                <li><a class="btn btn-social-icon btn-linkedin" href="http://linkedin/in"><i class="fa fa-lg fa-linkedin"></i></a></li>
-                <li><a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-lg fa-twitter"></i></a></li>
-                <li><a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-lg fa-youtube"></i></a></li>
-                <li><a class="btn btn-social-icon" href="mailto:"><i class="fa fa-lg fa-envelope-o"></i></a></li>
-            </ul>
            </div>
        </div> 
     </div>
