@@ -59,7 +59,6 @@ six==1.10.0
 sqlparse==0.1.19
 static3==0.6.1
 stripe==1.33.0
-travis==0.0.2
 Twisted==16.2.0
 txaio==2.5.1
 zope.interface==4.2.0
