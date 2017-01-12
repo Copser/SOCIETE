@@ -39,7 +39,7 @@ class InitialCharacteristicForm(forms.ModelForm):
                     placeholder="Last Name",
                 ),
                 layout.Field(
-                    bootstrap.PrependText("email", "@",
+                    bootstrap.PrependedText("email", "@",
                                           css_class="input-block-level",
                                           placeholder="youremail@example.com"),
                 ),
@@ -49,8 +49,8 @@ class InitialCharacteristicForm(forms.ModelForm):
             )
         )
 
-        class Meta:
-            models = InitialCharacteristicModel
-            fields=[ "first_name", "last_name", "email", "country",
-                    "move_in_date", "move_out_date", "message"]
+    class Meta:
+        model = InitialCharacteristicModel
+        fields=[ "first_name", "last_name", "email", "country",
+                "move_in_date", "move_out_date", "message"]
 

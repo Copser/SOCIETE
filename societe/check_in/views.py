@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import InitialCharacteristicModel
-from .forms import InitialCharacteristicModel
+from .forms import InitialCharacteristicForm
 # Create your views here.
 
 #@login_required(login_url="someurl")
