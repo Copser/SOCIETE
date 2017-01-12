@@ -19,7 +19,6 @@ class InitialCharacteristicModel(models.Model):
             - First Name
             - Last Name
             - Email
-            - Birthday
             - Country
         Residence Information:
             - Move in Date
@@ -41,10 +40,6 @@ class InitialCharacteristicModel(models.Model):
     email = models.EmailField(
         _("Email"),
         max_length=225
-    )
-    birthday = models.DateField(
-        _("Birthday"),
-        null=True
     )
     country = CountryField()
 
