@@ -43,6 +43,23 @@ class InitialCharacteristicForm(forms.ModelForm):
                                           css_class="input-block-level",
                                           placeholder="youremail@example.com"),
                 ),
+                layout.Field(
+                    "country",
+                ),
+                layout.Field(
+                    "move_in_date",
+                    css_class="input-block-level",
+                    placeholder="Move in date",
+                ),
+                layout.Field(
+                    "move_out_date",
+                    css_class="input-block-level",
+                    placeholder="Move out date",
+                ),
+                layout.Field(
+                    "message",
+                    placeholder="Message",
+                ),
                 bootstrap.FormActions(
                     layout.Submit("submit", _("Submit")),
                 )

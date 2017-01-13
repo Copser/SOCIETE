@@ -1,0 +1,30 @@
+{
+  "name": "Erasmus Haus",
+  "homepage": "https://github.com/Copser/SOCIETE",
+  "authors": [
+    "Copser <ppilipovic84@gmail.com>"
+  ],
+  "description": "real estate",
+  "main": "",
+  "keywords": [
+    "real",
+    "estate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "braintree-web": "^2.24.1",
+    "font-awesome": "~4.5.0",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "jquery-ujs": "^1.2.1",
+    "owl.carousel": "^2.2.0",
+    "slick-carousel": "^1.6.0"
+  }
+}
