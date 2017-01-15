@@ -11,28 +11,18 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     # auto-comeplete-light urls
-    url(r'^autocomplete/', include('autocomplete_light.urls')),
 
     url(r'^$', 'landing_page.views.index', name='index'),
     url(r'^about/', 'landing_page.views.about', name='about'),
 
-
+    # check_in
     url(r'^check_in/', include('check_in.urls')),
-
-    # cities
-    url(r'^cities/', include('cities.urls')),
 
     # robots.txt
     url(r'^robots.txt$',
         lambda r:
         render_to_response('robots.txt', content_type='text/plain')),
 
-    # url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    # stripe authentication payment urls
-    # url(r'^register/', views.register, name='register'),
-    # url(r'^thank_you/', views.thank_you, name='thank_you'),
-
     # allauth urls
-    # url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'^accounts/', include('allauth.urls')),
 ]
