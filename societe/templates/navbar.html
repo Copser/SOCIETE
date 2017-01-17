@@ -2,36 +2,87 @@
     <div class="container">
         <!-- Header -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" 
-                    data-toggle="collapse" 
-                    data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                Double Navbar!
-            </a>
+          <span itemscope itemtype="http://schema.org/Brand" itemprop="brand"><a class="navbar-left" href="{% url 'index' %}">
+                  <img class="responsive-img hidden-xs" src="/static/img/LogoFinalErasmus-01.png" >
+                  <img id="mobile-logo" class="responsive-img visible-xs mobile-logo" src="/static/img/LogoFinalErasmus-01.png" width=160>
+          </a></span>
         </div>
         <!-- Navbar Links -->
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="collapse navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+                <li><a id="logout" href="/accounts/logout">Logout</a></li>
+            {% else %}
+                <li class="pull-right"><a href="#" data-toggle="modal" data-target="#loginModal"><button type="button"
+										class="btn btn-sm btn-info round">EXPLORE</button></a></li>
+                </li>
+            {% endif %}
+                </ul>
         </div>
     </div>
 </div>
-<div class="navbar navbar-fixed-top navbar-default navbar-lower" role="navigation">
-  <div class="container">
-      <div class="pull-left">
-          <button type="button" class="btn btn-default navbar-btn">Action 1</button>
-          <button type="button" class="btn btn-default navbar-btn">Action 2</button>
-      </div>
-      <div class="pull-right">
-          <button type="button" class="btn btn-default navbar-btn">Cancel</button>
-          <button type="submit" class="btn btn-default navbar-btn">Save</button>
-      </div>
-  </div>
+<div class="navbar navbar-fixed-top navbar-default navbar-lower">
+    <div class="container">
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-2">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse-2">
+          <ul class="nav navbar-nav">
+						<li><a href="" class="text-danger"></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+						<li><a href="https://www.facebook.com/erasmushausnyc"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-skype fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">vytousa</a></li>
+              </ul>
+            </li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-whatsapp fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">+1 718-909-3303</a></li>
+              </ul>
+            </li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-mobile fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">+1 718-909-3303</a></li>
+              </ul>
+            </li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-location-arrow fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">40 w38 Street 5 Floor New York, NY, 10018</a></li>
+              </ul>
+            </li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-envelope-o fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Temporary Emial</a></li>
+                <li><a href="#">erasmushaus@gmail.com</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
 </div>
