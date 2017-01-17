@@ -1,9 +1,13 @@
+# landing_page/views.py
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+
 from django.shortcuts import render_to_response
 from django.template import RequestContext, loader
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import ContactUsView
 from django.contrib import messages
-from reviews.models import OnMapReviewLayout
+
+from .forms import ContactUsView
 
 
 def index(request):
@@ -12,12 +16,12 @@ def index(request):
     index.html(landing page), I should change the name to home page.
 
     """
-    layouts = OnMapReviewLayout.objects.filter(
-        category__codename='intern_review').order_by('?')
+#    layouts = OnMapReviewLayout.objects.filter(
+#        category__codename='intern_review').order_by('?')
     return render_to_response(
         'index.html', context_instance=RequestContext(
             request,
-            {'selected_layout': layouts.first() if layouts else None}
+#            {'selected_layout': layouts.first() if layouts else None}
         )
     )
 

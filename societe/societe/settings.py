@@ -47,15 +47,12 @@ INSTALLED_APPS = (
     # Project app
     'landing_page',
     'check_in',
-    'cities',
-    'reviews',
 
     # instaled third party app
     'debug_toolbar',
     'stripe',
     'analytical',
     'axes',
-    'autocomplete_light',
     'crispy_forms',
     'datetimewidget',
     'django_countries',
