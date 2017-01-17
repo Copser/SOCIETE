@@ -21,7 +21,7 @@ def index(request):
     return render_to_response(
         'index.html', context_instance=RequestContext(
             request,
-            {'selected_layout': layouts.first() if layouts else None}
+#            {'selected_layout': layouts.first() if layouts else None}
         )
     )
 
