@@ -96,49 +96,10 @@
     {% block global_map %}
     {% endblock %}
 
+		<!--footer section -->
+		{% include "footer.html" %}
 
 
-       <div id="footerWrapper" class="container-fluid text-center">
-          <div class="row">
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                &nbsp;
-            <img src="/static/img/erasmus_small.png" class="img-responsive center-block" alt="Responsive image" width=150 height=150>
-            &nbsp;
-                <h5 class=""><strong>PAYMENTS:</strong></h5>
-                <ul class="list-unstyled list-inline">
-                    <li>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="9HQAR9DKYCBWW">
-                    <button class="btn btn-sm" type="submit"><i class="fa fa-3x fa-cc-paypal" style="color:#777;" aria-hidden="true"></i></button>
-            </form></li>
-                </ul>
-             </div> 
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                 <h3><strong>CALL US:</strong></h3>
-                 <p class="text-muted"><i class="fa fa-2x fa-mobile" aria-hidden="true"></i> +1-718-909-3303</p>
-             </div> 
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <h3><strong>EMAIL US:</strong></h3> 
-                <p class="text-muted"><a href="#" style="color:#777;"><i class=""
-										aria-hidden="true"></i>Temporary Emial: erasmushaus@gmail.com</a></p>
-             </div>
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <h5 class=""><strong>MENU:</strong></h5>
-                <ul class="list-unstyled">
-                    <li><a class="text-muted" href="{% url 'index' %}">Home</a></li>
-                    <li><a class="text-muted" href="{% url 'about' %}">About Us</a></li>
-             </div> 
-          </div>
-       </div>
-    <div id="footerRights" class="container-fluid">
-       <div class="row">
-           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-           <p align="center">© 2015 Erasmus Haus</p>
-           </div>
-       </div> 
-    </div>
-</div><!--/ end container-->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -157,5 +118,5 @@
 		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     
       {% analytical_body_bottom %}
-  </body>
+ </body>
 </html>
