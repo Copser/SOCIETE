@@ -2,3 +2,4 @@ htmlcov/
 contact/__pycache__/views.cpython-34.pyc
 check_in/migrations/0001_initial.py
 check_in/migrations/0002_remove_initialcharacteristicmodel_birthday.py
+tags
