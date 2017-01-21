@@ -20,44 +20,25 @@ class InitialCharacteristicModel(models.Model):
             - Last Name
             - Email
             - Country
-        Residence Information:
-            - Move in Date
-            - Move out Date
-            - Message
+        What do you want to know about the building, house,
+        etc:
+            - Empty Field (Field Set)
 
     return: TODO
     """
     #
     # Personal Information
-    first_name = models.CharField(
-        _("First Name"),
-        max_length=225
-    )
-    last_name = models.CharField(
-        _("Last Name"),
-        max_length=225
-    )
-    email = models.EmailField(
-        _("Email"),
-        max_length=225
-    )
-    country = CountryField()
+    first_name = models.CharField(_("First Name"), max_length=225, blank=True, null=True)
+    last_name = models.CharField(_("Last Name"), max_length=225, blank=True, null=True)
+    email = models.EmailField(_("Email"), max_length=225, blank=True, null=True)
+    country = CountryField(blank=True, null=True)
 
     # Residence Information
-    move_in_date = models.DateField(
-        _("Move in date"),
-        null=True
-    )
-    move_out_date = models.DateField(
-        _("Move out date"),
-        null=True
-    )
+    your_questions = models.CharField(_("Your Questions"), max_length=300, blank=True, null=True)
     message = models.TextField()
 
     # Time when this model instance is created
-    timestamp = models.DateTimeField(
-        default=datetime.datetime.now
-    )
+    timestamp = models.DateTimeField(default=datetime.datetime.now)
 
     class Meta:
         verbose_name = _("InitialCharacteristicModel")
