@@ -1,39 +1,28 @@
 {# tamplates/footer.html #}
 
-       <div id="footerWrapper" class="container-fluid text-center">
-          <div class="row">
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                &nbsp;
-            <img src="/static/img/erasmus_small.png" class="img-responsive center-block" alt="Responsive image" width=150 height=150>
-            &nbsp;
-                <h5 class=""><strong>PAYMENTS:</strong></h5>
-                <ul class="list-unstyled list-inline">
-                    <li>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="9HQAR9DKYCBWW">
-                    <button class="btn btn-sm" type="submit"><i class="fa fa-3x fa-cc-paypal" style="color:#777;" aria-hidden="true"></i></button>
-            </form></li>
-                </ul>
-             </div> 
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                 <h3><strong>CALL US:</strong></h3>
-                 <p class="text-muted"><i class="fa fa-2x fa-mobile" aria-hidden="true"></i> +1-718-909-3303</p>
-             </div> 
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <h3><strong>EMAIL US:</strong></h3> 
-                <p class="text-muted"><a href="#" style="color:#777;"><i class=""
-										aria-hidden="true"></i>Temporary Emial: erasmushaus@gmail.com</a></p>
-             </div>
-             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <h5 class=""><strong>MENU:</strong></h5>
-                <ul class="list-unstyled">
-                    <li><a class="text-muted" href="{% url 'index' %}">Home</a></li>
-                    <li><a class="text-muted" href="{% url 'about' %}">About Us</a></li>
-             </div> 
-          </div>
-       </div>
-    <div id="footerRights" class="container-fluid">
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 footer-social-icons text-center">
+                </div>
+                 <div class="col-sm-4 text-center">
+            			<img src="/static/img/erasmus_small.png" class="img-responsive center-block" alt="Responsive image" width=200 height=200>
+									<p>Erasmus Haus provides analysis of housing for the New York City international community of
+									students, interns and young profesionals.</p>
+                </div>
+                <div class="col-sm-4 footer-social-icons text-center">
+									<ul class="list-unstyled pull-right">
+											<li><a href="#" class="" title="+1 718-909-3303"><i class="fa fa-mobile fa-3x"></i></a></li>
+											<li><a href="#" class="" title="40 w38 Street 5 Floor New York, NY, 10018"><i class="fa fa-location-arrow fa-3x"></i></a></li>
+											<li><a href="#" class="" title="Temporary Email: erasmushaus@gmail.com"><i class="fa fa-envelope-o fa-3x"></i></a></li>
+									</ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+    <div id="footerRights" class="container-fluid copyright">
        <div class="row">
            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
            <p align="center">© 2015 Erasmus Haus</p>

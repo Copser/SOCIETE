@@ -39,6 +39,13 @@
     z-index: 1029;
 }
 
+.btn-sm.round {
+    border-radius: 15px;
+}
+
+.navabar-nav .navbar-nav li, .navbar-nav li a {
+	padding-top: 15px;
+}
 
 /* Jumbotron Section */
 .jumbotron {
@@ -189,56 +196,54 @@
 }
 
 
-/* Footer */
+/* 7. FOOTER */
 
-#footerWrapper, #footerRights {
-    width: 100%;
-    margin: 0px auto;
-    padding: 20px 0px;
-}
+    #footer{
+        background-color: #F2F2F2;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 
-#footerWrapper {
-    background-color:#F2F2F2;
-}
+    #footer a{
+    }
+    #footer a:hover{
+    }
 
+		#footer p {
+			padding-top: 20px;
+		}
 
-.btn-facebook, .btn-google-plus, .btn-linkedin, .btn-twitter, .btn-youtube, .btn-social-icon {
-    color: #777;
-}
-
-
-#footerRights {
-    background-color:#030303;
-    text-align: center;
-}
-
-/* Clients Section */
-
-.clients {
-    background: url('/static/img/happy_clients/testimonials.jpg') no-repeat bottom;
-    background-size: cover;
-    height: 500px;
-}
-
-.foil {
-    background-color: #51A59C;
-    opacity: 0.9;
-		height: 500px;
-		margin-right: -15px;
-		margin-left: -15px;
-}
+    .footer-social-icons{
+    }
 
 
-/* Happy Customer Carousel */
+    .footer-social-icons a{
+        margin: 0 5px;
+        font-size: 16px;
+    }
 
-.ceo_carousel .indicators .circle {
-  width: 60px;
-  height: 60px;
-	z-index: 1;
-}
+    .footer-social-icons i{
+    }
+
+    .footer-social-icons i:hover{
+    }
 
 
+    .footer-social-icons span{
+        margin-right: 10px;
+        font-size: 25px;
+    }
 
+		#footerRights {
+        background-color: #000000;
+        padding-top: 20px;
+        padding-bottom: 20px;
+		}
+
+    .copyright p{
+        font-size: 15px;
+				color: #FFFFFF;
+    }
 
 /* ==========================================================================
    SOCIETE custom styles
@@ -291,107 +296,6 @@
     height: 550px;
 }
 
-/***
- *
- * CITIES PAGE
- *
- * ***/
-
-.cities {
-    background: url('/static/img/cities_img/newyork.jpg') no-repeat center center;
-    background-size: cover;
-    height: 550px;
-}
-
-.skopje {
-    background: url('/static/img/cities_img/skopje/skopje.jpg') no-repeat center center;
-    background-size: cover;
-    height: 550px;
-}
-
-
-/* ---- grid ---- */
-
-
-/*
-   Spezific styling for salvattore
-   Feel free to edit it as you like
-   More info at http://salvattore.com
- */
-
-.post{
-	height: 300px;
-  background: #ffffff;
-  padding: 10px;
-  margin: 5px 5px;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-
-.post1, .post2, .post3, .post4, .post5, .post6, .post7, .post8 {
-  background: #ffffff;
-  padding: 8px;
-  margin: 5px 5px;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-
-.post1 {
-	height: 230px;
-}
-
-.post1 img {
-	height: 210px;
-}
-
-.post2 {
-	height: 370px;
-}
-
-.post2 img {
-	height: 350px;
-}
-
-.post3 {
-	height: 230px;
-}
-
-.post3 img {
-	height: 210px;
-}
-
-.post4 {
-	height: 240px;
-}
-
-.post4 img {
-	height: 220px;
-}
-.post5 {
-	height: 250px;
-}
-
-.post5 img {
-	height: 230px;
-}
-
-.post7 img {
-	height: 300px;
-	width: 270px;
-}
-/* Salvattore Base Styles */
-.column {
-    float: left;
-}
-.size-1of4 {
-    width: 25%;
-}
-.size-1of3 {
-    width: 33.333%;
-}
-.size-1of1 {
-    width: 100%;
-}
 
 /***
  *

@@ -1,3 +1,6 @@
+{# tempaltes/navbar.html #}
+
+
 <div class="navbar navbar-fixed-top navbar-default">
     <div class="container">
         <!-- Header -->
@@ -16,7 +19,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
             {% if user.is_authenticated %}
                 <li><a id="logout" href="/accounts/logout">Logout</a></li>
             {% else %}
@@ -45,7 +48,13 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 						<li><a href="https://www.facebook.com/erasmushausnyc"><i class="fa fa-facebook-official fa-3x"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><i class="fa fa-linkedin-square fa-3x"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Coming Soon!</a></li>
+              </ul>
+            </li>
 						<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false"><i class="fa fa-skype fa-3x"></i> <span class="caret"></span></a>
@@ -58,28 +67,6 @@
 								aria-expanded="false"><i class="fa fa-whatsapp fa-3x"></i> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">+1 718-909-3303</a></li>
-              </ul>
-            </li>
-						<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false"><i class="fa fa-mobile fa-3x"></i> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">+1 718-909-3303</a></li>
-              </ul>
-            </li>
-						<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false"><i class="fa fa-location-arrow fa-3x"></i> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">40 w38 Street 5 Floor New York, NY, 10018</a></li>
-              </ul>
-            </li>
-						<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false"><i class="fa fa-envelope-o fa-3x"></i> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Temporary Emial</a></li>
-                <li><a href="#">erasmushaus@gmail.com</a></li>
               </ul>
             </li>
           </ul>
