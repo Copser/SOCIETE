@@ -46,16 +46,11 @@ class InitialCharacteristicForm(forms.ModelForm):
                 layout.Field(
                     "country",
                 ),
-                layout.Field(
-                    "move_in_date",
-                    css_class="input-block-level",
-                    placeholder="Move in date",
-                ),
-                layout.Field(
-                    "move_out_date",
-                    css_class="input-block-level",
-                    placeholder="Move out date",
-                ),
+               # layout.Field(
+               #     "your_questions",
+               #     css_class="input-block-level",
+               #     placeholder="Your Questions",
+               # ),
                 layout.Field(
                     "message",
                     placeholder="Message",
@@ -69,5 +64,5 @@ class InitialCharacteristicForm(forms.ModelForm):
     class Meta:
         model = InitialCharacteristicModel
         fields=[ "first_name", "last_name", "email", "country",
-                "move_in_date", "move_out_date", "message"]
+                "message"]
 

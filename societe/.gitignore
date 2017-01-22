@@ -2,6 +2,12 @@ htmlcov/
 contact/__pycache__/views.cpython-34.pyc
 check_in/migrations/0001_initial.py
 check_in/migrations/0002_remove_initialcharacteristicmodel_birthday.py
+<<<<<<< HEAD
 check_in/migrations/0003_auto_20170121_0620.py
 check_in/migrations/0004_auto_20170122_1845.py
 tags
+=======
+tags
+check_in/migrations/0003_auto_20170121_0620.py
+check_in/migrations/0004_auto_20170122_1845.py
+>>>>>>> erasmushaus_redesign_development_branch
