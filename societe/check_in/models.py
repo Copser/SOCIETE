@@ -34,7 +34,8 @@ class InitialCharacteristicModel(models.Model):
     country = CountryField(blank=True, null=True)
 
     # Residence Information
-    your_questions = models.CharField(_("Your Questions"), max_length=300, blank=True, null=True)
+#    your_questions = models.CharField(_("Your Questions"), max_length=300, blank=True, null=True,
+#                                     choices=QUESTION_CHOICES)
     message = models.TextField()
 
     # Time when this model instance is created
