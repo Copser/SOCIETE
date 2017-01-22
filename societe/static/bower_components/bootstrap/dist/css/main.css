@@ -1,8 +1,19 @@
+/* 
+ * 1. Custom css
+ * 2. Navbar Section
+ * 3. Jumbotron Section
+ * 4. Footer Section
+ * 5. Responsive Utils
+ *
+ *
+ *
+ */
 
-.spec {
-    font-family: 'Aladin', cursive;
-}
 
+/*
+ * Custom CSS
+ *
+ */
 .rounded-btn {
 		width: 55px;
 		height: 55px;
@@ -12,18 +23,6 @@
 }
 
 
-/* text overline */
-.overline {
-    border-top: 3px solid;
-    border-color: #51A59C;
-}
-
-.bottom-line {
-    border-bottom: 3px solid;
-    border-color: #51A59C;
-    width: 5%;
-}
-
 .erasmus-color {
     color: #51A59C;
 }
@@ -32,7 +31,11 @@
     color: #030303;
 }
 
-/* Navbar */
+/* 
+ * 
+ * 2. Navbar
+ *
+ * */
 
 .navbar-lower {
     top: 50px;
@@ -43,11 +46,13 @@
     border-radius: 15px;
 }
 
-.navabar-nav .navbar-nav li, .navbar-nav li a {
-	padding-top: 15px;
-}
 
-/* Jumbotron Section */
+/* 
+ * 
+ * 3. Jumbotron Section
+ *
+ * */
+ 
 .jumbotron {
     background-image: url('/static/img/cities_img/newyork.jpg');
     background-position: bottom;
@@ -60,143 +65,12 @@
 }
 
 
-/* SOCIETE row od columns, making devider */ 
-
-.SOCIETE-columns {
-    text-align: center;
-}
-
-.SOCIETE-columns img {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.col-md-4:not(:last-child) {
-    border-right: 1px solid #ccc;
-}
-
-/* House Carousel Section */
-/* Carousel Styling */
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.carousel-inner {
-  border-radius: 15px;
-}
-
-.carousel-caption {
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
-  text-align: left;
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 15;
-  margin: 0;
-  padding: 0 25px 25px 0;
-  text-align: right;
-}
-
-.carousel-control.left,
-.carousel-control.right {
-  background-image: none;
-}
-
-.castom-carousel {
-	height: 500px;
-}
-
-.section-white {
-   padding: 10px 0;
-}
-
-.section-white {
-  background-color: #fff;
-  color: #555;
-}
-
-@media screen and (min-width: 768px) {
-
-  .section-white {
-     padding: 1.5em 0;
-  }
-
-}
-
-@media screen and (min-width: 992px) {
-
-  .container {
-    max-width: ;
-  }
-
-
-/* Like Pinterest Section */
-
-#pinBoot {
-	position: relative;
-	max-width: 100%;
-	width: 100%;
-}
-
-.pinterest-image {
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-}
-
-.white-panel {
-	position: absolute;
-	background: white;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-	padding: 10px;
-}
-
-.white-panel h1 {
-	font-size: 1em;
-}
-
-.white-panel h1 a {
-	color: #A92733;
-}
-
-.white-panel:hover {
-	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-	margin-top: -5px;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3 ease-in-out;
-}
-
-/* Easy Section */
-
-.easy {
-    width: 100%;
-    height: 200px;
-}
-
-
-.btn-lg.round {
-    border-radius: 20px;
-}
-
-
-/* 7. FOOTER */
+/* 
+ * 
+ *
+ * 4. Footer Section
+ *
+ */
 
     #footer{
         background-color: #F2F2F2;
@@ -245,66 +119,12 @@
 				color: #FFFFFF;
     }
 
-/* ==========================================================================
-   SOCIETE custom styles
-   ========================================================================== */
-/***
+/* 
+ * 
  *
- * ABOUT 
+ * 5. Responsive Utils
  *
- * ***/
-
-/* MISSION AND HISTORY */
-    
-.living-room {
-    background: url('/static/img/about/about_us_room.jpg') no-repeat top;
-    background-size: cover;
-    height: 550px;
-}
-
-.living-room h1 {
-    color: #ffffff;
-}
-
-
-.mission p, .apartment p {
-    line-height: 2em;
-}
-
-.living_kitchen p {
-    line-height: 2em;
-    padding: 0px 15px 0px 15px;
-}
-
-.started {
-    height: 450px;
-}
-
-.living_room_1 {
-    background-image: url('/static/img/about/apartment/apartment3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 550px;
-}
-
-.kitchen_1 {
-    background-image: url('/static/img/about/apartment/apartment5.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 550px;
-}
-
-
-/***
- *
- * Success page  
- * * ***/ 
-#success {
-    height: 500px;
-}
-
+ */
 
 @media screen and (min-width: 1px) and (max-width: 480px){
     #posts[data-columns]::before {
