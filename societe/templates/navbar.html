@@ -1,11 +1,11 @@
 {# tempaltes/navbar.html #}
 
-
+<!-- First Navbar Section -->
 <div class="navbar navbar-fixed-top navbar-default">
     <div class="container">
         <!-- Header -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-topnav">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -16,13 +16,13 @@
           </a></span>
         </div>
         <!-- Navbar Links -->
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbar-collapse-topnav">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class=""><a href="{% url 'index' %}">Home</a></li>
             {% if user.is_authenticated %}
                 <li><a id="logout" href="/accounts/logout">Logout</a></li>
             {% else %}
-                <li class="pull-right"><a href="#" data-toggle="modal" data-target="#loginModal"><button type="button"
+                <li class=""><a href="#" data-toggle="modal" data-target="#loginModal"><button type="button"
 										class="btn btn-sm btn-info round">EXPLORE</button></a></li>
                 </li>
             {% endif %}
@@ -30,18 +30,20 @@
         </div>
     </div>
 </div>
+
+<!-- Second Navbar Section -->
 <div class="navbar navbar-fixed-top navbar-default navbar-lower">
     <div class="container">
         <!-- Header -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar-collapse-social">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
         </div>
         <!-- Navbar Links -->
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbar-collapse-social">
           <ul class="nav navbar-nav">
 						<li><a href="" class="text-danger"></a></li>
           </ul>
@@ -68,6 +70,7 @@
                 <li><a href="#">+1 718-909-3303</a></li>
               </ul>
             </li>
+						<li><a href="#" class="" title="Temporary Email: haus.erasmus@gmail.com"><i class="fa fa-envelope-o fa-3x"></i></a></li>
           </ul>
         </div>
     </div>
