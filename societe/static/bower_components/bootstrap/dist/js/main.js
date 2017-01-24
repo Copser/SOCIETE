@@ -15,6 +15,8 @@ $(document).ready(function(){
     $('div.lazy').lazyload({
         effect : 'fadeIn'
     });
+
+		$('[data-toggle="popover"]').popover();
     
     $('select').select2();
 
@@ -194,3 +196,17 @@ http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Styl
     }
 
 })(jQuery, window, document);
+
+
+var map = new ol.Map({
+	target: 'map',
+	layers: [
+		new ol.layer.Tile({
+			source: new ol.source.OSM()
+		}),
+	],
+	view: new ol.View({
+		center: ol.proj.fromLonLat([37.41, 8.82]),
+		zoom: 4
+	})
+});
