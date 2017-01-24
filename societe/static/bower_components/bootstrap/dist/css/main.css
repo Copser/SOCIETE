@@ -73,57 +73,58 @@
  *
  */
 
-    #footer{
-        background-color: #F2F2F2;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+#footer{
+    background-color: #F2F2F2;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 
-    #footer a{
-    }
-    #footer a:hover{
-    }
+#footer a{
+}
+#footer a:hover{
+}
 
-		#footer p {
-			padding-top: 20px;
-		}
+#footer p {
+	padding-top: 20px;
+}
 
-    .footer-social-icons{
-    }
-
-
-    .footer-social-icons a{
-        margin: 0 5px;
-        font-size: 16px;
-    }
-
-    .footer-social-icons i{
-    }
-
-    .footer-social-icons i:hover{
-    }
+.footer-social-icons{
+}
 
 
-    .footer-social-icons span{
-        margin-right: 10px;
-        font-size: 25px;
-    }
+.footer-social-icons a{
+  margin: 0 5px;
+  font-size: 16px;
+}
 
-		#footerRights {
-        background-color: #000000;
-        padding-top: 20px;
-        padding-bottom: 20px;
-		}
+.footer-social-icons i{
+}
 
-    .copyright p{
-        font-size: 15px;
-				color: #FFFFFF;
-    }
+.footer-social-icons i:hover{
+}
 
-		.map {
-			height: 200px;
-			width: 300px;
-		}
+.footer-social-icons span{
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+#footerRights {
+  background-color: #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.copyright p{
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.haus-logo {
+	
+	
+}
+
+
 
 /* 
  * 
