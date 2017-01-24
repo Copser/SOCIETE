@@ -3,6 +3,7 @@
  * 2. Navbar Section
  * 3. Jumbotron Section
  * 4. Footer Section
+ * 		- map style
  * 5. Responsive Utils
  *
  *
@@ -118,6 +119,11 @@
         font-size: 15px;
 				color: #FFFFFF;
     }
+
+		.map {
+			height: 200px;
+			width: 300px;
+		}
 
 /* 
  * 
