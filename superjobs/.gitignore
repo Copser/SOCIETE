@@ -1,0 +1,31 @@
+labor_apply_app/migrations/0007_merge.py
+labor_apply_app/migrations/0008_personaluserinfo.py
+jobs/migrations/0002_auto_20161029_0436.py
+jobs/migrations/0003_auto_20161031_2054.py
+jobs/migrations/0001_initial.py
+jobs/migrations/
+jobs_post/migrations/0003_auto_20161106_0643.py
+jobs_post/migrations/0004_auto_20161106_0644.py
+jobs_post/migrations/0005_auto_20161106_0706.py
+blog/migrations/0002_remove_post_categories.py
+blog/migrations/0003_post_slug.py
+blog/migrations/0004_auto_20161112_1919.py
+blog/migrations/0005_auto_20161112_1954.py
+blog/migrations/0001_initial.py
+blog/migrations/
+.cache/
+../.cache/
+../.coverage
+<<<<<<< HEAD
+=======
+candidate_form/migrations/0001_initial.py
+candidate_form/migrations/0002_multilingualmodelidea.py
+candidate_form/migrations/0003_auto_20161210_2011.py
+candidate_form/migrations/0004_auto_20161210_2038.py
+candidate_form/migrations/0005_auto_20161210_2040.py
+<<<<<<< HEAD
+>>>>>>> 497fb9537206a0b2309bfb5e25bbd5eac620dc18
+=======
+candidate_form/migrations/0006_auto_20161213_2008.py
+candidate_form/migrations/0007_auto_20161213_2018.py
+>>>>>>> rest_framework_development_branch

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 societe/societe/local_settings.py
 societe/functional_tests/selenium_testing.py
 societe/societe/secret.py
@@ -11,3 +12,7 @@ societe/contact/__pycache__/views.cpython-34.pyc
 societe/contact/__pycache__/forms.cpython-34.pyc
 societe/contact/__pycache__/views.cpython-34.pyc
 societe/contact/__pycache__/views.cpython-34.pyc
+=======
+.cache/
+.coverage
+>>>>>>> d535cbbf7731ce4319496af1871acadc78204811

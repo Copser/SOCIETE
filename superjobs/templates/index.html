@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <!-- HEADER -->
+    <header id="header">
+    <nav class="navbar st-navbar navbar-default navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#st-navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+								<a class="navbar-brand" href="{% url 'index' %}"><img src="/static/img/logo1.png" alt="Welcome to SuperJobs"></a>
+            </div>
+            <div id="st-navbar-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+									<li class="active"><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'about' %}">About</a></li>
+									<li><a href="{% url 'jobs' %}">Career</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+													{% if user.is_authenticated %}
+                            <li><a id="logout" href="/accounts/logout"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+													{% else %}
+                            <li><a href="/accounts/signup"><i class="fa fa-user" aria-hidden="true"></i> SignUp</a></li>
+                            <li><a href="/accounts/login"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+													{% endif %}
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- SLIDER -->
+    <section id="slider">
+        <div id="home-carousel" class="carousel slide" data-ride="carousel">            
+            <div class="carousel-inner">
+                <div class="item active" style="background-image: url(/static/img/manual-slider/01.jpg)">
+                        <div class="carousel-caption container">
+                            <div class="row">
+                                <h1>Want to earn money? Are you handy with various tool's?<br>Well, what are you waiting for?</h1>
+                                <h2>
+                                    <div class="button-apply">
+                                        <a href="/accounts/login">Apply Now</a>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>                  
+                    </div>
+                   <div class="item" style="background-image: url(/static/img/manual-slider/03.jpg)">
+                        <div class="carousel-caption container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1>Want to earn money? Are you handy with various tool's?<br>Well, what are you waiting for?</h1>
+                                    <h2>
+                                        <div class="button-apply">
+                                            <a href="/accounts/login">Apply Now</a>
+                                        </div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div>
+                     <div class="item" style="background-image: url(/static/img/manual-slider/04.jpg)">
+                        <div class="carousel-caption container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1>Want to earn money? Are you handy with various tool's?<br>Well, what are you waiting for?</h1>
+                                    <h2>
+                                    <div class="button-apply">
+                                        <a href="/accounts/login">Apply Now</a>
+                                    </div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div>
+                <a class="home-carousel-left" href="#home-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                <a class="home-carousel-right" href="#home-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+            </div>      
+        </div>
+    </section>
+    <!-- /SLIDER -->
+    
+    <!-- CATEGORIES -->
+    <section id="categories">
+        <div class="container">
+            <div class="row">
+                <div class="text-cat col-sm-12">
+                    <div class="row">
+                        <h2>Categories</h2>
+                    </div>    
+                </div>
+                <div class="col-md-4 st-service">
+                    <div class="cat-ico">
+											<a href="/accounts/login">
+                        <img src="/static/img/categories/Saw-128.png">
+											</a>
+                        <h2>Carpenter</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 st-service">
+                    <div class="cat-ico">
+											<a href="/accounts/login">
+                        <img src="/static/img/categories/Cooker-128.png">
+											</a>
+                        <h2>Housekeep</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 st-service">
+                    <div class="cat-ico">
+											<a href="/accounts/login">
+                        <img src="/static/img/categories/Water-Tap-128.png">
+											</a>
+                        <h2>Plumbing</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4 st-service">
+                    <div class="cat-ico">
+											<a href="/accounts/login">
+                        <img src="/static/img/categories/Tools-128.png">
+											</a>
+                        <h2>Electrical</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 st-service">
+                    <div class="cat-ico">
+											<a href="/accounts/login">
+                        <img src="/static/img/categories/Gear-128.png">
+											</a>
+                        <h2>Construction</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 st-service">
+                    <div class="cat-ico">
+											<a href="/accounts/login">
+                        <img src="/static/img/categories/Temperature-128.png">
+											</a>
+                        <h2>Heating, ventilation and air conditioning (HVAC)</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / CATEGORIES -->
+    
+    <!-- OWL CAROUSEL COMMENTS -->
+    <section id="testimonial" class="parallax-section">
+        <div class="container">
+            <div class="row">
+                <!-- Service Owl Carousel section -->
+                <div id="owl-testimonial" class="owl-carousel">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8 testimonial-people">
+                                <img src="/static/img/slider/001.png" class="img-responsive img-circle" alt="testimonial img">
+                                <h2>Ella Elisson - Housekeeper</h2>
+                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8 testimonial-people">
+                                <img src="/static/img/slider/002.png" class="img-responsive img-circle" alt="testimonial img">
+                                <h2>Jim Carter - Plumber</h2>
+                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8 testimonial-people">
+                                <img src="/static/img/slider/003.png" class="img-responsive img-circle" alt="testimonial img">
+                                <h2>Curt Jackson - ELECTRICAL</h2>
+                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / OWL CAROUSEL COMMENTS -->
+    
+    <!-- IMAGES OVERFLOW / JOIN US-->
+    <section id="testimonials">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-join col-md-12">
+                    <h2 class="join-us-name text-center">Join Us</h2>
+                    <div class="join-us-text col-md-12">
+                        <p>An quo ipsum lobortis liberavisse, te nec mutat facer viderer. Usu ad ornatus utroque definitionem, ei fugit docendi lucilius eos, ad duo vide dolorem senserit. Pri putant verear ea, dicat aeque ut cum.</p>
+                    </div>
+                </div>  
+                
+                <div class="img-gallery col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <img src="/static/img/join-us/02.jpg" alt="Image 2" class="img-fluid sigmapad">
+                    <div class="overlay text-center">
+                        <h2>Project image</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                    </div>
+                </div>
+                <div class="img-gallery col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <img src="/static/img/join-us/01.png" alt="Image 1" class="img-fluid sigmapad">
+                    <div class="overlay large text-center">
+                        <h2>Project image</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                    </div>
+                </div>
+                <div class="img-gallery col-md-4 col-sm-12 col-xs-12">
+                    <img src="/static/img/join-us/03.jpg" alt="Image 3" class="img-fluid sigmapad">
+                    <div class="overlay text-center">
+                        <h2>Project image</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                    </div>
+                </div>
+                <div class="img-gallery col-md-4 col-sm-12 col-xs-12">
+                    <img src="/static/img/join-us/04.jpg" alt="Image 4" class="img-fluid sigmapad">
+                    <div class="overlay text-center">
+                        <h2>Project image</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                    </div>
+                </div>
+                <div class="img-gallery col-md-4 col-sm-12 col-xs-12">
+                    <img src="/static/img/join-us/05.jpg" alt="Image 5" class="img-fluid sigmapad">
+                    <div class="overlay text-center">
+                        <h2>Project image</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                    </div>
+                </div> 
+            </div>
+            <!-- Button Apply -->
+            <div class="col-md-12">
+                <h2>
+                    <div class="button-apply-2">
+                        <a href="/accounts/login">Apply Now</a>
+                    </div>
+                </h2>
+            </div>
+            <!-- / Button Apply -->
+        </div>
+    </section>
+    <!-- IMAGES OVERFLOW / JOIN US -->
+{% endblock %}
