@@ -56,13 +56,19 @@
  
 .jumbotron {
     background-image: url('/static/img/city/nyc.jpg');
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
     height: 650px;
 }
 
-.jumbotron .haus {
-    color: #ffffff;
+.jumbotron p {
+  font-size: 1.2em;
+}
+
+.jumbotron button {
+  margin-right: 35px;
+  background-color: transparent;
+  border-color: #000000;
 }
 
 
@@ -79,9 +85,11 @@
     padding-bottom: 40px;
 }
 
-#footer a{
+#footer i{
+  color: #606060;
 }
-#footer a:hover{
+#footer i:hover{
+  color: #808080;
 }
 
 #footer p {
