@@ -21,6 +21,7 @@ django-crispy-forms==1.6.1
 django-datetime-widget==0.9.3
 django-debug-toolbar==1.4
 django-model-utils==2.5
+django-nose==1.4.4
 django-paypal==0.3.2
 django-pylibmc==0.6.1
 django-robots==2.0
