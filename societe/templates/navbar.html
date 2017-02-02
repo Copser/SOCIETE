@@ -18,13 +18,14 @@
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbar-collapse-topnav">
             <ul class="nav navbar-nav navbar-right">
-                <li class=""><a href="{% url 'index' %}">Home</a></li>
+                <li class=""><a href="https://drive.google.com/drive/folders/0B-IM7D5R_56aVC1ERGJYRHlPUUE?usp=sharing">tenant advisory</a></li>
+                <li class=""><a href="{% url 'about' %}">erasmus places</a></li>
             {% if user.is_authenticated %}
                 <li><a id="logout" href="/accounts/logout">Logout</a></li>
             {% else %}
-                <li class=""><a href="#" data-toggle="modal" data-target="#loginModal"><button type="button"
-										class="btn btn-sm btn-info round">EXPLORE</button></a></li>
-                </li>
+                <!--<li class=""><a href="#" data-toggle="modal" data-target="#loginModal"><button type="button"
+                   class="btn btn-sm btn-info round"></button></a></li>
+                </li>-->
             {% endif %}
                 </ul>
         </div>
@@ -45,10 +46,10 @@
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbar-collapse-social">
           <ul class="nav navbar-nav">
-						<li><a href="" class="text-danger"></a></li>
+           <li><a href="" class="text-danger"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-						<li><a href="https://www.facebook.com/erasmushausnyc"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+           <li><a href="https://www.facebook.com/erasmushausnyc"><i class="fa fa-facebook-official fa-3x"></i></a></li>
           </ul>
         </div>
     </div>
